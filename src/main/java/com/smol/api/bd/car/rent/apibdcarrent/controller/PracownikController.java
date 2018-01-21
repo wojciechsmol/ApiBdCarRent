@@ -40,6 +40,11 @@ public class PracownikController {
         return Pracownik.Rola.allRola;
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Pracownik> getPracownik(@PathVariable(value = "id") Long pracownikId) {
+        return pracownikService.getPracownik(pracownikId);
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<Pracownik> updatePracownik(@PathVariable(value = "id") Long pracownikId,
                                                      @Valid @RequestBody Pracownik pracownikDetails) {

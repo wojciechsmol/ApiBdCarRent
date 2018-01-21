@@ -58,4 +58,14 @@ public class PracownikServiceImpl implements PracownikService {
         pracownikRepository.delete(pracownik);
         return ResponseEntity.ok().build();
     }
+
+    @Override
+    public ResponseEntity<Pracownik> getPracownik(Long pracownikId) {
+        Pracownik pracownik = pracownikRepository.findOne(pracownikId);
+        if (pracownik == null) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(pracownik);
+    }
+
 }

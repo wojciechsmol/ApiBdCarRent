@@ -23,7 +23,9 @@ public class MainController {
                 "GET: /pracownicy\n " +
                 "GET: /pracownicy/statusy_zatrudnienia\n " +
                 "GET: /pracownicy/role\n" +
-                "PUT /pracownicy/{id}  -  i przekazujemy to co chcemy zmienić JSON-em\n" +
+                "GET: /pracownicy/{id} - zwraca konkretnego pracownika\n" +
+                "PUT: /pracownicy/{id}  -  i przekazujemy to co chcemy zmienić JSON-em\n" +
+                "DELETE: /pracownicy/{id}\n" +
                 "POST: /pracownicy";
     }
 

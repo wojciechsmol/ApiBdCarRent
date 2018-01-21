@@ -9,4 +9,5 @@ public interface PracownikService {
     ResponseEntity<Pracownik> updatePracownik(Long pracownikId, Pracownik pracownikDetails);
     ResponseEntity<Pracownik> createPracownik(Pracownik pracownik);
     ResponseEntity<Pracownik> deletePracownik(Long pracownikId);
+    ResponseEntity<Pracownik> getPracownik(Long pracownikId);
 }
