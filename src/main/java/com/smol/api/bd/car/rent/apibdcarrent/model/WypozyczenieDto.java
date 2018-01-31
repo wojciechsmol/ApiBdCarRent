@@ -1,13 +1,12 @@
 package com.smol.api.bd.car.rent.apibdcarrent.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
 
 public class WypozyczenieDto {
 
+    @JsonProperty("id")
     private Long id;
 
     @JsonProperty("planowana_data_rozpoczecia")
@@ -35,12 +34,12 @@ public class WypozyczenieDto {
     private Long idPojazdu;
 
     @JsonProperty("status_wypozyczenia")
-    private Wypozyczenie.statusyWypozyczenia statusWypozyczenia;
+    private Wypozyczenie.statusyWypozyczen statusWypozyczenia;
 
     public WypozyczenieDto() {
     }
 
-    public WypozyczenieDto(Long id, LocalDateTime planowanaDataRozpoczecia, LocalDateTime planowanaDataZakonczenia, LocalDateTime faktycznaDataRozpoczecia, LocalDateTime faktycznaDataZakonczenia, int przebiegRozpoczecia, int przebiegZakonczenia, Long idPracownika, Long idPojazdu, Wypozyczenie.statusyWypozyczenia statusWypozyczenia) {
+    public WypozyczenieDto(Long id, LocalDateTime planowanaDataRozpoczecia, LocalDateTime planowanaDataZakonczenia, LocalDateTime faktycznaDataRozpoczecia, LocalDateTime faktycznaDataZakonczenia, int przebiegRozpoczecia, int przebiegZakonczenia, Long idPracownika, Long idPojazdu, Wypozyczenie.statusyWypozyczen statusWypozyczenia) {
         this.id = id;
         this.planowanaDataRozpoczecia = planowanaDataRozpoczecia;
         this.planowanaDataZakonczenia = planowanaDataZakonczenia;

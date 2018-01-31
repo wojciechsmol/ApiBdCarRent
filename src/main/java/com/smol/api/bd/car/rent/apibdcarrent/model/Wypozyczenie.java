@@ -4,12 +4,9 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.apache.tomcat.jni.Local;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.EnumSet;
 import java.util.List;
 
@@ -17,10 +14,10 @@ import java.util.List;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Wypozyczenie {
 
-    //ENUM Type of statusyWypozyczenia
-    public enum statusyWypozyczenia{
+    //ENUM Type of statusyWypozyczen
+    public enum statusyWypozyczen {
         ZAREZERWOWANE, WYPOZYCZONE, ZAKONCZONE;
-        public static final EnumSet<statusyWypozyczenia> allStatusyWypozyczenia = EnumSet.allOf(statusyWypozyczenia.class);
+        public static final EnumSet<statusyWypozyczen> allStatusyWypozyczen = EnumSet.allOf(statusyWypozyczen.class);
     }
 
     @Id
@@ -59,7 +56,7 @@ public class Wypozyczenie {
     @Enumerated
     @Column(columnDefinition = "smallint")
     @JsonProperty("status_wypozyczenia")
-    private statusyWypozyczenia statusWypozyczenia;
+    private statusyWypozyczen statusWypozyczenia;
 
     @OneToMany(mappedBy = "wypozyczenie")
     @JsonBackReference
@@ -73,7 +70,7 @@ public class Wypozyczenie {
     public Wypozyczenie() {
     }
 
-    public Wypozyczenie(LocalDateTime planowanaDataRozpoczecia, LocalDateTime planowanaDataZakonczenia, LocalDateTime faktycznaDataRozpoczecia, LocalDateTime faktycznaDataZakonczenia, int przebiegRozpoczecia, int przebiegZakonczenia, Pracownik pracownik, Pojazd pojazd, statusyWypozyczenia statusWypozyczenia) {
+    public Wypozyczenie(LocalDateTime planowanaDataRozpoczecia, LocalDateTime planowanaDataZakonczenia, LocalDateTime faktycznaDataRozpoczecia, LocalDateTime faktycznaDataZakonczenia, int przebiegRozpoczecia, int przebiegZakonczenia, Pracownik pracownik, Pojazd pojazd, statusyWypozyczen statusWypozyczenia) {
         this.planowanaDataRozpoczecia = planowanaDataRozpoczecia;
         this.planowanaDataZakonczenia = planowanaDataZakonczenia;
         this.faktycznaDataRozpoczecia = faktycznaDataRozpoczecia;
@@ -85,7 +82,7 @@ public class Wypozyczenie {
         this.statusWypozyczenia = statusWypozyczenia;
     }
 
-    public Wypozyczenie(LocalDateTime planowanaDataRozpoczecia, LocalDateTime planowanaDataZakonczenia, LocalDateTime faktycznaDataRozpoczecia, LocalDateTime faktycznaDataZakonczenia, int przebiegRozpoczecia, int przebiegZakonczenia, Pracownik pracownik, Pojazd pojazd, statusyWypozyczenia statusWypozyczenia, List<CzynnoscSerwisowa> czynnosciSerwisowe, List<CzynnoscEksploatacyjna> czynnosciEksploatacyjne) {
+    public Wypozyczenie(LocalDateTime planowanaDataRozpoczecia, LocalDateTime planowanaDataZakonczenia, LocalDateTime faktycznaDataRozpoczecia, LocalDateTime faktycznaDataZakonczenia, int przebiegRozpoczecia, int przebiegZakonczenia, Pracownik pracownik, Pojazd pojazd, statusyWypozyczen statusWypozyczenia, List<CzynnoscSerwisowa> czynnosciSerwisowe, List<CzynnoscEksploatacyjna> czynnosciEksploatacyjne) {
         this.planowanaDataRozpoczecia = planowanaDataRozpoczecia;
         this.planowanaDataZakonczenia = planowanaDataZakonczenia;
         this.faktycznaDataRozpoczecia = faktycznaDataRozpoczecia;
@@ -135,7 +132,7 @@ public class Wypozyczenie {
         return pojazd;
     }
 
-    public statusyWypozyczenia getStatusWypozyczenia() {
+    public statusyWypozyczen getStatusWypozyczenia() {
         return statusWypozyczenia;
     }
 
@@ -183,7 +180,7 @@ public class Wypozyczenie {
         this.pojazd = pojazd;
     }
 
-    public void setStatusWypozyczenia(statusyWypozyczenia statusWypozyczenia) {
+    public void setStatusWypozyczenia(statusyWypozyczen statusWypozyczenia) {
         this.statusWypozyczenia = statusWypozyczenia;
     }
 

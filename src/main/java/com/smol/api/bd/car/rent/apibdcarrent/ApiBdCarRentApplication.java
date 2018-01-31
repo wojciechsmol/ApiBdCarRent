@@ -14,7 +14,6 @@ public class ApiBdCarRentApplication {
 
     public static void main(String[] args) {
 
-        System.out.println(Integer.getInteger("4"));
         SpringApplication.run(ApiBdCarRentApplication.class, args);
 
     }

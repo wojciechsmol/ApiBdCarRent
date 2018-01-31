@@ -2,13 +2,11 @@ package com.smol.api.bd.car.rent.apibdcarrent.service;
 
 import com.smol.api.bd.car.rent.apibdcarrent.model.*;
 import com.smol.api.bd.car.rent.apibdcarrent.repository.*;
-import org.bouncycastle.math.raw.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Component
@@ -55,7 +53,7 @@ public class DataLoader implements ApplicationRunner {
 
         mPojazdRepository.save(pojazd1);
 
-        Wypozyczenie wyp1 = new Wypozyczenie(LocalDateTime.now(), LocalDateTime.now(), LocalDateTime.now(), LocalDateTime.now(), 129000, 129034, prac1, pojazd1, Wypozyczenie.statusyWypozyczenia.ZAKONCZONE);
+        Wypozyczenie wyp1 = new Wypozyczenie(LocalDateTime.now(), LocalDateTime.now(), LocalDateTime.now(), LocalDateTime.now(), 129000, 129034, prac1, pojazd1, Wypozyczenie.statusyWypozyczen.ZAKONCZONE);
         mWypozyczenieRepository.save(wyp1);
 
 
