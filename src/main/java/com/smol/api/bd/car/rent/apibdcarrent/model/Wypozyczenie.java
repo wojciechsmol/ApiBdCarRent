@@ -54,6 +54,8 @@ public class Wypozyczenie {
     @JsonManagedReference
     private Pojazd pojazd;
 
+
+
     @Enumerated
     @Column(columnDefinition = "smallint")
     @JsonProperty("status_wypozyczenia")

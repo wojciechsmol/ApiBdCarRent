@@ -6,6 +6,9 @@ import com.smol.api.bd.car.rent.apibdcarrent.repository.WypozyczenieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 public class WypozyczenieServiceImpl implements WypozyczenieService {
 
@@ -17,7 +20,9 @@ public class WypozyczenieServiceImpl implements WypozyczenieService {
     }
 
     @Override
-    public Iterable<Wypozyczenie> getAllWypozyczenia() {
-        return wypozyczenieRepository.findAll();
+    public List<Wypozyczenie> getAllWypozyczenia() {
+        List<Wypozyczenie> wypozyczenia = new ArrayList<>();
+        wypozyczenieRepository.findAll().forEach(wypozyczenia::add);
+        return wypozyczenia;
     }
 }
