@@ -1,13 +1,16 @@
 package com.smol.api.bd.car.rent.apibdcarrent.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.EnumSet;
+import java.util.List;
 
 
 @Entity
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Pracownik {
 
     //ENUM TYPE of StatusZatrudnienia:
@@ -32,6 +35,9 @@ public class Pracownik {
     @Column(columnDefinition = "date")
     private LocalDate dataUrodzenia;
 
+    @OneToOne
+    private Opieka opieka;
+
     @Enumerated
     @Column(columnDefinition = "smallint")
     @JsonProperty("status_zatrudnienia")
@@ -54,16 +60,26 @@ public class Pracownik {
         this.rola = rola;
     }
 
+    public Pracownik(String pesel, String imie, String nazwisko, LocalDate dataUrodzenia, Opieka opieka, StatusZatrudnienia statusZatrudnienia, Rola rola) {
+        this.pesel = pesel;
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+        this.dataUrodzenia = dataUrodzenia;
+        this.opieka = opieka;
+        this.statusZatrudnienia = statusZatrudnienia;
+        this.rola = rola;
+    }
+
     public Long getId() {
         return id;
     }
 
-    public String getImie() {
-        return imie;
-    }
-
     public String getPesel() {
         return pesel;
+    }
+
+    public String getImie() {
+        return imie;
     }
 
     public String getNazwisko() {
@@ -74,6 +90,10 @@ public class Pracownik {
         return dataUrodzenia;
     }
 
+    public Opieka getOpieka() {
+        return opieka;
+    }
+
     public StatusZatrudnienia getStatusZatrudnienia() {
         return statusZatrudnienia;
     }
@@ -82,50 +102,36 @@ public class Pracownik {
         return rola;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public void setPesel(String pesel) {
-        if (pesel != null)
-            this.pesel = pesel;
-    }
-
-    public void setNazwisko(String nazwisko) {
-
-        if (nazwisko != null)
-            this.nazwisko = nazwisko;
-    }
-
-    public void setDataUrodzenia(LocalDate dataUrodzenia) {
-
-        if (dataUrodzenia != null)
-            this.dataUrodzenia = dataUrodzenia;
+        this.pesel = pesel;
     }
 
     public void setImie(String imie) {
+        this.imie = imie;
+    }
 
-        if (imie != null)
-            this.imie = imie;
+    public void setNazwisko(String nazwisko) {
+        this.nazwisko = nazwisko;
+    }
+
+    public void setDataUrodzenia(LocalDate dataUrodzenia) {
+        this.dataUrodzenia = dataUrodzenia;
+    }
+
+    public void setOpieka(Opieka opieka) {
+        this.opieka = opieka;
     }
 
     public void setStatusZatrudnienia(StatusZatrudnienia statusZatrudnienia) {
-        if (statusZatrudnienia != null)
-            this.statusZatrudnienia = statusZatrudnienia;
+        this.statusZatrudnienia = statusZatrudnienia;
     }
 
     public void setRola(Rola rola) {
-
-        if (rola != null)
-            this.rola = rola;
+        this.rola = rola;
     }
 
-    @Override
-    public String toString() {
-        return "Pracownik{" +
-                "id=" + id +
-                ", pesel='" + pesel + '\'' +
-                ", imie='" + imie + '\'' +
-                ", nazwisko='" + nazwisko + '\'' +
-                ", dataUrodzenia=" + dataUrodzenia +
-                ", statusZatrudnienia=" + statusZatrudnienia +
-                ", rola=" + rola +
-                '}';
-    }
 }

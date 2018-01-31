@@ -12,6 +12,7 @@ public class MainController {
 
     private PracownikRepository pracownikRepository;
 
+
     @Autowired
     MainController(PracownikRepository pracownikRepository){
         this.pracownikRepository = pracownikRepository;
