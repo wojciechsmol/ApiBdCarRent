@@ -15,13 +15,6 @@ public class Opieka {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @JsonProperty("data_rozpoczecia")
-    @Column(columnDefinition = "date")
-    private LocalDate dataRozpoczecia;
-
-    @JsonProperty("data_zakonczenia")
-    @Column(columnDefinition = "date")
-    private LocalDate dataZakonczenia;
 
     @ManyToOne(fetch=FetchType.LAZY)
     @JsonManagedReference
@@ -34,23 +27,13 @@ public class Opieka {
     public Opieka() {
     }
 
-    public Opieka(LocalDate dataRozpoczecia, LocalDate dataZakonczenia, Pracownik pracownik, Pojazd pojazd) {
-        this.dataRozpoczecia = dataRozpoczecia;
-        this.dataZakonczenia = dataZakonczenia;
+    public Opieka(Pracownik pracownik, Pojazd pojazd) {
         this.pracownik = pracownik;
         this.pojazd = pojazd;
     }
 
     public Long getId() {
         return id;
-    }
-
-    public LocalDate getDataRozpoczecia() {
-        return dataRozpoczecia;
-    }
-
-    public LocalDate getDataZakonczenia() {
-        return dataZakonczenia;
     }
 
     public Pracownik getPracownik() {
@@ -63,14 +46,6 @@ public class Opieka {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public void setDataRozpoczecia(LocalDate dataRozpoczecia) {
-        this.dataRozpoczecia = dataRozpoczecia;
-    }
-
-    public void setDataZakonczenia(LocalDate dataZakonczenia) {
-        this.dataZakonczenia = dataZakonczenia;
     }
 
     public void setPracownik(Pracownik pracownik) {

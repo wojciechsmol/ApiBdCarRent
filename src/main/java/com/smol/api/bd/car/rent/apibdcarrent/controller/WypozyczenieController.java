@@ -30,7 +30,7 @@ public class WypozyczenieController {
     public List<WypozyczenieDto> getAllWypozyczenia(){
         List<Wypozyczenie> wypozyczenia = mWypozyczenieService.getAllWypozyczenia();
         return wypozyczenia.stream()
-                .map(wypozyczenie -> convertToDto(wypozyczenie))
+                .map(wypozyczenie -> mWypozyczenieService.convertToDto(wypozyczenie))
                 .collect(Collectors.toList());
 
     }
@@ -40,12 +40,6 @@ public class WypozyczenieController {
         return Wypozyczenie.statusyWypozyczen.allStatusyWypozyczen;
     }
 
-
-
-    private WypozyczenieDto convertToDto(Wypozyczenie wypozyczenie) {
-
-        return new WypozyczenieDto(wypozyczenie.getId(), wypozyczenie.getPlanowanaDataRozpoczecia(), wypozyczenie.getPlanowanaDataZakonczenia(), wypozyczenie.getFaktycznaDataRozpoczecia(), wypozyczenie.getFaktycznaDataZakonczenia(), wypozyczenie.getPrzebiegRozpoczecia(), wypozyczenie.getPrzebiegZakonczenia(), wypozyczenie.getPracownik().getId(), wypozyczenie.getPojazd().getId(), wypozyczenie.getStatusWypozyczenia());
-    }
 
 
 

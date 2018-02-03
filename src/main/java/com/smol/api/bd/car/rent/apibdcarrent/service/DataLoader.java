@@ -7,6 +7,7 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Component
@@ -17,14 +18,15 @@ public class DataLoader implements ApplicationRunner {
     private ModelRepository mModelRepository;
     private PojazdRepository mPojazdRepository;
     private WypozyczenieRepository mWypozyczenieRepository;
+    private OpiekaRepository mOpiekaRepository;
 
-    @Autowired
-    public DataLoader(PracownikRepository pracownikRepository, MarkaRepository markaRepository, ModelRepository modelRepository, PojazdRepository pojazdRepository, WypozyczenieRepository wypozyczenieRepository) {
+    public DataLoader(PracownikRepository pracownikRepository, MarkaRepository markaRepository, ModelRepository modelRepository, PojazdRepository pojazdRepository, WypozyczenieRepository wypozyczenieRepository, OpiekaRepository opiekaRepository) {
         this.pracownikRepository = pracownikRepository;
         mMarkaRepository = markaRepository;
         mModelRepository = modelRepository;
         mPojazdRepository = pojazdRepository;
         mWypozyczenieRepository = wypozyczenieRepository;
+        mOpiekaRepository = opiekaRepository;
     }
 
     public void run(ApplicationArguments args) {
@@ -50,8 +52,18 @@ public class DataLoader implements ApplicationRunner {
         mModelRepository.save(corsa);
 
         Pojazd pojazd1 = new Pojazd("SLU34AW", 102987, Pojazd.statusPojazdu.SPRAWNY, corsa);
-
         mPojazdRepository.save(pojazd1);
+
+        Opieka opieka1 = new Opieka(prac1, pojazd1);
+        mOpiekaRepository.save(opieka1);
+
+        Pojazd corsa1 = mPojazdRepository.findOne(pojazd1.getId());
+        corsa1.setOpieka(opieka1);
+        mPojazdRepository.save(corsa1);
+
+        Pracownik pracJeden = pracownikRepository.findOne(prac1.getId());
+        pracJeden.setOpieka(opieka1);
+        pracownikRepository.save(pracJeden);
 
         Wypozyczenie wyp1 = new Wypozyczenie(LocalDateTime.now(), LocalDateTime.now(), LocalDateTime.now(), LocalDateTime.now(), 129000, 129034, prac1, pojazd1, Wypozyczenie.statusyWypozyczen.ZAKONCZONE);
         mWypozyczenieRepository.save(wyp1);

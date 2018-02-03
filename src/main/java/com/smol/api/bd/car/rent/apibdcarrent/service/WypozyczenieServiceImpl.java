@@ -2,6 +2,7 @@ package com.smol.api.bd.car.rent.apibdcarrent.service;
 
 
 import com.smol.api.bd.car.rent.apibdcarrent.model.Wypozyczenie;
+import com.smol.api.bd.car.rent.apibdcarrent.model.WypozyczenieDto;
 import com.smol.api.bd.car.rent.apibdcarrent.repository.WypozyczenieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,5 +25,19 @@ public class WypozyczenieServiceImpl implements WypozyczenieService {
         List<Wypozyczenie> wypozyczenia = new ArrayList<>();
         wypozyczenieRepository.findAll().forEach(wypozyczenia::add);
         return wypozyczenia;
+    }
+
+    @Override
+    public WypozyczenieDto convertToDto(Wypozyczenie wypozyczenie) {
+        return new WypozyczenieDto(wypozyczenie.getId(),
+                wypozyczenie.getPlanowanaDataRozpoczecia(),
+                wypozyczenie.getPlanowanaDataZakonczenia(),
+                wypozyczenie.getFaktycznaDataRozpoczecia(),
+                wypozyczenie.getFaktycznaDataZakonczenia(),
+                wypozyczenie.getPrzebiegRozpoczecia(),
+                wypozyczenie.getPrzebiegZakonczenia(),
+                wypozyczenie.getPracownik().getId(),
+                wypozyczenie.getPojazd().getId(),
+                wypozyczenie.getStatusWypozyczenia());
     }
 }

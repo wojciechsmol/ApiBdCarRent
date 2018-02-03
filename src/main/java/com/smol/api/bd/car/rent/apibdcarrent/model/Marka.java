@@ -2,6 +2,7 @@ package com.smol.api.bd.car.rent.apibdcarrent.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import java.util.List;
@@ -13,6 +14,7 @@ public class Marka {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @JsonProperty("nazwa")
     private String opis;
 
     @OneToMany(mappedBy = "marka")
