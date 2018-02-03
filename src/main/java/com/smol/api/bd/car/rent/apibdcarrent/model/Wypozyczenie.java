@@ -16,7 +16,7 @@ public class Wypozyczenie {
 
     //ENUM Type of statusyWypozyczen
     public enum statusyWypozyczen {
-        ZAREZERWOWANE, WYPOZYCZONE, ZAKONCZONE;
+        ZAREZERWOWANE, WYPOŻYCZONE, ZAKOŃCZONE;
         public static final EnumSet<statusyWypozyczen> allStatusyWypozyczen = EnumSet.allOf(statusyWypozyczen.class);
     }
 

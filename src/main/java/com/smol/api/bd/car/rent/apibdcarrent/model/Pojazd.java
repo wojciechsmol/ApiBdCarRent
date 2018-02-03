@@ -15,7 +15,7 @@ public class Pojazd {
 
     //ENUM TYPE of statusPojazdu
     public enum statusPojazdu{
-        SPRAWNY, W_NAPRAWIE, ZLOMOWANY;
+        SPRAWNY, W_NAPRAWIE, ZŁOMOWANY;
         public static final EnumSet<statusPojazdu> allStatusyPojazdu = EnumSet.allOf(statusPojazdu.class);
     }
 

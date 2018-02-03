@@ -14,7 +14,7 @@ public class CzynnoscEksploatacyjna {
 
     //ENUM TYPE of rodzajCzynnosciEksploatacyjnej
     public enum rodzajCzynnoscEksploatacyjnej{
-        TANKOWANIE, DOLANIE_PLYNU_DO_SPRYSKIWACZY, DOLANIE_OLEJU_SILNIKOWEGO;
+        TANKOWANIE, DOLANIE_PŁYNU_DO_SPRYSKIWACZY, DOLANIE_OLEJU_SILNIKOWEGO;
         public static final EnumSet<rodzajCzynnoscEksploatacyjnej> allCzynnosciEksploatacyjne = EnumSet.allOf(rodzajCzynnoscEksploatacyjnej.class);
     }
 

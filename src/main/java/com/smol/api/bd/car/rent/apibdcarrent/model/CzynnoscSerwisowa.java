@@ -15,7 +15,7 @@ public class CzynnoscSerwisowa {
 
     //ENUM TYPE of rodzajCzynnosciSerwisowej
     public enum rodzajCzynnosciSerwisowej{
-        WYMIANA_ROZRZADU, NAPRAWY_LAKIERNICZE, WYMIANA_SILNIKA;
+        WYMIANA_ROZRZĄDU, NAPRAWY_LAKIERNICZE, WYMIANA_SILNIKA;
         public static final EnumSet<rodzajCzynnosciSerwisowej> allCzynnosciSerwisowe = EnumSet.allOf(rodzajCzynnosciSerwisowej.class);
     }
     @Id
