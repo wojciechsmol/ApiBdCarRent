@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.EnumSet;
 import java.util.List;
 
@@ -130,5 +131,17 @@ public class Pojazd {
 
     public void setEwidencjeKosztow(List<EwidencjaKosztow> ewidencjeKosztow) {
         this.ewidencjeKosztow = ewidencjeKosztow;
+    }
+
+    public boolean isTaken(LocalDateTime fromTime, LocalDateTime toTime){
+
+        //Check all wypozyczenia of the car
+        for (Wypozyczenie wypozyczenie : wypozyczenia) {
+
+            if ((toTime.isBefore(wypozyczenie.getFaktycznaDataZakonczenia()) || toTime.isBefore(wypozyczenie.getPlanowanaDataZakonczenia())) &&
+                    (fromTime.isAfter(wypozyczenie.getFaktycznaDataRozpoczecia()) || fromTime.isAfter(wypozyczenie.getPlanowanaDataRozpoczecia())))
+                return true;
+        }
+        return false;
     }
 }

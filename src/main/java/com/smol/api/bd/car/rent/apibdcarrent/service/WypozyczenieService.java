@@ -8,5 +8,10 @@ import java.util.List;
 
 public interface WypozyczenieService {
     List<Wypozyczenie> getAllWypozyczenia();
+    Wypozyczenie updateWypozyczenie(Long wypozyczenieId, WypozyczenieDto wypozyczenieDetails);
+    Wypozyczenie createWypozyczenie(WypozyczenieDto wypozyczenieDto);
     WypozyczenieDto convertToDto(Wypozyczenie wypozyczenie);
+    Wypozyczenie getWypozyczenie(Long wypozyczenieId);
+    Wypozyczenie convertFromDto(WypozyczenieDto wypozyczenieDto);
+
 }

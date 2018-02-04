@@ -6,10 +6,11 @@ import com.smol.api.bd.car.rent.apibdcarrent.service.WypozyczenieService;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import javax.ws.rs.POST;
 import java.util.EnumSet;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -27,7 +28,7 @@ public class WypozyczenieController {
     }
 
     @GetMapping("")
-    public List<WypozyczenieDto> getAllWypozyczenia(){
+    public List<WypozyczenieDto> getAllWypozyczenia() {
         List<Wypozyczenie> wypozyczenia = mWypozyczenieService.getAllWypozyczenia();
         return wypozyczenia.stream()
                 .map(wypozyczenie -> mWypozyczenieService.convertToDto(wypozyczenie))
@@ -35,13 +36,31 @@ public class WypozyczenieController {
 
     }
 
-    @GetMapping("/statusy_wypozyczen")
-    public EnumSet<Wypozyczenie.statusyWypozyczen> getStatusyWypozyczen(){
-        return Wypozyczenie.statusyWypozyczen.allStatusyWypozyczen;
+    @PatchMapping("/{id}")
+    public ResponseEntity<WypozyczenieDto> updateWypozyczenie(@PathVariable(value = "id") Long wypozyczenieId,
+                                                              @Valid @RequestBody WypozyczenieDto wypozyczenieDetails) {
+        Wypozyczenie wypozyczenie = mWypozyczenieService.updateWypozyczenie(wypozyczenieId, wypozyczenieDetails);
+        if (wypozyczenie == null)
+            return ResponseEntity.notFound().build();
+
+        return ResponseEntity.ok(mWypozyczenieService.convertToDto(wypozyczenie));
     }
 
+    @PostMapping("")
+    public ResponseEntity<WypozyczenieDto> createWypozyczenie(@Valid @RequestBody WypozyczenieDto wypozyczenieDto) {
+        Wypozyczenie wypozyczenie = mWypozyczenieService.createWypozyczenie(wypozyczenieDto);
+        if (wypozyczenie == null)
+            return ResponseEntity.notFound().build();
 
+        return ResponseEntity.ok(mWypozyczenieService.convertToDto(mWypozyczenieService.createWypozyczenie(wypozyczenieDto)));
+    }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<WypozyczenieDto> getWypozyczenie(@PathVariable(value = "id") Long wypozyczenieId) {
+        Wypozyczenie wypozyczenie = mWypozyczenieService.getWypozyczenie(wypozyczenieId);
+        if(wypozyczenie == null)
+            return ResponseEntity.notFound().build();
 
-
+        return ResponseEntity.ok(mWypozyczenieService.convertToDto(wypozyczenie));
+    }
 }

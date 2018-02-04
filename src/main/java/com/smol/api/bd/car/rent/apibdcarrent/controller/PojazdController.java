@@ -6,6 +6,7 @@ import com.smol.api.bd.car.rent.apibdcarrent.service.PojazdService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.ws.rs.GET;
@@ -26,8 +27,15 @@ public class PojazdController {
 
     @GetMapping("")
     public List<PojazdDto> getAllPojazdy(){
-        List<Pojazd> pojazdy = mPojazdService.getAllPojazdy();
-        return pojazdy.stream()
+        return mPojazdService.getAllPojazdy().stream()
+                .map(pojazd -> mPojazdService.convertToDto(pojazd))
+                .collect(Collectors.toList());
+    }
+
+    @GetMapping("/dostepne")
+    public List<PojazdDto> getAllAvailablePojazdy(@RequestParam("od") String from,
+                                                  @RequestParam("do") String to){
+        return mPojazdService.getAllAvailablePojazdy(from, to).stream()
                 .map(pojazd -> mPojazdService.convertToDto(pojazd))
                 .collect(Collectors.toList());
     }

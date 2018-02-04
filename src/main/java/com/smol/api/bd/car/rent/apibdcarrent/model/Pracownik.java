@@ -1,5 +1,6 @@
 package com.smol.api.bd.car.rent.apibdcarrent.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -35,6 +36,10 @@ public class Pracownik {
     @Column(columnDefinition = "date")
     private LocalDate dataUrodzenia;
 
+    @OneToMany(mappedBy = "pracownik")
+    @JsonBackReference
+    private List<Wypozyczenie> wypozyczenia;
+
     @OneToOne
     private Opieka opieka;
 
@@ -60,11 +65,12 @@ public class Pracownik {
         this.rola = rola;
     }
 
-    public Pracownik(String pesel, String imie, String nazwisko, LocalDate dataUrodzenia, Opieka opieka, StatusZatrudnienia statusZatrudnienia, Rola rola) {
+    public Pracownik(String pesel, String imie, String nazwisko, LocalDate dataUrodzenia, List<Wypozyczenie> wypozyczenia, Opieka opieka, StatusZatrudnienia statusZatrudnienia, Rola rola) {
         this.pesel = pesel;
         this.imie = imie;
         this.nazwisko = nazwisko;
         this.dataUrodzenia = dataUrodzenia;
+        this.wypozyczenia = wypozyczenia;
         this.opieka = opieka;
         this.statusZatrudnienia = statusZatrudnienia;
         this.rola = rola;
@@ -88,6 +94,10 @@ public class Pracownik {
 
     public LocalDate getDataUrodzenia() {
         return dataUrodzenia;
+    }
+
+    public List<Wypozyczenie> getWypozyczenia() {
+        return wypozyczenia;
     }
 
     public Opieka getOpieka() {
@@ -122,6 +132,10 @@ public class Pracownik {
         this.dataUrodzenia = dataUrodzenia;
     }
 
+    public void setWypozyczenia(List<Wypozyczenie> wypozyczenia) {
+        this.wypozyczenia = wypozyczenia;
+    }
+
     public void setOpieka(Opieka opieka) {
         this.opieka = opieka;
     }
@@ -133,5 +147,4 @@ public class Pracownik {
     public void setRola(Rola rola) {
         this.rola = rola;
     }
-
 }

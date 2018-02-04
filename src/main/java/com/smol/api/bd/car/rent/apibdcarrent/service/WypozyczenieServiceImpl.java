@@ -1,9 +1,14 @@
 package com.smol.api.bd.car.rent.apibdcarrent.service;
 
 
+import com.smol.api.bd.car.rent.apibdcarrent.model.Pojazd;
+import com.smol.api.bd.car.rent.apibdcarrent.model.Pracownik;
 import com.smol.api.bd.car.rent.apibdcarrent.model.Wypozyczenie;
 import com.smol.api.bd.car.rent.apibdcarrent.model.WypozyczenieDto;
+import com.smol.api.bd.car.rent.apibdcarrent.repository.PojazdRepository;
+import com.smol.api.bd.car.rent.apibdcarrent.repository.PracownikRepository;
 import com.smol.api.bd.car.rent.apibdcarrent.repository.WypozyczenieRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,11 +19,22 @@ import java.util.List;
 public class WypozyczenieServiceImpl implements WypozyczenieService {
 
     private WypozyczenieRepository wypozyczenieRepository;
+    private ModelMapper mModelMapper;
+    private PojazdRepository mPojazdRepository;
+    private PracownikRepository mPracownikRepository;
+    private PojazdService mPojazdService;
 
     @Autowired
-    public WypozyczenieServiceImpl(WypozyczenieRepository wypozyczenieRepository) {
+    public WypozyczenieServiceImpl(WypozyczenieRepository wypozyczenieRepository, ModelMapper modelMapper, PojazdRepository pojazdRepository, PracownikRepository pracownikRepository, PojazdService pojazdService) {
         this.wypozyczenieRepository = wypozyczenieRepository;
+        mModelMapper = modelMapper;
+        mPojazdRepository = pojazdRepository;
+        mPracownikRepository = pracownikRepository;
+        mPojazdService = pojazdService;
     }
+
+
+
 
     @Override
     public List<Wypozyczenie> getAllWypozyczenia() {
@@ -28,16 +44,118 @@ public class WypozyczenieServiceImpl implements WypozyczenieService {
     }
 
     @Override
+    public Wypozyczenie updateWypozyczenie(Long wypozyczenieId, WypozyczenieDto wypozyczenieDetails){
+        Wypozyczenie wypozyczenie = wypozyczenieRepository.findOne(wypozyczenieId);
+        if(wypozyczenie == null)
+            return null;
+
+        if(wypozyczenieDetails.getFaktycznaDataRozpoczecia() != null)
+            wypozyczenie.setFaktycznaDataRozpoczecia(wypozyczenieDetails.getFaktycznaDataRozpoczecia());
+        if(wypozyczenieDetails.getPlanowanaDataRozpoczecia() != null)
+            wypozyczenie.setPlanowanaDataRozpoczecia(wypozyczenieDetails.getPlanowanaDataRozpoczecia());
+        if(wypozyczenieDetails.getFaktycznaDataZakonczenia() != null)
+            wypozyczenie.setFaktycznaDataZakonczenia(wypozyczenieDetails.getFaktycznaDataZakonczenia());
+        if(wypozyczenieDetails.getPlanowanaDataZakonczenia() != null)
+            wypozyczenie.setPlanowanaDataZakonczenia(wypozyczenieDetails.getPlanowanaDataZakonczenia());
+        if(wypozyczenieDetails.getPrzebiegRozpoczecia() != 0)
+            wypozyczenie.setPrzebiegRozpoczecia(wypozyczenieDetails.getPrzebiegRozpoczecia());
+        if(wypozyczenieDetails.getPrzebiegZakonczenia() != 0)
+            wypozyczenie.setPrzebiegZakonczenia(wypozyczenieDetails.getPrzebiegZakonczenia());
+        if(wypozyczenieDetails.getStatusWypozyczenia() != null)
+            wypozyczenie.setStatusWypozyczenia(wypozyczenieDetails.getStatusWypozyczenia());
+
+        if(wypozyczenieDetails.getIdPojazdu() != null) {
+            //if Id don't match then we've got to change the pojazd
+            if (wypozyczenieDetails.getIdPojazdu() != wypozyczenie.getPojazd().getId()) {
+                Pojazd pojazd = mPojazdRepository.findOne(wypozyczenieDetails.getIdPojazdu());
+
+                //if the Pojazd is available
+                if (pojazd != null && pojazd.getStatus() != Pojazd.statusPojazdu.ZŁOMOWANY &&
+                        pojazd.getStatus() != Pojazd.statusPojazdu.W_NAPRAWIE &&
+                        !pojazd.isTaken(wypozyczenie.getFaktycznaDataRozpoczecia(), wypozyczenie.getFaktycznaDataZakonczenia()) &&
+                        !pojazd.isTaken(wypozyczenie.getPlanowanaDataRozpoczecia(), wypozyczenie.getPlanowanaDataZakonczenia())) {
+
+                    wypozyczenie.getPojazd().getWypozyczenia().remove(wypozyczenie);
+                    mPojazdRepository.save(wypozyczenie.getPojazd());
+
+                    wypozyczenie.setPojazd(pojazd);
+                    pojazd.getWypozyczenia().add(wypozyczenie);
+                    mPojazdRepository.save(pojazd);
+                }
+            }
+        }
+
+        if(wypozyczenieDetails.getIdPracownika() != null)  {
+            //if Id don't match then we've got to change the pracownik
+            if(wypozyczenieDetails.getIdPracownika() != wypozyczenie.getPracownik().getId()) {
+                Pracownik pracownik = mPracownikRepository.findOne(wypozyczenieDetails.getIdPracownika());
+
+                //if pracownik is ZWOLNIONY then can't book the car
+                if(pracownik != null && pracownik.getStatusZatrudnienia()!=Pracownik.StatusZatrudnienia.ZWOLNIONY) {
+                    wypozyczenie.getPracownik().getWypozyczenia().remove(wypozyczenie);
+                    mPracownikRepository.save(wypozyczenie.getPracownik());
+
+                    wypozyczenie.setPracownik(pracownik);
+                    pracownik.getWypozyczenia().add(wypozyczenie);
+                    mPracownikRepository.save(pracownik);
+
+                }
+            }
+        }
+
+        wypozyczenieRepository.save(wypozyczenie);
+        return wypozyczenie;
+
+    }
+
+    @Override
+    public Wypozyczenie createWypozyczenie(WypozyczenieDto wypozyczenieDto) {
+        //Should be validation if the car available
+
+        Wypozyczenie wypozyczenie = convertFromDto(wypozyczenieDto);
+        if(wypozyczenie.getPracownik() == null || wypozyczenie.getPojazd() == null)
+            return null;
+
+        wypozyczenieRepository.save(wypozyczenie);
+
+        wypozyczenie.getPojazd().getWypozyczenia().add(wypozyczenie);
+        mPojazdRepository.save(wypozyczenie.getPojazd());
+
+        wypozyczenie.getPracownik().getWypozyczenia().add(wypozyczenie);
+        mPracownikRepository.save(wypozyczenie.getPracownik());
+
+        return wypozyczenie;
+    }
+
+    @Override
+    public Wypozyczenie getWypozyczenie(Long wypozyczenieId) {
+        Wypozyczenie wypozyczenie = wypozyczenieRepository.findOne(wypozyczenieId);
+        if (wypozyczenie == null) {
+            return null;
+        }
+        return wypozyczenie;
+    }
+
+    @Override
     public WypozyczenieDto convertToDto(Wypozyczenie wypozyczenie) {
-        return new WypozyczenieDto(wypozyczenie.getId(),
-                wypozyczenie.getPlanowanaDataRozpoczecia(),
-                wypozyczenie.getPlanowanaDataZakonczenia(),
-                wypozyczenie.getFaktycznaDataRozpoczecia(),
-                wypozyczenie.getFaktycznaDataZakonczenia(),
-                wypozyczenie.getPrzebiegRozpoczecia(),
-                wypozyczenie.getPrzebiegZakonczenia(),
-                wypozyczenie.getPracownik().getId(),
-                wypozyczenie.getPojazd().getId(),
-                wypozyczenie.getStatusWypozyczenia());
+        WypozyczenieDto wypozyczenieDto = new WypozyczenieDto();
+        mModelMapper.map(wypozyczenie, wypozyczenieDto);
+
+        wypozyczenieDto.setIdPojazdu(wypozyczenie.getPojazd().getId());
+        wypozyczenieDto.setIdPracownika(wypozyczenie.getPracownik().getId());
+        return wypozyczenieDto;
+    }
+
+    @Override
+    public Wypozyczenie convertFromDto(WypozyczenieDto wypozyczenieDto) {
+        Wypozyczenie wypozyczenie = mModelMapper.map(wypozyczenieDto, Wypozyczenie.class);
+        if(mPracownikRepository.findOne(wypozyczenieDto.getIdPracownika()) != null)
+        wypozyczenie.setPracownik(mPracownikRepository.findOne(wypozyczenieDto.getIdPracownika()));
+
+        if(mPojazdRepository.findOne(wypozyczenieDto.getIdPojazdu()) != null)
+            wypozyczenie.setPojazd(mPojazdRepository.findOne(wypozyczenieDto.getIdPojazdu()));
+
+        return wypozyczenie;
+
     }
 }

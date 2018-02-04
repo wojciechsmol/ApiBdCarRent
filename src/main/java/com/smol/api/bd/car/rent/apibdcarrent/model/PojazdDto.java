@@ -41,5 +41,63 @@ public class PojazdDto {
         this.status = status;
         this.marka = marka;
         this.model = model;
+
+
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getOpiekun() {
+        return opiekun;
+    }
+
+    public String getNrRej() {
+        return nrRej;
+    }
+
+    public int getPrzebieg() {
+        return przebieg;
+    }
+
+    public Pojazd.statusPojazdu getStatus() {
+        return status;
+    }
+
+    public MarkaDto getMarka() {
+        return marka;
+    }
+
+    public ModelDto getModel() {
+        return model;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setOpiekun(String opiekun) {
+        this.opiekun = opiekun;
+    }
+
+    public void setNrRej(String nrRej) {
+        this.nrRej = nrRej;
+    }
+
+    public void setPrzebieg(int przebieg) {
+        this.przebieg = przebieg;
+    }
+
+    public void setStatus(Pojazd.statusPojazdu status) {
+        this.status = status;
+    }
+
+    public void setMarka(MarkaDto marka) {
+        this.marka = marka;
+    }
+
+    public void setModel(ModelDto model) {
+        this.model = model;
     }
 }

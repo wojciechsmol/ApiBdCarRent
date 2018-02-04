@@ -52,5 +52,83 @@ public class WypozyczenieDto {
         this.statusWypozyczenia = statusWypozyczenia;
     }
 
+    public Long getId() {
+        return id;
+    }
 
+    public LocalDateTime getPlanowanaDataRozpoczecia() {
+        return planowanaDataRozpoczecia;
+    }
+
+    public LocalDateTime getPlanowanaDataZakonczenia() {
+        return planowanaDataZakonczenia;
+    }
+
+    public LocalDateTime getFaktycznaDataRozpoczecia() {
+        return faktycznaDataRozpoczecia;
+    }
+
+    public LocalDateTime getFaktycznaDataZakonczenia() {
+        return faktycznaDataZakonczenia;
+    }
+
+    public int getPrzebiegRozpoczecia() {
+        return przebiegRozpoczecia;
+    }
+
+    public int getPrzebiegZakonczenia() {
+        return przebiegZakonczenia;
+    }
+
+    public Long getIdPracownika() {
+        return idPracownika;
+    }
+
+    public Long getIdPojazdu() {
+        return idPojazdu;
+    }
+
+    public Wypozyczenie.statusyWypozyczen getStatusWypozyczenia() {
+        return statusWypozyczenia;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setPlanowanaDataRozpoczecia(LocalDateTime planowanaDataRozpoczecia) {
+        this.planowanaDataRozpoczecia = planowanaDataRozpoczecia;
+    }
+
+    public void setPlanowanaDataZakonczenia(LocalDateTime planowanaDataZakonczenia) {
+        this.planowanaDataZakonczenia = planowanaDataZakonczenia;
+    }
+
+    public void setFaktycznaDataRozpoczecia(LocalDateTime faktycznaDataRozpoczecia) {
+        this.faktycznaDataRozpoczecia = faktycznaDataRozpoczecia;
+    }
+
+    public void setFaktycznaDataZakonczenia(LocalDateTime faktycznaDataZakonczenia) {
+        this.faktycznaDataZakonczenia = faktycznaDataZakonczenia;
+    }
+
+    public void setPrzebiegRozpoczecia(int przebiegRozpoczecia) {
+        this.przebiegRozpoczecia = przebiegRozpoczecia;
+    }
+
+    public void setPrzebiegZakonczenia(int przebiegZakonczenia) {
+        this.przebiegZakonczenia = przebiegZakonczenia;
+    }
+
+    public void setIdPracownika(Long idPracownika) {
+        this.idPracownika = idPracownika;
+    }
+
+    public void setIdPojazdu(Long idPojazdu) {
+        this.idPojazdu = idPojazdu;
+    }
+
+    public void setStatusWypozyczenia(Wypozyczenie.statusyWypozyczen statusWypozyczenia) {
+        this.statusWypozyczenia = statusWypozyczenia;
+    }
 }

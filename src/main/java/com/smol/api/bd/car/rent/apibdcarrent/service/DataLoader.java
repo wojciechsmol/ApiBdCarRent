@@ -59,6 +59,16 @@ public class DataLoader implements ApplicationRunner {
         corsa1.setOpieka(opieka1);
         mPojazdRepository.save(corsa1);
 
+        Pojazd pojazd2 = new Pojazd("DFE34", 3344, Pojazd.statusPojazdu.SPRAWNY, corsa);
+        mPojazdRepository.save(pojazd2);
+
+        Opieka opieka2 = new Opieka(prac3, pojazd2);
+        mOpiekaRepository.save(opieka2);
+
+        corsa1 = mPojazdRepository.findOne(pojazd2.getId());
+        corsa1.setOpieka(opieka2);
+        mPojazdRepository.save(corsa1);
+
         Pracownik pracJeden = pracownikRepository.findOne(prac1.getId());
         pracJeden.setOpieka(opieka1);
         pracownikRepository.save(pracJeden);
