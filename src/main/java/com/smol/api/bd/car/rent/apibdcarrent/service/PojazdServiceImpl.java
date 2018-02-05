@@ -112,7 +112,17 @@ public class PojazdServiceImpl implements PojazdService {
 
         Pojazd pojazd = mPojazdRepository.findOne(pojazdId);
 
-        if(pojazdDetails.getIdOpiekuna() != null && pojazdDetails.getIdOpiekuna() != pojazd.getOpieka().getPracownik().getId()) {
+        boolean skip = false;
+        if(pojazd.getOpieka() == null){
+            Opieka opieka = new Opieka(mPracownikRepository.findOne(pojazdDetails.getIdOpiekuna()), pojazd);
+            mOpiekaRepository.save(opieka);
+            opieka.getPracownik().getOpieki().add(opieka);
+            mPracownikRepository.save(opieka.getPracownik());
+            pojazd.setOpieka(opieka);
+            mPojazdRepository.save(pojazd);
+            skip = true;
+        }
+        if(!skip && pojazdDetails.getIdOpiekuna() != null && pojazdDetails.getIdOpiekuna() != pojazd.getOpieka().getPracownik().getId()) {
             Opieka opieka = pojazd.getOpieka();
             pojazd.setOpieka(null);
             opieka.getPracownik().getOpieki().remove(opieka);
@@ -153,6 +163,7 @@ public class PojazdServiceImpl implements PojazdService {
                 mPojazdRepository.save(pojazd);
             }
             pojazd.setStatus(pojazdDetails.getStatus());
+            mPojazdRepository.save(pojazd);
         }
 
         return pojazd;

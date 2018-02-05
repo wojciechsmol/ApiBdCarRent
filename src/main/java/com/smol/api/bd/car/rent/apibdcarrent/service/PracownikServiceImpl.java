@@ -4,6 +4,7 @@ import com.smol.api.bd.car.rent.apibdcarrent.model.*;
 import com.smol.api.bd.car.rent.apibdcarrent.repository.OpiekaRepository;
 import com.smol.api.bd.car.rent.apibdcarrent.repository.PojazdRepository;
 import com.smol.api.bd.car.rent.apibdcarrent.repository.PracownikRepository;
+import com.smol.api.bd.car.rent.apibdcarrent.repository.WypozyczenieRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,13 +23,16 @@ public class PracownikServiceImpl implements PracownikService {
     PracownikRepository pracownikRepository;
     ModelMapper mModelMapper;
     OpiekaRepository mOpiekaRepository;
+    WypozyczenieRepository wypozyczenieRepository;
+
     PojazdRepository mPojazdRepository;
 
     @Autowired
-    public PracownikServiceImpl(PracownikRepository pracownikRepository, ModelMapper modelMapper, OpiekaRepository opiekaRepository, PojazdRepository pojazdRepository) {
+    public PracownikServiceImpl(PracownikRepository pracownikRepository, ModelMapper modelMapper, OpiekaRepository opiekaRepository, WypozyczenieRepository wypozyczenieRepository, PojazdRepository pojazdRepository) {
         this.pracownikRepository = pracownikRepository;
         mModelMapper = modelMapper;
         mOpiekaRepository = opiekaRepository;
+        this.wypozyczenieRepository = wypozyczenieRepository;
         mPojazdRepository = pojazdRepository;
     }
 
@@ -44,6 +48,8 @@ public class PracownikServiceImpl implements PracownikService {
         if (!pracownikRepository.exists(pracownikId)) {
             return null;
         }
+
+        //TU TRZEBA ZROBIc USUWANIE WYPOZYCZEN ORAZ OPIEK ITD.
         Pracownik pracownik = pracownikRepository.findOne(pracownikId);
 
         if(pracownikDetails.getDataUrodzenia() != null)
@@ -56,9 +62,43 @@ public class PracownikServiceImpl implements PracownikService {
         pracownik.setPesel(pracownikDetails.getPesel());
         if(pracownikDetails.getRola() != null)
         pracownik.setRola(pracownikDetails.getRola());
-        if(pracownikDetails.getStatusZatrudnienia() != null)
-        pracownik.setStatusZatrudnienia(pracownikDetails.getStatusZatrudnienia());
+        if(pracownikDetails.getStatusZatrudnienia() != null) {
 
+
+            if (pracownikDetails.getStatusZatrudnienia() == Pracownik.StatusZatrudnienia.NIE_PRACUJE || pracownikDetails.getStatusZatrudnienia() == Pracownik.StatusZatrudnienia.ZWOLNIONY) {
+
+                // USUWANIE WYPOZYCZEN
+                List<Wypozyczenie> wypozyczenia = pracownik.getWypozyczenia();
+                for (Iterator<Wypozyczenie> i = wypozyczenia.iterator(); i.hasNext(); ){
+                    Wypozyczenie wypozyczenie = i.next();
+
+                    wypozyczenie.getPojazd().getWypozyczenia().remove(wypozyczenie);
+                    mPojazdRepository.save(wypozyczenie.getPojazd());
+
+                    wypozyczenieRepository.delete(wypozyczenie);
+                    i.remove();
+                }
+
+                pracownikRepository.save(pracownik);
+
+                //USUWANIE OPIEK
+                if (pracownik.getRola() == Pracownik.Rola.OPIEKUN){
+                    List<Opieka> opieki = pracownik.getOpieki();
+                    for(Iterator<Opieka> i = opieki.iterator(); i.hasNext();) {
+                        Opieka opieka = i.next();
+                        opieka.getPojazd().setOpieka(null);
+                        mPojazdRepository.save(opieka.getPojazd());
+
+                        mOpiekaRepository.delete(opieka);
+                        i.remove();
+                    }
+                }
+
+                pracownikRepository.save(pracownik);
+            }
+
+            pracownik.setStatusZatrudnienia(pracownikDetails.getStatusZatrudnienia());
+        }
         pracownikRepository.save(pracownik);
         return pracownik;
     }
@@ -110,7 +150,7 @@ public class PracownikServiceImpl implements PracownikService {
             Pracownik opiekun = i.next();
             isOpiekunem = true;
 
-            if (opiekun.getRola() != Pracownik.Rola.OPIEKUN)
+            if (opiekun.getRola() != Pracownik.Rola.OPIEKUN || opiekun.getStatusZatrudnienia() == Pracownik.StatusZatrudnienia.ZWOLNIONY || opiekun.getStatusZatrudnienia() == Pracownik.StatusZatrudnienia.NIE_PRACUJE)
                 isOpiekunem = false;
 
             if(!isOpiekunem)

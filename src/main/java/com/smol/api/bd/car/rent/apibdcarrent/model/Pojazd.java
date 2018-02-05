@@ -161,6 +161,8 @@ public class Pojazd {
 
     public boolean isTaken(LocalDateTime fromTime, LocalDateTime toTime){
 
+        if (opieka == null)
+            return true;
         //Check all wypozyczenia of the car
         for (Wypozyczenie wypozyczenie : wypozyczenia) {
 
