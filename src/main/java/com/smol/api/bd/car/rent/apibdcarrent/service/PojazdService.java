@@ -13,6 +13,7 @@ public interface PojazdService {
     List<Pojazd> getAllPojazdy();
     Pojazd createPojazd(PojazdDto pojazdDto);
     List<Pojazd> getAllAvailablePojazdy(String from, String to);
+    Pojazd getPojazd(Long pojazdId);
     PojazdDto convertToDto(Pojazd pojazd);
     Pojazd convertFromDto(PojazdDto pojazdDto);
 }

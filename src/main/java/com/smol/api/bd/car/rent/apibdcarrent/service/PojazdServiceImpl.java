@@ -91,6 +91,16 @@ public class PojazdServiceImpl implements PojazdService {
     }
 
     @Override
+    public Pojazd getPojazd(Long pojazdId) {
+        Pojazd pojazd = mPojazdRepository.findOne(pojazdId);
+        if (pojazd == null){
+            return null;
+        }
+
+        return pojazd;
+    }
+
+    @Override
     public PojazdDto convertToDto(Pojazd pojazd) {
 
         PojazdDto pojazdDto = mModelMapper.map(pojazd, PojazdDto.class);
