@@ -50,7 +50,7 @@ public class PojazdServiceImpl implements PojazdService {
     @Override
     public List<Pojazd> getAllAvailablePojazdy(String from, String to) {
         //Formatter for the input strings
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH:mm");
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd-HH:mm");
 
         //Converting Strings to time
         LocalDateTime fromTime = LocalDateTime.parse(from, formatter);
