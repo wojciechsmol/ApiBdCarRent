@@ -10,6 +10,6 @@ public class HelpController {
 
     @RequestMapping("/help")
     public String getHelp(){
-        return "index";
+        return "help.html";
     }
 }
