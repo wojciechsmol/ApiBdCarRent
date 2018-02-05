@@ -165,8 +165,8 @@ public class Pojazd {
         for (Wypozyczenie wypozyczenie : wypozyczenia) {
 
             if (wypozyczenie.getStatusWypozyczenia() != Wypozyczenie.statusyWypozyczen.ZAKOŃCZONE) {
-                if ((toTime.isBefore(wypozyczenie.getFaktycznaDataZakonczenia()) || toTime.isBefore(wypozyczenie.getPlanowanaDataZakonczenia())) &&
-                        (fromTime.isAfter(wypozyczenie.getFaktycznaDataRozpoczecia()) || fromTime.isAfter(wypozyczenie.getPlanowanaDataRozpoczecia())))
+                if (toTime.isBefore(wypozyczenie.getPlanowanaDataZakonczenia()) &&
+                        fromTime.isAfter(wypozyczenie.getPlanowanaDataRozpoczecia()))
                     return true;
             }
         }
