@@ -114,7 +114,7 @@ public class WypozyczenieServiceImpl implements WypozyczenieService {
         //Should be validation if the car available
 
         Wypozyczenie wypozyczenie = convertFromDto(wypozyczenieDto);
-        if(wypozyczenie.getPracownik() == null || wypozyczenie.getPojazd() == null)
+        if(wypozyczenie.getPracownik() == null || wypozyczenie.getPojazd() == null || wypozyczenie.getPracownik().getStatusZatrudnienia() == Pracownik.StatusZatrudnienia.ZWOLNIONY)
             return null;
 
 
