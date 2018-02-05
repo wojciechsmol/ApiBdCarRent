@@ -164,9 +164,11 @@ public class Pojazd {
         //Check all wypozyczenia of the car
         for (Wypozyczenie wypozyczenie : wypozyczenia) {
 
-            if ((toTime.isBefore(wypozyczenie.getFaktycznaDataZakonczenia()) || toTime.isBefore(wypozyczenie.getPlanowanaDataZakonczenia())) &&
-                    (fromTime.isAfter(wypozyczenie.getFaktycznaDataRozpoczecia()) || fromTime.isAfter(wypozyczenie.getPlanowanaDataRozpoczecia())))
-                return true;
+            if (wypozyczenie.getStatusWypozyczenia() != Wypozyczenie.statusyWypozyczen.ZAKOŃCZONE) {
+                if ((toTime.isBefore(wypozyczenie.getFaktycznaDataZakonczenia()) || toTime.isBefore(wypozyczenie.getPlanowanaDataZakonczenia())) &&
+                        (fromTime.isAfter(wypozyczenie.getFaktycznaDataRozpoczecia()) || fromTime.isAfter(wypozyczenie.getPlanowanaDataRozpoczecia())))
+                    return true;
+            }
         }
         return false;
     }
