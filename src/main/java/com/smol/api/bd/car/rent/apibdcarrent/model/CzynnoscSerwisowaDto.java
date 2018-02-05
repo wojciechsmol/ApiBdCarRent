@@ -23,16 +23,20 @@ public class CzynnoscSerwisowaDto {
     @JsonProperty("id_pojazdu")
     private Long idPojazdu;
 
+    @JsonProperty("id_pracownika")
+    private  Long idPracownika;
+
 
     public CzynnoscSerwisowaDto() {
     }
 
-    public CzynnoscSerwisowaDto(Long id, CzynnoscSerwisowa.rodzajCzynnosciSerwisowej rodzajCzynnosciSerwisowej, LocalDate data, int cena, Long idPojazdu) {
+    public CzynnoscSerwisowaDto(Long id, CzynnoscSerwisowa.rodzajCzynnosciSerwisowej rodzajCzynnosciSerwisowej, LocalDate data, int cena, Long idPojazdu, Long idPracownika) {
         this.id = id;
         mRodzajCzynnosciSerwisowej = rodzajCzynnosciSerwisowej;
         this.data = data;
         this.cena = cena;
         this.idPojazdu = idPojazdu;
+        this.idPracownika = idPracownika;
     }
 
     public Long getId() {
@@ -73,5 +77,13 @@ public class CzynnoscSerwisowaDto {
 
     public void setIdPojazdu(Long idPojazdu) {
         this.idPojazdu = idPojazdu;
+    }
+
+    public Long getIdPracownika() {
+        return idPracownika;
+    }
+
+    public void setIdPracownika(Long idPracownika) {
+        this.idPracownika = idPracownika;
     }
 }
