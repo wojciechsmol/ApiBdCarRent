@@ -1,5 +1,6 @@
 package com.smol.api.bd.car.rent.apibdcarrent.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.Column;
@@ -18,6 +19,7 @@ public class PracownikDto {
     @JsonProperty("nazwisko")
     private String nazwisko;
     @JsonProperty("data_urodzenia")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd")
     private LocalDate dataUrodzenia;
 
     @JsonProperty("status_zatrudnienia")
