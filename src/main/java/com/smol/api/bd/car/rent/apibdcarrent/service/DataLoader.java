@@ -40,7 +40,7 @@ public class DataLoader implements ApplicationRunner {
         Pracownik prac2 = new Pracownik("95063468245", "Jacek", "Nowak", java.time.LocalDate.of(1994, 7, 3), Pracownik.StatusZatrudnienia.PRACUJE, Pracownik.Rola.KIEROWCA);
         pracownikRepository.save(prac2);
 
-        Pracownik prac3 = new Pracownik("74859375847", "Piotr", "Kłosowski", java.time.LocalDate.of(1923, 8, 2),  Pracownik.StatusZatrudnienia.PRACUJE, Pracownik.Rola.MENADŻER);
+        Pracownik prac3 = new Pracownik("74859375847", "Piotr", "Kłosowski", java.time.LocalDate.of(1923, 8, 2),  Pracownik.StatusZatrudnienia.PRACUJE, Pracownik.Rola.OPIEKUN);
         pracownikRepository.save(prac3);
 
 
