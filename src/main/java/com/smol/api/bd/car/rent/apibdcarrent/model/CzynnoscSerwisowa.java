@@ -30,25 +30,20 @@ public class CzynnoscSerwisowa {
     @JsonProperty("data")
     @Column(columnDefinition = "date")
     private LocalDate data;
-    private float cena;
+    private int cena;
 
     @ManyToOne(fetch=FetchType.LAZY)
     @JsonManagedReference
-    private Wypozyczenie wypozyczenie;
-
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JsonManagedReference
-    private Serwis serwis;
+    private Pojazd pojazd;
 
     public CzynnoscSerwisowa() {
     }
 
-    public CzynnoscSerwisowa(rodzajCzynnosciSerwisowej rodzajCzynnosciSerwisowej, LocalDate data, float cena, Wypozyczenie wypozyczenie, Serwis serwis) {
+    public CzynnoscSerwisowa(rodzajCzynnosciSerwisowej rodzajCzynnosciSerwisowej, LocalDate data, int cena, Pojazd pojazd) {
         RodzajCzynnosciSerwisowej = rodzajCzynnosciSerwisowej;
         this.data = data;
         this.cena = cena;
-        this.wypozyczenie = wypozyczenie;
-        this.serwis = serwis;
+        this.pojazd = pojazd;
     }
 
     public Long getId() {
@@ -63,17 +58,14 @@ public class CzynnoscSerwisowa {
         return data;
     }
 
-    public float getCena() {
+    public int getCena() {
         return cena;
     }
 
-    public Wypozyczenie getWypozyczenie() {
-        return wypozyczenie;
+    public Pojazd getPojazd() {
+        return pojazd;
     }
 
-    public Serwis getSerwis() {
-        return serwis;
-    }
 
     public void setId(Long id) {
         this.id = id;
@@ -87,15 +79,11 @@ public class CzynnoscSerwisowa {
         this.data = data;
     }
 
-    public void setCena(float cena) {
+    public void setCena(int cena) {
         this.cena = cena;
     }
 
-    public void setWypozyczenie(Wypozyczenie wypozyczenie) {
-        this.wypozyczenie = wypozyczenie;
-    }
-
-    public void setSerwis(Serwis serwis) {
-        this.serwis = serwis;
+    public void setPojazd(Pojazd pojazd) {
+        this.pojazd = pojazd;
     }
 }

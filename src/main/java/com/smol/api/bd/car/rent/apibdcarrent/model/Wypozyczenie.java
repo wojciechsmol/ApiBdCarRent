@@ -25,16 +25,16 @@ public class Wypozyczenie {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(columnDefinition = "datetime2")
+    @Column(columnDefinition = "smalldatetime")
     @JsonProperty("planowana_data_rozpoczecia")
     private LocalDateTime planowanaDataRozpoczecia;
-    @Column(columnDefinition = "datetime2")
+    @Column(columnDefinition = "smalldatetime")
     @JsonProperty("planowana_data_zakonczenia")
     private LocalDateTime planowanaDataZakonczenia;
-    @Column(columnDefinition = "datetime2")
+    @Column(columnDefinition = "smalldatetime")
     @JsonProperty("faktyczna_data_rozpoczecia")
     private LocalDateTime faktycznaDataRozpoczecia;
-    @Column(columnDefinition = "datetime2")
+    @Column(columnDefinition = "smalldatetime")
     @JsonProperty("faktyczna_data_zakonczenia")
     private LocalDateTime faktycznaDataZakonczenia;
 
@@ -59,13 +59,7 @@ public class Wypozyczenie {
     @JsonProperty("status_wypozyczenia")
     private statusyWypozyczen statusWypozyczenia;
 
-    @OneToMany(mappedBy = "wypozyczenie")
-    @JsonBackReference
-    private List<CzynnoscSerwisowa> czynnosciSerwisowe;
 
-    @OneToMany(mappedBy = "wypozyczenie")
-    @JsonBackReference
-    private List<CzynnoscEksploatacyjna> czynnosciEksploatacyjne;
 
 
     public Wypozyczenie() {
@@ -81,20 +75,6 @@ public class Wypozyczenie {
         this.pracownik = pracownik;
         this.pojazd = pojazd;
         this.statusWypozyczenia = statusWypozyczenia;
-    }
-
-    public Wypozyczenie(LocalDateTime planowanaDataRozpoczecia, LocalDateTime planowanaDataZakonczenia, LocalDateTime faktycznaDataRozpoczecia, LocalDateTime faktycznaDataZakonczenia, int przebiegRozpoczecia, int przebiegZakonczenia, Pracownik pracownik, Pojazd pojazd, statusyWypozyczen statusWypozyczenia, List<CzynnoscSerwisowa> czynnosciSerwisowe, List<CzynnoscEksploatacyjna> czynnosciEksploatacyjne) {
-        this.planowanaDataRozpoczecia = planowanaDataRozpoczecia;
-        this.planowanaDataZakonczenia = planowanaDataZakonczenia;
-        this.faktycznaDataRozpoczecia = faktycznaDataRozpoczecia;
-        this.faktycznaDataZakonczenia = faktycznaDataZakonczenia;
-        this.przebiegRozpoczecia = przebiegRozpoczecia;
-        this.przebiegZakonczenia = przebiegZakonczenia;
-        this.pracownik = pracownik;
-        this.pojazd = pojazd;
-        this.statusWypozyczenia = statusWypozyczenia;
-        this.czynnosciSerwisowe = czynnosciSerwisowe;
-        this.czynnosciEksploatacyjne = czynnosciEksploatacyjne;
     }
 
     public Long getId() {
@@ -137,14 +117,6 @@ public class Wypozyczenie {
         return statusWypozyczenia;
     }
 
-    public List<CzynnoscSerwisowa> getCzynnosciSerwisowe() {
-        return czynnosciSerwisowe;
-    }
-
-    public List<CzynnoscEksploatacyjna> getCzynnosciEksploatacyjne() {
-        return czynnosciEksploatacyjne;
-    }
-
     public void setId(Long id) {
         this.id = id;
     }
@@ -185,11 +157,4 @@ public class Wypozyczenie {
         this.statusWypozyczenia = statusWypozyczenia;
     }
 
-    public void setCzynnosciSerwisowe(List<CzynnoscSerwisowa> czynnosciSerwisowe) {
-        this.czynnosciSerwisowe = czynnosciSerwisowe;
-    }
-
-    public void setCzynnosciEksploatacyjne(List<CzynnoscEksploatacyjna> czynnosciEksploatacyjne) {
-        this.czynnosciEksploatacyjne = czynnosciEksploatacyjne;
-    }
 }

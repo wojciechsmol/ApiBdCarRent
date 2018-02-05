@@ -11,6 +11,8 @@ import java.util.List;
 public interface PojazdService {
 
     List<Pojazd> getAllPojazdy();
-    PojazdDto convertToDto(Pojazd pojazd);
+    Pojazd createPojazd(PojazdDto pojazdDto);
     List<Pojazd> getAllAvailablePojazdy(String from, String to);
+    PojazdDto convertToDto(Pojazd pojazd);
+    Pojazd convertFromDto(PojazdDto pojazdDto);
 }

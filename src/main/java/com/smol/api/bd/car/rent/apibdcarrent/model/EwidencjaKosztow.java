@@ -12,7 +12,6 @@ import java.time.LocalDate;
 public class EwidencjaKosztow {
 
 
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -25,12 +24,20 @@ public class EwidencjaKosztow {
     @JsonManagedReference
     private Pojazd pojazd;
 
-    @Enumerated
-    @Column(columnDefinition = "smallint")
-    @JsonProperty("nazwa_wydatku")
-    private CzynnoscEksploatacyjna.rodzajCzynnoscEksploatacyjnej rodzajCzynnosciEksploatacyjnej;
+    @JsonProperty("id_kierowcy")
+    private Long idKierowcy;
+
+    @JsonProperty("nazwa_czynnosci")
+    private String nazwaCzynnosci;
 
     public EwidencjaKosztow() {
+    }
+
+    public EwidencjaKosztow(LocalDate data, Pojazd pojazd, Long idKierowcy, String nazwaCzynnosci) {
+        this.data = data;
+        this.pojazd = pojazd;
+        this.idKierowcy = idKierowcy;
+        this.nazwaCzynnosci = nazwaCzynnosci;
     }
 
     public Long getId() {
@@ -45,8 +52,16 @@ public class EwidencjaKosztow {
         return pojazd;
     }
 
-    public CzynnoscEksploatacyjna.rodzajCzynnoscEksploatacyjnej getRodzajCzynnosciEksploatacyjnej() {
-        return rodzajCzynnosciEksploatacyjnej;
+    public Long getIdKierowcy() {
+        return idKierowcy;
+    }
+
+    public String getNazwaCzynnosci() {
+        return nazwaCzynnosci;
+    }
+
+    public void setIdKierowcy(Long idKierowcy) {
+        this.idKierowcy = idKierowcy;
     }
 
     public void setId(Long id) {
@@ -61,7 +76,7 @@ public class EwidencjaKosztow {
         this.pojazd = pojazd;
     }
 
-    public void setRodzajCzynnosciEksploatacyjnej(CzynnoscEksploatacyjna.rodzajCzynnoscEksploatacyjnej rodzajCzynnosciEksploatacyjnej) {
-        this.rodzajCzynnosciEksploatacyjnej = rodzajCzynnosciEksploatacyjnej;
+    public void setNazwaCzynnosci(String nazwaCzynnosci) {
+        this.nazwaCzynnosci = nazwaCzynnosci;
     }
 }

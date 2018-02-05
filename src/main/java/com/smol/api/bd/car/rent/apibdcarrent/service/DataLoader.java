@@ -7,6 +7,7 @@ import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 @Component
 public class DataLoader implements ApplicationRunner {
@@ -70,8 +71,14 @@ public class DataLoader implements ApplicationRunner {
         mPojazdRepository.save(corsa1);
 
         Pracownik pracJeden = pracownikRepository.findOne(prac1.getId());
-        pracJeden.setOpieka(opieka1);
+        pracJeden.setOpieki(new ArrayList<>());
+        pracJeden.getOpieki().add(opieka1);
         pracownikRepository.save(pracJeden);
+
+        Pracownik pracTrzy = pracownikRepository.findOne(prac3.getId());
+        pracTrzy.setOpieki(new ArrayList<>());
+        pracTrzy.getOpieki().add(opieka2);
+        pracownikRepository.save(pracTrzy);
 
         Wypozyczenie wyp1 = new Wypozyczenie(LocalDateTime.now(), LocalDateTime.now(), LocalDateTime.now(), LocalDateTime.now(), 129000, 129034, prac1, pojazd1, Wypozyczenie.statusyWypozyczen.ZAKOŃCZONE);
         mWypozyczenieRepository.save(wyp1);

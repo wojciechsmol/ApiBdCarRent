@@ -33,16 +33,16 @@ public class CzynnoscEksploatacyjna {
 
     @ManyToOne(fetch=FetchType.LAZY)
     @JsonManagedReference
-    private Wypozyczenie wypozyczenie;
+    private Pojazd pojazd;
 
     public CzynnoscEksploatacyjna() {
     }
 
-    public CzynnoscEksploatacyjna(rodzajCzynnoscEksploatacyjnej rodzajCzynnosciEksploatacyjnej, LocalDate data, int cena, Wypozyczenie wypozyczenie) {
+    public CzynnoscEksploatacyjna(rodzajCzynnoscEksploatacyjnej rodzajCzynnosciEksploatacyjnej, LocalDate data, int cena, Pojazd pojazd) {
         this.rodzajCzynnosciEksploatacyjnej = rodzajCzynnosciEksploatacyjnej;
         this.data = data;
         this.cena = cena;
-        this.wypozyczenie = wypozyczenie;
+        this.pojazd = pojazd;
     }
 
     public Long getId() {
@@ -61,8 +61,9 @@ public class CzynnoscEksploatacyjna {
         return cena;
     }
 
-    public Wypozyczenie getWypozyczenie() {
-        return wypozyczenie;
+
+    public Pojazd getPojazd() {
+        return pojazd;
     }
 
     public void setId(Long id) {
@@ -81,7 +82,7 @@ public class CzynnoscEksploatacyjna {
         this.cena = cena;
     }
 
-    public void setWypozyczenie(Wypozyczenie wypozyczenie) {
-        this.wypozyczenie = wypozyczenie;
+    public void setPojazd(Pojazd pojazd) {
+        this.pojazd = pojazd;
     }
 }

@@ -12,6 +12,7 @@ public interface WypozyczenieService {
     Wypozyczenie createWypozyczenie(WypozyczenieDto wypozyczenieDto);
     WypozyczenieDto convertToDto(Wypozyczenie wypozyczenie);
     Wypozyczenie getWypozyczenie(Long wypozyczenieId);
+    boolean deleteWypozyczenie(Long wypozyczenieId);
     Wypozyczenie convertFromDto(WypozyczenieDto wypozyczenieDto);
 
 }

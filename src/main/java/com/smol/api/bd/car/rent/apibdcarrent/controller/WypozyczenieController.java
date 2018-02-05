@@ -52,7 +52,7 @@ public class WypozyczenieController {
         if (wypozyczenie == null)
             return ResponseEntity.notFound().build();
 
-        return ResponseEntity.ok(mWypozyczenieService.convertToDto(mWypozyczenieService.createWypozyczenie(wypozyczenieDto)));
+        return ResponseEntity.ok(mWypozyczenieService.convertToDto(wypozyczenie));
     }
 
     @GetMapping("/{id}")
@@ -62,5 +62,14 @@ public class WypozyczenieController {
             return ResponseEntity.notFound().build();
 
         return ResponseEntity.ok(mWypozyczenieService.convertToDto(wypozyczenie));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<WypozyczenieDto> deleteWypozyczenie(@PathVariable(value = "id") Long wypozyczenieId){
+        boolean successful = mWypozyczenieService.deleteWypozyczenie(wypozyczenieId);
+        if(!successful)
+            return ResponseEntity.notFound().build();
+
+        return ResponseEntity.ok().build();
     }
 }

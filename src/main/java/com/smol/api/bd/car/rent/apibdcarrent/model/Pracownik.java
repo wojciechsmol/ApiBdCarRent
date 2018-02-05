@@ -40,8 +40,9 @@ public class Pracownik {
     @JsonBackReference
     private List<Wypozyczenie> wypozyczenia;
 
-    @OneToOne
-    private Opieka opieka;
+    @OneToMany(mappedBy = "pracownik")
+    @JsonBackReference
+    private List<Opieka> opieki;
 
     @Enumerated
     @Column(columnDefinition = "smallint")
@@ -65,13 +66,13 @@ public class Pracownik {
         this.rola = rola;
     }
 
-    public Pracownik(String pesel, String imie, String nazwisko, LocalDate dataUrodzenia, List<Wypozyczenie> wypozyczenia, Opieka opieka, StatusZatrudnienia statusZatrudnienia, Rola rola) {
+    public Pracownik(String pesel, String imie, String nazwisko, LocalDate dataUrodzenia, List<Wypozyczenie> wypozyczenia, List<Opieka> opieki, StatusZatrudnienia statusZatrudnienia, Rola rola) {
         this.pesel = pesel;
         this.imie = imie;
         this.nazwisko = nazwisko;
         this.dataUrodzenia = dataUrodzenia;
         this.wypozyczenia = wypozyczenia;
-        this.opieka = opieka;
+        this.opieki = opieki;
         this.statusZatrudnienia = statusZatrudnienia;
         this.rola = rola;
     }
@@ -100,8 +101,8 @@ public class Pracownik {
         return wypozyczenia;
     }
 
-    public Opieka getOpieka() {
-        return opieka;
+    public List<Opieka> getOpieki() {
+        return opieki;
     }
 
     public StatusZatrudnienia getStatusZatrudnienia() {
@@ -136,8 +137,8 @@ public class Pracownik {
         this.wypozyczenia = wypozyczenia;
     }
 
-    public void setOpieka(Opieka opieka) {
-        this.opieka = opieka;
+    public void setOpieki(List<Opieka> opieki) {
+        this.opieki = opieki;
     }
 
     public void setStatusZatrudnienia(StatusZatrudnienia statusZatrudnienia) {

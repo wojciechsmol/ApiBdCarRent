@@ -20,8 +20,7 @@ public class Opieka {
     @JsonManagedReference
     private Pracownik pracownik;
 
-    @ManyToOne(fetch=FetchType.LAZY)
-    @JsonManagedReference
+    @OneToOne
     private Pojazd pojazd;
 
     public Opieka() {

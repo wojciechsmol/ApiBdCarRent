@@ -45,9 +45,10 @@ public class WypozyczenieServiceImpl implements WypozyczenieService {
 
     @Override
     public Wypozyczenie updateWypozyczenie(Long wypozyczenieId, WypozyczenieDto wypozyczenieDetails){
-        Wypozyczenie wypozyczenie = wypozyczenieRepository.findOne(wypozyczenieId);
-        if(wypozyczenie == null)
+        if(!wypozyczenieRepository.exists(wypozyczenieId))
             return null;
+
+        Wypozyczenie wypozyczenie = wypozyczenieRepository.findOne(wypozyczenieId);
 
         if(wypozyczenieDetails.getFaktycznaDataRozpoczecia() != null)
             wypozyczenie.setFaktycznaDataRozpoczecia(wypozyczenieDetails.getFaktycznaDataRozpoczecia());
@@ -116,7 +117,7 @@ public class WypozyczenieServiceImpl implements WypozyczenieService {
         if(wypozyczenie.getPracownik() == null || wypozyczenie.getPojazd() == null)
             return null;
 
-        wypozyczenieRepository.save(wypozyczenie);
+
 
         wypozyczenie.getPojazd().getWypozyczenia().add(wypozyczenie);
         mPojazdRepository.save(wypozyczenie.getPojazd());
@@ -124,16 +125,37 @@ public class WypozyczenieServiceImpl implements WypozyczenieService {
         wypozyczenie.getPracownik().getWypozyczenia().add(wypozyczenie);
         mPracownikRepository.save(wypozyczenie.getPracownik());
 
+        wypozyczenieRepository.save(wypozyczenie);
+
         return wypozyczenie;
     }
 
     @Override
     public Wypozyczenie getWypozyczenie(Long wypozyczenieId) {
-        Wypozyczenie wypozyczenie = wypozyczenieRepository.findOne(wypozyczenieId);
-        if (wypozyczenie == null) {
+        if (!wypozyczenieRepository.exists(wypozyczenieId)) {
             return null;
         }
-        return wypozyczenie;
+        return wypozyczenieRepository.findOne(wypozyczenieId);
+    }
+
+    @Override
+    public boolean deleteWypozyczenie(Long wypozyczenieId){
+
+        if(!wypozyczenieRepository.exists(wypozyczenieId))
+            return false;
+
+        Wypozyczenie wypozyczenie = wypozyczenieRepository.findOne(wypozyczenieId);
+
+        Pracownik pracownik = wypozyczenie.getPracownik();
+        pracownik.getWypozyczenia().remove(wypozyczenie);
+        mPracownikRepository.save(pracownik);
+
+        Pojazd pojazd = wypozyczenie.getPojazd();
+        pojazd.getWypozyczenia().remove(wypozyczenie);
+        mPojazdRepository.save(pojazd);
+
+        wypozyczenieRepository.delete(wypozyczenieId);
+        return true;
     }
 
     @Override
@@ -149,13 +171,13 @@ public class WypozyczenieServiceImpl implements WypozyczenieService {
     @Override
     public Wypozyczenie convertFromDto(WypozyczenieDto wypozyczenieDto) {
         Wypozyczenie wypozyczenie = mModelMapper.map(wypozyczenieDto, Wypozyczenie.class);
-        if(mPracownikRepository.findOne(wypozyczenieDto.getIdPracownika()) != null)
+        if(mPracownikRepository.exists(wypozyczenieDto.getIdPracownika()))
         wypozyczenie.setPracownik(mPracownikRepository.findOne(wypozyczenieDto.getIdPracownika()));
 
-        if(mPojazdRepository.findOne(wypozyczenieDto.getIdPojazdu()) != null)
+        if(mPojazdRepository.exists(wypozyczenieDto.getIdPojazdu()))
             wypozyczenie.setPojazd(mPojazdRepository.findOne(wypozyczenieDto.getIdPojazdu()));
 
-        return wypozyczenie;
 
+        return wypozyczenie;
     }
 }

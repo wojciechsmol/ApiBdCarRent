@@ -2,7 +2,7 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="api-bd@api-bd.database.windows.net" uuid="6e415450-92c4-4a3e-b1da-abc691d0b1cd">
-      <database-info product="Microsoft SQL Server" version="12.00.1000" jdbc-version="4.2" driver-name="Microsoft JDBC Driver 6.0 for SQL Server" driver-version="6.0.8112.100">
+      <database-info product="Microsoft SQL Server" version="12.00.1001" jdbc-version="4.2" driver-name="Microsoft JDBC Driver 6.0 for SQL Server" driver-version="6.0.8112.100">
         <extra-name-characters>$#@</extra-name-characters>
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>

@@ -15,6 +15,9 @@ public class PojazdDto {
     @JsonProperty("opiekun")
     private String opiekun;
 
+    @JsonProperty("id_opiekuna")
+    private Long idOpiekuna;
+
     @JsonProperty("nr_rej")
     private String nrRej;
 
@@ -33,16 +36,15 @@ public class PojazdDto {
     public PojazdDto() {
     }
 
-    public PojazdDto(Long id, String opiekun, String nrRej, int przebieg, Pojazd.statusPojazdu status, MarkaDto marka, ModelDto model) {
+    public PojazdDto(Long id, String opiekun, Long idOpiekuna, String nrRej, int przebieg, Pojazd.statusPojazdu status, MarkaDto marka, ModelDto model) {
         this.id = id;
         this.opiekun = opiekun;
+        this.idOpiekuna = idOpiekuna;
         this.nrRej = nrRej;
         this.przebieg = przebieg;
         this.status = status;
         this.marka = marka;
         this.model = model;
-
-
     }
 
     public Long getId() {
@@ -99,5 +101,13 @@ public class PojazdDto {
 
     public void setModel(ModelDto model) {
         this.model = model;
+    }
+
+    public Long getIdOpiekuna() {
+        return idOpiekuna;
+    }
+
+    public void setIdOpiekuna(Long idOpiekuna) {
+        this.idOpiekuna = idOpiekuna;
     }
 }

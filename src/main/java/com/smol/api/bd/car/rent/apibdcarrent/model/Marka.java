@@ -21,18 +21,13 @@ public class Marka {
     @JsonBackReference
     private List<Model> modele;
 
-    @JoinTable(name="marka_serwis", joinColumns=@JoinColumn(name="id_marki", referencedColumnName="ID"), inverseJoinColumns=@JoinColumn(name="id_serwisu", referencedColumnName="ID"))
-    @ElementCollection(targetClass=Serwis.class)
-    @JsonBackReference
-    private List<Serwis> serwisy;
 
     public Marka() {
     }
 
-    public Marka(String opis, List<Model> modele, List<Serwis> serwisy) {
+    public Marka(String opis, List<Model> modele) {
         this.opis = opis;
         this.modele = modele;
-        this.serwisy = serwisy;
         }
 
     public Marka(String opis) {
@@ -51,9 +46,7 @@ public class Marka {
         return modele;
     }
 
-    public List<Serwis> getSerwisy() {
-        return serwisy;
-    }
+
 
     public void setId(Long id) {
         this.id = id;
@@ -65,9 +58,5 @@ public class Marka {
 
     public void setModele(List<Model> modele) {
         this.modele = modele;
-    }
-
-    public void setSerwisy(List<Serwis> serwisy) {
-        this.serwisy = serwisy;
     }
 }

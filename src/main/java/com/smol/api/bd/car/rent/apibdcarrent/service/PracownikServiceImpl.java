@@ -1,8 +1,8 @@
 package com.smol.api.bd.car.rent.apibdcarrent.service;
 
-import com.smol.api.bd.car.rent.apibdcarrent.model.Pracownik;
-import com.smol.api.bd.car.rent.apibdcarrent.model.PracownikDto;
-import com.smol.api.bd.car.rent.apibdcarrent.model.Wypozyczenie;
+import com.smol.api.bd.car.rent.apibdcarrent.model.*;
+import com.smol.api.bd.car.rent.apibdcarrent.repository.OpiekaRepository;
+import com.smol.api.bd.car.rent.apibdcarrent.repository.PojazdRepository;
 import com.smol.api.bd.car.rent.apibdcarrent.repository.PracownikRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeanUtils;
@@ -20,11 +20,15 @@ public class PracownikServiceImpl implements PracownikService {
 
     PracownikRepository pracownikRepository;
     ModelMapper mModelMapper;
+    OpiekaRepository mOpiekaRepository;
+    PojazdRepository mPojazdRepository;
 
     @Autowired
-    public PracownikServiceImpl(PracownikRepository pracownikRepository, ModelMapper modelMapper){
+    public PracownikServiceImpl(PracownikRepository pracownikRepository, ModelMapper modelMapper, OpiekaRepository opiekaRepository, PojazdRepository pojazdRepository) {
         this.pracownikRepository = pracownikRepository;
-        this.mModelMapper = modelMapper;
+        mModelMapper = modelMapper;
+        mOpiekaRepository = opiekaRepository;
+        mPojazdRepository = pojazdRepository;
     }
 
     @Override
@@ -36,10 +40,10 @@ public class PracownikServiceImpl implements PracownikService {
 
     @Override
     public Pracownik updatePracownik(Long pracownikId, PracownikDto pracownikDetails) {
-        Pracownik pracownik = pracownikRepository.findOne(pracownikId);
-        if (pracownik == null) {
+        if (!pracownikRepository.exists(pracownikId)) {
             return null;
         }
+        Pracownik pracownik = pracownikRepository.findOne(pracownikId);
 
         if(pracownikDetails.getDataUrodzenia() != null)
         pracownik.setDataUrodzenia(pracownikDetails.getDataUrodzenia());
@@ -61,7 +65,10 @@ public class PracownikServiceImpl implements PracownikService {
     @Override
     public Pracownik createPracownik(PracownikDto pracownikDto) {
         Pracownik pracownik = convertFromDto(pracownikDto);
+        pracownik.setWypozyczenia(new ArrayList<>());
+        pracownik.setOpieki(new ArrayList<>());
         pracownikRepository.save(pracownik);
+
         return pracownik;
     }
 
@@ -72,7 +79,14 @@ public class PracownikServiceImpl implements PracownikService {
             return false;
         }
 
-        pracownikRepository.delete(pracownik);
+        for (Opieka opieka : pracownik.getOpieki()){
+            mOpiekaRepository.delete(opieka);
+            Pojazd pojazd = opieka.getPojazd();
+            pojazd.setOpieka(null);
+            mPojazdRepository.save(pojazd);
+            mOpiekaRepository.delete(opieka);
+        }
+        pracownikRepository.delete(pracownikId);
         return true;
     }
 

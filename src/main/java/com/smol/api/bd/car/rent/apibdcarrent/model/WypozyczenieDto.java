@@ -1,7 +1,9 @@
 package com.smol.api.bd.car.rent.apibdcarrent.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.Entity;
 import java.time.LocalDateTime;
 
 public class WypozyczenieDto {
@@ -10,15 +12,19 @@ public class WypozyczenieDto {
     private Long id;
 
     @JsonProperty("planowana_data_rozpoczecia")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy/MM/dd HH:mm")
     private LocalDateTime planowanaDataRozpoczecia;
 
     @JsonProperty("planowana_data_zakonczenia")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy/MM/dd HH:mm")
     private LocalDateTime planowanaDataZakonczenia;
 
     @JsonProperty("faktyczna_data_rozpoczecia")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy/MM/dd HH:mm")
     private LocalDateTime faktycznaDataRozpoczecia;
 
     @JsonProperty("faktyczna_data_zakonczenia")
+    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy/MM/dd HH:mm")
     private LocalDateTime faktycznaDataZakonczenia;
 
     @JsonProperty("przebieg_rozpoczecia")

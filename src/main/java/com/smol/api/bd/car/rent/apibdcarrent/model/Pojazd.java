@@ -49,10 +49,18 @@ public class Pojazd {
     @JsonBackReference
     private List<EwidencjaKosztow> ewidencjeKosztow;
 
+    @OneToMany(mappedBy = "pojazd")
+    @JsonBackReference
+    private List<CzynnoscSerwisowa> czynnosciSerwisowe;
+
+    @OneToMany(mappedBy = "pojazd")
+    @JsonBackReference
+    private List<CzynnoscEksploatacyjna> czynnosciEksploatacyjne;
+
     public Pojazd() {
     }
 
-    public Pojazd(Opieka opieka, String nrRej, int przebieg, statusPojazdu status, List<Wypozyczenie> wypozyczenia, Model model, List<EwidencjaKosztow> ewidencjeKosztow) {
+    public Pojazd(Opieka opieka, String nrRej, int przebieg, statusPojazdu status, List<Wypozyczenie> wypozyczenia, Model model, List<EwidencjaKosztow> ewidencjeKosztow, List<CzynnoscSerwisowa> czynnosciSerwisowe, List<CzynnoscEksploatacyjna> czynnosciEksploatacyjne) {
         this.opieka = opieka;
         this.nrRej = nrRej;
         this.przebieg = przebieg;
@@ -60,6 +68,8 @@ public class Pojazd {
         this.wypozyczenia = wypozyczenia;
         this.model = model;
         this.ewidencjeKosztow = ewidencjeKosztow;
+        this.czynnosciSerwisowe = czynnosciSerwisowe;
+        this.czynnosciEksploatacyjne = czynnosciEksploatacyjne;
     }
 
     public Pojazd(String nrRej, int przebieg, statusPojazdu status, Model model) {
@@ -131,6 +141,22 @@ public class Pojazd {
 
     public void setEwidencjeKosztow(List<EwidencjaKosztow> ewidencjeKosztow) {
         this.ewidencjeKosztow = ewidencjeKosztow;
+    }
+
+    public List<CzynnoscSerwisowa> getCzynnosciSerwisowe() {
+        return czynnosciSerwisowe;
+    }
+
+    public List<CzynnoscEksploatacyjna> getCzynnosciEksploatacyjne() {
+        return czynnosciEksploatacyjne;
+    }
+
+    public void setCzynnosciSerwisowe(List<CzynnoscSerwisowa> czynnosciSerwisowe) {
+        this.czynnosciSerwisowe = czynnosciSerwisowe;
+    }
+
+    public void setCzynnosciEksploatacyjne(List<CzynnoscEksploatacyjna> czynnosciEksploatacyjne) {
+        this.czynnosciEksploatacyjne = czynnosciEksploatacyjne;
     }
 
     public boolean isTaken(LocalDateTime fromTime, LocalDateTime toTime){
