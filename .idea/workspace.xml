@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c1e768f-eeec-4ed1-a149-31e0577e4b10" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/RequestFilter.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/templates/index.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/help.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/ApiBdCarRentApplication.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/ApiBdCarRentApplication.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/controller/HelpController.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/controller/HelpController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/ApiBdCarRentApplication.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/ApiBdCarRentApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/WebConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/WebConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/controller/HelpController.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/controller/HelpController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/RequestFilter.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/RequestFilter.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -83,11 +75,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WebConfig.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="WebConfig.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/WebConfig.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="400">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
                 <element signature="e#0#568#0" expanded="true" />
               </folding>
@@ -133,17 +125,17 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/ApiBdCarRentApplication.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="375">
-              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RequestFilter.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RequestFilter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/RequestFilter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="482">
-              <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+            <state relative-caret-position="303">
+              <caret line="14" column="98" lean-forward="false" selection-start-line="14" selection-start-column="98" selection-end-line="14" selection-end-column="98" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -266,8 +258,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/controller/HelpController.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/ApiBdCarRentApplication.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/RequestFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/WebConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/RequestFilter.java" />
       </list>
     </option>
   </component>
@@ -606,12 +598,12 @@
       <workItem from="1517434772211" duration="7910000" />
       <workItem from="1517677411809" duration="53397000" />
       <workItem from="1517776055859" duration="3530000" />
-      <workItem from="1517779887365" duration="17096000" />
+      <workItem from="1517779887365" duration="17230000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="161310000" />
+    <option name="totallyTimeSpent" value="161444000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -963,7 +955,7 @@
         <state relative-caret-position="456">
           <caret line="21" column="31" lean-forward="true" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1081,27 +1073,27 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/ApiBdCarRentApplication.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/RequestFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/WebConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding>
             <element signature="e#0#568#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/RequestFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="14" column="98" lean-forward="false" selection-start-line="14" selection-start-column="98" selection-end-line="14" selection-end-column="98" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
