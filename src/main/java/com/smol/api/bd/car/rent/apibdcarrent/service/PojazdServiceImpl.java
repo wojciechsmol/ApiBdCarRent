@@ -57,12 +57,13 @@ public class PojazdServiceImpl implements PojazdService {
         LocalDateTime toTime = LocalDateTime.parse(to, formatter);
 
         //Save all the pojazdy to the list
-        List<Pojazd> availablePojazdy = getAllPojazdy();
+        List<Pojazd> availablePojazdy = new ArrayList<>();
 
         //if toTime is before current time, then return empty list
         if (toTime.isBefore(LocalDateTime.now()))
             return availablePojazdy;
 
+        availablePojazdy = getAllPojazdy();
         boolean isAvailable;
 
         //check all the pojazdy
@@ -71,9 +72,10 @@ public class PojazdServiceImpl implements PojazdService {
             isAvailable = true;
 
             //check if at the given time it's taken
-            if (pojazd.isTaken(fromTime, toTime)) {
+            if (pojazd.isTaken(fromTime, toTime))
                 isAvailable = false;
-            }
+            if (!pojazd.isAvailable())
+                isAvailable = false;
 
             //if it's booked, then remove it from the list
             if (!isAvailable)

@@ -172,4 +172,8 @@ public class Pojazd {
         }
         return false;
     }
+
+    public boolean isAvailable(){
+        return status == statusPojazdu.SPRAWNY;
+    }
 }
