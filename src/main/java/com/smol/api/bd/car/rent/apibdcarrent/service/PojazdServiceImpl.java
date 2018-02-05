@@ -22,10 +22,11 @@ public class PojazdServiceImpl implements PojazdService {
     ModelMapper mModelMapper;
     OpiekaRepository mOpiekaRepository;
     ModelRepository mModelRepository;
+    WypozyczenieRepository mWypozyczenieRepository;
     MarkaRepository mMarkaRepository;
 
     @Autowired
-    public PojazdServiceImpl(PojazdRepository pojazdRepository, MarkaService markaService, PracownikRepository pracownikRepository, ModelService modelService, ModelMapper modelMapper, OpiekaRepository opiekaRepository, ModelRepository modelRepository, MarkaRepository markaRepository) {
+    public PojazdServiceImpl(PojazdRepository pojazdRepository, MarkaService markaService, PracownikRepository pracownikRepository, ModelService modelService, ModelMapper modelMapper, OpiekaRepository opiekaRepository, ModelRepository modelRepository, WypozyczenieRepository wypozyczenieRepository, MarkaRepository markaRepository) {
         mPojazdRepository = pojazdRepository;
         mMarkaService = markaService;
         mPracownikRepository = pracownikRepository;
@@ -33,6 +34,7 @@ public class PojazdServiceImpl implements PojazdService {
         mModelMapper = modelMapper;
         mOpiekaRepository = opiekaRepository;
         mModelRepository = modelRepository;
+        mWypozyczenieRepository = wypozyczenieRepository;
         mMarkaRepository = markaRepository;
     }
 
@@ -128,6 +130,28 @@ public class PojazdServiceImpl implements PojazdService {
             mPojazdRepository.save(pojazd);
         }
         if(pojazdDetails.getStatus() != null){
+            if (pojazdDetails.getStatus() != Pojazd.statusPojazdu.SPRAWNY)
+            {
+                List<Wypozyczenie> wypozyczenia = pojazd.getWypozyczenia();
+                for (Iterator<Wypozyczenie> i = wypozyczenia.iterator(); i.hasNext(); ){
+                    Wypozyczenie wypozyczenie = i.next();
+                    wypozyczenie.getPracownik().getWypozyczenia().remove(wypozyczenie);
+                    mPracownikRepository.save(wypozyczenie.getPracownik());
+                    mWypozyczenieRepository.delete(wypozyczenie);
+                    i.remove();
+                }
+                mPojazdRepository.save(pojazd);
+            }
+
+            if (pojazdDetails.getStatus() == Pojazd.statusPojazdu.ZŁOMOWANY){
+                Opieka opieka = pojazd.getOpieka();
+                pojazd.getOpieka().getPracownik().getOpieki().remove(opieka);
+                mPracownikRepository.save(pojazd.getOpieka().getPracownik());
+                pojazd.setOpieka(null);
+
+                mOpiekaRepository.delete(opieka);
+                mPojazdRepository.save(pojazd);
+            }
             pojazd.setStatus(pojazdDetails.getStatus());
         }
 
@@ -141,9 +165,10 @@ public class PojazdServiceImpl implements PojazdService {
 
         pojazdDto.setMarka(mMarkaService.convertToDto(pojazd.getModel().getMarka()));
         pojazdDto.setModel(mModelService.convertToDto(pojazd.getModel()));
-        pojazdDto.setOpiekun(pojazd.getOpieka().getPracownik().getImie() + " " + pojazd.getOpieka().getPracownik().getNazwisko());
-        pojazdDto.setIdOpiekuna(pojazd.getOpieka().getPracownik().getId());
-
+        if(pojazd.getOpieka() != null) {
+            pojazdDto.setOpiekun(pojazd.getOpieka().getPracownik().getImie() + " " + pojazd.getOpieka().getPracownik().getNazwisko());
+            pojazdDto.setIdOpiekuna(pojazd.getOpieka().getPracownik().getId());
+        }
         return pojazdDto;
     }
 
