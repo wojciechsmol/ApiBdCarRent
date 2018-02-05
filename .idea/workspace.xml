@@ -2,69 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c1e768f-eeec-4ed1-a149-31e0577e4b10" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/Serwis.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/model/Serwis.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/6e415450-92c4-4a3e-b1da-abc691d0b1cd/_metadata_/metadata" afterPath="$PROJECT_DIR$/.idea/dataSources/6e415450-92c4-4a3e-b1da-abc691d0b1cd/_metadata_/metadata" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/6e415450-92c4-4a3e-b1da-abc691d0b1cd/_metadata_/metadata.values.at" afterPath="$PROJECT_DIR$/.idea/dataSources/6e415450-92c4-4a3e-b1da-abc691d0b1cd/_metadata_/metadata.values.at" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/controller/PojazdController.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/controller/PojazdController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/controller/WypozyczenieController.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/controller/WypozyczenieController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscEksploatacyjna.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscEksploatacyjna.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscSerwisowa.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscSerwisowa.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/model/EwidencjaKosztow.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/model/EwidencjaKosztow.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/model/Marka.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/model/Marka.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/model/MarkaDto.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/model/MarkaDto.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/model/Pojazd.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/model/Pojazd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/model/PojazdDto.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/model/PojazdDto.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/model/Wypozyczenie.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/model/Wypozyczenie.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/model/WypozyczenieDto.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/model/WypozyczenieDto.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/repository/MarkaRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/repository/MarkaRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/repository/ModelRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/repository/ModelRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/repository/OpiekaRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/repository/OpiekaRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/repository/PojazdRepository.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/repository/PojazdRepository.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/service/MarkaService.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/service/MarkaService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/service/MarkaServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/service/MarkaServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/service/ModelService.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/service/ModelService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/service/ModelServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/service/ModelServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/service/PojazdService.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/service/PojazdService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/service/PojazdServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/service/PojazdServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/service/PracownikServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/service/PracownikServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/service/WypozyczenieService.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/service/WypozyczenieService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/service/WypozyczenieServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/service/WypozyczenieServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/6e415450-92c4-4a3e-b1da-abc691d0b1cd.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/6e415450-92c4-4a3e-b1da-abc691d0b1cd.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/WebConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/controller/PojazdController.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/controller/PojazdController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/controller/PracownikController.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/controller/PracownikController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/controller/WypozyczenieController.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/controller/WypozyczenieController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscEksploatacyjna.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscEksploatacyjna.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscSerwisowa.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscSerwisowa.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/EwidencjaKosztow.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/EwidencjaKosztow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/Marka.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/Marka.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/MarkaDto.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/MarkaDto.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/Model.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/Model.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/Opieka.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/Opieka.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/Pojazd.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/Pojazd.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/PojazdDto.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/PojazdDto.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/Pracownik.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/Pracownik.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/Wypozyczenie.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/Wypozyczenie.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/WypozyczenieDto.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/WypozyczenieDto.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/repository/MarkaRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/repository/MarkaRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/repository/ModelRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/repository/ModelRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/repository/OpiekaRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/repository/OpiekaRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/repository/PojazdRepository.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/repository/PojazdRepository.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/DataLoader.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/DataLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/MarkaService.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/MarkaService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/MarkaServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/MarkaServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/ModelService.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/ModelService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/ModelServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/ModelServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/PojazdService.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/PojazdService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/PojazdServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/PojazdServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/PracownikServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/PracownikServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/WypozyczenieService.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/WypozyczenieService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/WypozyczenieServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/WypozyczenieServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="$PROJECT_DIR$/target/classes/application.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -136,16 +75,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PojazdServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/PojazdServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="108" column="0" lean-forward="false" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="WypozyczenieServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/WypozyczenieServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -156,7 +85,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PracownikServiceImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PracownikServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/PracownikServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-325">
@@ -169,8 +98,8 @@
       <file leaf-file-name="Pojazd.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/Pojazd.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="543">
-              <caret line="38" column="11" lean-forward="false" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="11" />
+            <state relative-caret-position="275">
+              <caret line="49" column="52" lean-forward="true" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -194,6 +123,20 @@
             <state relative-caret-position="403">
               <caret line="49" column="41" lean-forward="false" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebConfig.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/WebConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="350">
+              <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#490#491#0" expanded="true" />
+                <element signature="e#532#533#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -264,7 +207,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/dataLoader.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/repository/RolaRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/Rola.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/converter/LocalDateToDateConverter.java" />
@@ -315,6 +257,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/Pracownik.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/DataLoader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/WebConfig.java" />
       </list>
     </option>
   </component>
@@ -652,12 +595,12 @@
       <workItem from="1517434772211" duration="7910000" />
       <workItem from="1517677411809" duration="53397000" />
       <workItem from="1517776055859" duration="3530000" />
-      <workItem from="1517779887365" duration="14133000" />
+      <workItem from="1517779887365" duration="14693000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158347000" />
+    <option name="totallyTimeSpent" value="158907000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -688,7 +631,7 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30995107" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="1931" y="31" width="511" height="868" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2055465" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2055465" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -752,13 +695,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://table:/d6e3a673/6e415450-92c4-4a3e-b1da-abc691d0b1cd/api-bd.dbo.marka">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/d6e3a673/6e415450-92c4-4a3e-b1da-abc691d0b1cd/api-bd.dbo.marka">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1100,26 +1036,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/Pojazd.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="38" column="11" lean-forward="false" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/Pracownik.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="49" column="41" lean-forward="false" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/Wypozyczenie.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="421">
           <caret line="50" column="14" lean-forward="false" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/Pojazd.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="49" column="52" lean-forward="true" selection-start-line="49" selection-start-column="52" selection-end-line="49" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/PracownikServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-325">
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1132,11 +1068,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/PracownikServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/Pracownik.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-325">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state relative-caret-position="403">
+          <caret line="49" column="41" lean-forward="false" selection-start-line="49" selection-start-column="41" selection-end-line="49" selection-end-column="41" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/WebConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#490#491#0" expanded="true" />
+            <element signature="e#532#533#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
