@@ -1,9 +1,6 @@
 package com.smol.api.bd.car.rent.apibdcarrent.controller;
 
-import com.smol.api.bd.car.rent.apibdcarrent.model.Pojazd;
-import com.smol.api.bd.car.rent.apibdcarrent.model.PojazdDto;
-import com.smol.api.bd.car.rent.apibdcarrent.model.PracownikDto;
-import com.smol.api.bd.car.rent.apibdcarrent.model.WypozyczenieDto;
+import com.smol.api.bd.car.rent.apibdcarrent.model.*;
 import com.smol.api.bd.car.rent.apibdcarrent.service.PojazdService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -54,6 +51,17 @@ public class PojazdController {
 
         return ResponseEntity.ok(mPojazdService.convertToDto(pojazd));
 
+    }
+
+    @PatchMapping("/{id}")
+    public ResponseEntity<PojazdDto> updatePojazd(@PathVariable(value = "id") Long pojazdId,
+                                                        @Valid @RequestBody PojazdDto pojazdDetails) {
+
+        Pojazd pojazd = mPojazdService.updatePojazd(pojazdId, pojazdDetails);
+        if(pojazd == null)
+            return ResponseEntity.notFound().build();
+
+        return ResponseEntity.ok(mPojazdService.convertToDto(pojazd));
     }
 
 }

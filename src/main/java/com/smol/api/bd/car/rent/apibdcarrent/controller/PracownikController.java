@@ -48,6 +48,14 @@ public class PracownikController {
         return ResponseEntity.ok(pracownikService.convertToDto(pracownik));
     }
 
+    @GetMapping("/opiekuni")
+    public List<PracownikDto> getAllOpiekuni() {
+        List<Pracownik> pracownicy = pracownikService.getAllOpiekuni();
+        return pracownicy.stream()
+                .map(pracownik -> pracownikService.convertToDto(pracownik))
+                .collect(Collectors.toList());
+    }
+
     @PatchMapping("/{id}")
     public ResponseEntity<PracownikDto> updatePracownik(@PathVariable(value = "id") Long pracownikId,
                                                      @Valid @RequestBody PracownikDto pracownikDetails) {

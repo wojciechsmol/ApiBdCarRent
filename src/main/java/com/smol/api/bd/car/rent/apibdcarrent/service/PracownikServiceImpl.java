@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
@@ -97,6 +98,25 @@ public class PracownikServiceImpl implements PracownikService {
             return null;
         }
         return pracownik;
+    }
+
+    @Override
+    public List<Pracownik> getAllOpiekuni() {
+        List<Pracownik> opiekuni = new ArrayList<>();
+        pracownikRepository.findAll().forEach(opiekuni::add);
+
+        boolean isOpiekunem;
+        for (Iterator<Pracownik> i = opiekuni.iterator(); i.hasNext(); ) {
+            Pracownik opiekun = i.next();
+            isOpiekunem = true;
+
+            if (opiekun.getRola() != Pracownik.Rola.OPIEKUN)
+                isOpiekunem = false;
+
+            if(!isOpiekunem)
+                i.remove();
+        }
+        return opiekuni;
     }
 
     @Override

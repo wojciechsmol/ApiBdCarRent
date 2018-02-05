@@ -14,7 +14,7 @@
     </database>
     <schema id="4" parent="2" name="dbo">
       <ObjectId>1</ObjectId>
-      <IntrospectionTimestamp>2018-02-05.02:09:23.190</IntrospectionTimestamp>
+      <IntrospectionTimestamp>2018-02-05.14:30:11.950</IntrospectionTimestamp>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -55,44 +55,44 @@
       <ObjectId>16393</ObjectId>
     </schema>
     <table id="17" parent="4" name="czynnosc_eksploatacyjna">
-      <ObjectId>398728573</ObjectId>
-      <CreatedTimestamp>2018-02-05.02:09:09.497</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-05.02:09:09.957</ModifiedTimestamp>
+      <ObjectId>875970297</ObjectId>
+      <CreatedTimestamp>2018-02-05.14:28:02.710</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-05.14:28:03.517</ModifiedTimestamp>
     </table>
     <table id="18" parent="4" name="czynnosc_serwisowa">
-      <ObjectId>430728687</ObjectId>
-      <CreatedTimestamp>2018-02-05.02:09:09.550</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-05.02:09:10.007</ModifiedTimestamp>
+      <ObjectId>907970411</ObjectId>
+      <CreatedTimestamp>2018-02-05.14:28:02.860</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-05.14:28:03.583</ModifiedTimestamp>
     </table>
     <table id="19" parent="4" name="ewidencja_kosztow">
-      <ObjectId>462728801</ObjectId>
-      <CreatedTimestamp>2018-02-05.02:09:09.597</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-05.02:09:10.057</ModifiedTimestamp>
+      <ObjectId>939970525</ObjectId>
+      <CreatedTimestamp>2018-02-05.14:28:02.917</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-05.14:28:03.647</ModifiedTimestamp>
     </table>
     <table id="20" parent="4" name="marka">
-      <ObjectId>494728915</ObjectId>
-      <CreatedTimestamp>2018-02-05.02:09:09.660</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-05.02:09:10.110</ModifiedTimestamp>
+      <ObjectId>971970639</ObjectId>
+      <CreatedTimestamp>2018-02-05.14:28:02.970</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-05.14:28:03.713</ModifiedTimestamp>
     </table>
     <table id="21" parent="4" name="model">
-      <ObjectId>526729029</ObjectId>
-      <CreatedTimestamp>2018-02-05.02:09:09.713</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-05.02:09:10.290</ModifiedTimestamp>
+      <ObjectId>1003970753</ObjectId>
+      <CreatedTimestamp>2018-02-05.14:28:03.023</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-05.14:28:03.870</ModifiedTimestamp>
     </table>
     <table id="22" parent="4" name="opieka">
-      <ObjectId>558729143</ObjectId>
-      <CreatedTimestamp>2018-02-05.02:09:09.760</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-05.02:09:10.340</ModifiedTimestamp>
+      <ObjectId>1035970867</ObjectId>
+      <CreatedTimestamp>2018-02-05.14:28:03.073</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-05.14:28:03.923</ModifiedTimestamp>
     </table>
     <table id="23" parent="4" name="pojazd">
-      <ObjectId>590729257</ObjectId>
-      <CreatedTimestamp>2018-02-05.02:09:09.810</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-05.02:09:10.390</ModifiedTimestamp>
+      <ObjectId>1067970981</ObjectId>
+      <CreatedTimestamp>2018-02-05.14:28:03.233</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-05.14:28:03.980</ModifiedTimestamp>
     </table>
     <table id="24" parent="4" name="pracownik">
-      <ObjectId>622729371</ObjectId>
-      <CreatedTimestamp>2018-02-05.02:09:09.860</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-05.02:09:10.440</ModifiedTimestamp>
+      <ObjectId>1099971095</ObjectId>
+      <CreatedTimestamp>2018-02-05.14:28:03.400</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-05.14:28:04.037</ModifiedTimestamp>
     </table>
     <table id="25" parent="4" name="serwis">
       <ObjectId>897490326</ObjectId>
@@ -100,9 +100,9 @@
       <ModifiedTimestamp>2018-02-05.01:44:32.543</ModifiedTimestamp>
     </table>
     <table id="26" parent="4" name="wypozyczenie">
-      <ObjectId>654729485</ObjectId>
-      <CreatedTimestamp>2018-02-05.02:09:09.907</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-05.02:09:10.440</ModifiedTimestamp>
+      <ObjectId>1131971209</ObjectId>
+      <CreatedTimestamp>2018-02-05.14:28:03.450</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-05.14:28:04.033</ModifiedTimestamp>
     </table>
     <column id="27" parent="17" name="id">
       <Position>1</Position>
@@ -127,31 +127,31 @@
       <Position>5</Position>
       <DataType>bigint|0</DataType>
     </column>
-    <index id="32" parent="17" name="PK__czynnosc__3213E83FF5EADFF3">
+    <index id="32" parent="17" name="PK__czynnosc__3213E83F95D96C23">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="33" parent="17" name="PK__czynnosc__3213E83FF5EADFF3">
-      <ObjectId>414728630</ObjectId>
+    <key id="33" parent="17" name="PK__czynnosc__3213E83F95D96C23">
+      <ObjectId>891970354</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <CreatedTimestamp>2018-02-05.02:09:09.497</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-05.02:09:09.497</ModifiedTimestamp>
+      <CreatedTimestamp>2018-02-05.14:28:02.710</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-05.14:28:02.710</ModifiedTimestamp>
       <ColNames>id</ColNames>
-      <UnderlyingIndexName>PK__czynnosc__3213E83FF5EADFF3</UnderlyingIndexName>
+      <UnderlyingIndexName>PK__czynnosc__3213E83F95D96C23</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
     <foreign-key id="34" parent="17" name="FKsia8dc654debt87pdai6pfet3">
-      <ObjectId>686729599</ObjectId>
-      <CreatedTimestamp>2018-02-05.02:09:09.957</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-05.02:09:09.957</ModifiedTimestamp>
+      <ObjectId>1163971323</ObjectId>
+      <CreatedTimestamp>2018-02-05.14:28:03.517</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-05.14:28:03.517</ModifiedTimestamp>
       <ColNames>pojazd</ColNames>
-      <RefTableId>590729257</RefTableId>
+      <RefTableId>1067970981</RefTableId>
       <RefSchemaName>dbo</RefSchemaName>
       <RefTableName>pojazd</RefTableName>
-      <RefKeyName>PK__pojazd__3213E83FC37560C3</RefKeyName>
+      <RefKeyName>PK__pojazd__3213E83F07147FA2</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <column id="35" parent="18" name="id">
@@ -177,31 +177,31 @@
       <Position>5</Position>
       <DataType>bigint|0</DataType>
     </column>
-    <index id="40" parent="18" name="PK__czynnosc__3213E83F72F7AE3A">
+    <index id="40" parent="18" name="PK__czynnosc__3213E83F34ABA84A">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="41" parent="18" name="PK__czynnosc__3213E83F72F7AE3A">
-      <ObjectId>446728744</ObjectId>
+    <key id="41" parent="18" name="PK__czynnosc__3213E83F34ABA84A">
+      <ObjectId>923970468</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <CreatedTimestamp>2018-02-05.02:09:09.550</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-05.02:09:09.550</ModifiedTimestamp>
+      <CreatedTimestamp>2018-02-05.14:28:02.863</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-05.14:28:02.863</ModifiedTimestamp>
       <ColNames>id</ColNames>
-      <UnderlyingIndexName>PK__czynnosc__3213E83F72F7AE3A</UnderlyingIndexName>
+      <UnderlyingIndexName>PK__czynnosc__3213E83F34ABA84A</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
     <foreign-key id="42" parent="18" name="FKr3q361d2o1molxibeer8i5534">
-      <ObjectId>702729656</ObjectId>
-      <CreatedTimestamp>2018-02-05.02:09:10.007</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-05.02:09:10.007</ModifiedTimestamp>
+      <ObjectId>1179971380</ObjectId>
+      <CreatedTimestamp>2018-02-05.14:28:03.583</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-05.14:28:03.583</ModifiedTimestamp>
       <ColNames>pojazd</ColNames>
-      <RefTableId>590729257</RefTableId>
+      <RefTableId>1067970981</RefTableId>
       <RefSchemaName>dbo</RefSchemaName>
       <RefTableName>pojazd</RefTableName>
-      <RefKeyName>PK__pojazd__3213E83FC37560C3</RefKeyName>
+      <RefKeyName>PK__pojazd__3213E83F07147FA2</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <column id="43" parent="19" name="id">
@@ -226,31 +226,31 @@
       <Position>5</Position>
       <DataType>bigint|0</DataType>
     </column>
-    <index id="48" parent="19" name="PK__ewidencj__3213E83F9DB975C1">
+    <index id="48" parent="19" name="PK__ewidencj__3213E83F91FA10ED">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="49" parent="19" name="PK__ewidencj__3213E83F9DB975C1">
-      <ObjectId>478728858</ObjectId>
+    <key id="49" parent="19" name="PK__ewidencj__3213E83F91FA10ED">
+      <ObjectId>955970582</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <CreatedTimestamp>2018-02-05.02:09:09.597</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-05.02:09:09.597</ModifiedTimestamp>
+      <CreatedTimestamp>2018-02-05.14:28:02.917</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-05.14:28:02.917</ModifiedTimestamp>
       <ColNames>id</ColNames>
-      <UnderlyingIndexName>PK__ewidencj__3213E83F9DB975C1</UnderlyingIndexName>
+      <UnderlyingIndexName>PK__ewidencj__3213E83F91FA10ED</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
     <foreign-key id="50" parent="19" name="FKp8xmp2oaqe74tbgdkb4dinds2">
-      <ObjectId>718729713</ObjectId>
-      <CreatedTimestamp>2018-02-05.02:09:10.057</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-05.02:09:10.057</ModifiedTimestamp>
+      <ObjectId>1195971437</ObjectId>
+      <CreatedTimestamp>2018-02-05.14:28:03.647</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-05.14:28:03.647</ModifiedTimestamp>
       <ColNames>pojazd</ColNames>
-      <RefTableId>590729257</RefTableId>
+      <RefTableId>1067970981</RefTableId>
       <RefSchemaName>dbo</RefSchemaName>
       <RefTableName>pojazd</RefTableName>
-      <RefKeyName>PK__pojazd__3213E83FC37560C3</RefKeyName>
+      <RefKeyName>PK__pojazd__3213E83F07147FA2</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <column id="51" parent="20" name="id">
@@ -263,20 +263,20 @@
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
     </column>
-    <index id="53" parent="20" name="PK__marka__3213E83F1AA4CB24">
+    <index id="53" parent="20" name="PK__marka__3213E83F02C9A5B1">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="54" parent="20" name="PK__marka__3213E83F1AA4CB24">
-      <ObjectId>510728972</ObjectId>
+    <key id="54" parent="20" name="PK__marka__3213E83F02C9A5B1">
+      <ObjectId>987970696</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <CreatedTimestamp>2018-02-05.02:09:09.660</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-05.02:09:09.660</ModifiedTimestamp>
+      <CreatedTimestamp>2018-02-05.14:28:02.970</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-05.14:28:02.970</ModifiedTimestamp>
       <ColNames>id</ColNames>
-      <UnderlyingIndexName>PK__marka__3213E83F1AA4CB24</UnderlyingIndexName>
+      <UnderlyingIndexName>PK__marka__3213E83F02C9A5B1</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
     <column id="55" parent="21" name="id">
@@ -307,31 +307,31 @@
       <Position>6</Position>
       <DataType>bigint|0</DataType>
     </column>
-    <index id="61" parent="21" name="PK__model__3213E83F8736D89F">
+    <index id="61" parent="21" name="PK__model__3213E83FBF832816">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="62" parent="21" name="PK__model__3213E83F8736D89F">
-      <ObjectId>542729086</ObjectId>
+    <key id="62" parent="21" name="PK__model__3213E83FBF832816">
+      <ObjectId>1019970810</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <CreatedTimestamp>2018-02-05.02:09:09.713</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-05.02:09:09.713</ModifiedTimestamp>
+      <CreatedTimestamp>2018-02-05.14:28:03.023</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-05.14:28:03.023</ModifiedTimestamp>
       <ColNames>id</ColNames>
-      <UnderlyingIndexName>PK__model__3213E83F8736D89F</UnderlyingIndexName>
+      <UnderlyingIndexName>PK__model__3213E83FBF832816</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
     <foreign-key id="63" parent="21" name="FKsbbdwcyj6fnjuww5vf2rekwce">
-      <ObjectId>734729770</ObjectId>
-      <CreatedTimestamp>2018-02-05.02:09:10.110</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-05.02:09:10.110</ModifiedTimestamp>
+      <ObjectId>1211971494</ObjectId>
+      <CreatedTimestamp>2018-02-05.14:28:03.710</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-05.14:28:03.710</ModifiedTimestamp>
       <ColNames>marka</ColNames>
-      <RefTableId>494728915</RefTableId>
+      <RefTableId>971970639</RefTableId>
       <RefSchemaName>dbo</RefSchemaName>
       <RefTableName>marka</RefTableName>
-      <RefKeyName>PK__marka__3213E83F1AA4CB24</RefKeyName>
+      <RefKeyName>PK__marka__3213E83F02C9A5B1</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <column id="64" parent="22" name="id">
@@ -348,42 +348,42 @@
       <Position>3</Position>
       <DataType>bigint|0</DataType>
     </column>
-    <index id="67" parent="22" name="PK__opieka__3213E83FE8924FE1">
+    <index id="67" parent="22" name="PK__opieka__3213E83F3782A1C7">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="68" parent="22" name="PK__opieka__3213E83FE8924FE1">
-      <ObjectId>574729200</ObjectId>
+    <key id="68" parent="22" name="PK__opieka__3213E83F3782A1C7">
+      <ObjectId>1051970924</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <CreatedTimestamp>2018-02-05.02:09:09.760</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-05.02:09:09.760</ModifiedTimestamp>
+      <CreatedTimestamp>2018-02-05.14:28:03.077</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-05.14:28:03.077</ModifiedTimestamp>
       <ColNames>id</ColNames>
-      <UnderlyingIndexName>PK__opieka__3213E83FE8924FE1</UnderlyingIndexName>
+      <UnderlyingIndexName>PK__opieka__3213E83F3782A1C7</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
     <foreign-key id="69" parent="22" name="FKt9qsd9iu817gqi9hy4gtogmpw">
-      <ObjectId>750729827</ObjectId>
-      <CreatedTimestamp>2018-02-05.02:09:10.163</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-05.02:09:10.163</ModifiedTimestamp>
+      <ObjectId>1227971551</ObjectId>
+      <CreatedTimestamp>2018-02-05.14:28:03.767</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-05.14:28:03.767</ModifiedTimestamp>
       <ColNames>pojazd</ColNames>
-      <RefTableId>590729257</RefTableId>
+      <RefTableId>1067970981</RefTableId>
       <RefSchemaName>dbo</RefSchemaName>
       <RefTableName>pojazd</RefTableName>
-      <RefKeyName>PK__pojazd__3213E83FC37560C3</RefKeyName>
+      <RefKeyName>PK__pojazd__3213E83F07147FA2</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <foreign-key id="70" parent="22" name="FK1qohtniugsrc0uaq3gq51re1h">
-      <ObjectId>766729884</ObjectId>
-      <CreatedTimestamp>2018-02-05.02:09:10.240</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-05.02:09:10.240</ModifiedTimestamp>
+      <ObjectId>1243971608</ObjectId>
+      <CreatedTimestamp>2018-02-05.14:28:03.813</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-05.14:28:03.813</ModifiedTimestamp>
       <ColNames>pracownik</ColNames>
-      <RefTableId>622729371</RefTableId>
+      <RefTableId>1099971095</RefTableId>
       <RefSchemaName>dbo</RefSchemaName>
       <RefTableName>pracownik</RefTableName>
-      <RefKeyName>PK__pracowni__3213E83FEEAB9B02</RefKeyName>
+      <RefKeyName>PK__pracowni__3213E83F81475D5D</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <column id="71" parent="23" name="id">
@@ -413,42 +413,42 @@
       <Position>6</Position>
       <DataType>bigint|0</DataType>
     </column>
-    <index id="77" parent="23" name="PK__pojazd__3213E83FC37560C3">
+    <index id="77" parent="23" name="PK__pojazd__3213E83F07147FA2">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="78" parent="23" name="PK__pojazd__3213E83FC37560C3">
-      <ObjectId>606729314</ObjectId>
+    <key id="78" parent="23" name="PK__pojazd__3213E83F07147FA2">
+      <ObjectId>1083971038</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <CreatedTimestamp>2018-02-05.02:09:09.810</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-05.02:09:09.810</ModifiedTimestamp>
+      <CreatedTimestamp>2018-02-05.14:28:03.233</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-05.14:28:03.233</ModifiedTimestamp>
       <ColNames>id</ColNames>
-      <UnderlyingIndexName>PK__pojazd__3213E83FC37560C3</UnderlyingIndexName>
+      <UnderlyingIndexName>PK__pojazd__3213E83F07147FA2</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
     <foreign-key id="79" parent="23" name="FKdkjswg3x0rk532cok49uf0xa2">
-      <ObjectId>782729941</ObjectId>
-      <CreatedTimestamp>2018-02-05.02:09:10.290</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-05.02:09:10.290</ModifiedTimestamp>
+      <ObjectId>1259971665</ObjectId>
+      <CreatedTimestamp>2018-02-05.14:28:03.870</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-05.14:28:03.870</ModifiedTimestamp>
       <ColNames>model</ColNames>
-      <RefTableId>526729029</RefTableId>
+      <RefTableId>1003970753</RefTableId>
       <RefSchemaName>dbo</RefSchemaName>
       <RefTableName>model</RefTableName>
-      <RefKeyName>PK__model__3213E83F8736D89F</RefKeyName>
+      <RefKeyName>PK__model__3213E83FBF832816</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <foreign-key id="80" parent="23" name="FK1uiq53rhiye739yni80jwp74f">
-      <ObjectId>798729998</ObjectId>
-      <CreatedTimestamp>2018-02-05.02:09:10.340</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-05.02:09:10.340</ModifiedTimestamp>
+      <ObjectId>1275971722</ObjectId>
+      <CreatedTimestamp>2018-02-05.14:28:03.923</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-05.14:28:03.923</ModifiedTimestamp>
       <ColNames>opieka</ColNames>
-      <RefTableId>558729143</RefTableId>
+      <RefTableId>1035970867</RefTableId>
       <RefSchemaName>dbo</RefSchemaName>
       <RefTableName>opieka</RefTableName>
-      <RefKeyName>PK__opieka__3213E83FE8924FE1</RefKeyName>
+      <RefKeyName>PK__opieka__3213E83F3782A1C7</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <column id="81" parent="24" name="id">
@@ -481,20 +481,20 @@
       <Position>7</Position>
       <DataType>smallint|0</DataType>
     </column>
-    <index id="88" parent="24" name="PK__pracowni__3213E83FEEAB9B02">
+    <index id="88" parent="24" name="PK__pracowni__3213E83F81475D5D">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="89" parent="24" name="PK__pracowni__3213E83FEEAB9B02">
-      <ObjectId>638729428</ObjectId>
+    <key id="89" parent="24" name="PK__pracowni__3213E83F81475D5D">
+      <ObjectId>1115971152</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <CreatedTimestamp>2018-02-05.02:09:09.860</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-05.02:09:09.860</ModifiedTimestamp>
+      <CreatedTimestamp>2018-02-05.14:28:03.400</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-05.14:28:03.400</ModifiedTimestamp>
       <ColNames>id</ColNames>
-      <UnderlyingIndexName>PK__pracowni__3213E83FEEAB9B02</UnderlyingIndexName>
+      <UnderlyingIndexName>PK__pracowni__3213E83F81475D5D</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
     <column id="90" parent="25" name="id">
@@ -571,42 +571,42 @@
       <Position>10</Position>
       <DataType>bigint|0</DataType>
     </column>
-    <index id="105" parent="26" name="PK__wypozycz__3213E83F4714E4F2">
+    <index id="105" parent="26" name="PK__wypozycz__3213E83FE4E172A5">
       <Position>1</Position>
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Clustering>1</Clustering>
       <Unique>1</Unique>
     </index>
-    <key id="106" parent="26" name="PK__wypozycz__3213E83F4714E4F2">
-      <ObjectId>670729542</ObjectId>
+    <key id="106" parent="26" name="PK__wypozycz__3213E83FE4E172A5">
+      <ObjectId>1147971266</ObjectId>
       <NameSurrogate>1</NameSurrogate>
-      <CreatedTimestamp>2018-02-05.02:09:09.910</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-05.02:09:09.910</ModifiedTimestamp>
+      <CreatedTimestamp>2018-02-05.14:28:03.450</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-05.14:28:03.450</ModifiedTimestamp>
       <ColNames>id</ColNames>
-      <UnderlyingIndexName>PK__wypozycz__3213E83F4714E4F2</UnderlyingIndexName>
+      <UnderlyingIndexName>PK__wypozycz__3213E83FE4E172A5</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
     <foreign-key id="107" parent="26" name="FKdechwln87l2fos6id2qreko3c">
-      <ObjectId>814730055</ObjectId>
-      <CreatedTimestamp>2018-02-05.02:09:10.390</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-05.02:09:10.390</ModifiedTimestamp>
+      <ObjectId>1291971779</ObjectId>
+      <CreatedTimestamp>2018-02-05.14:28:03.980</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-05.14:28:03.980</ModifiedTimestamp>
       <ColNames>pojazd</ColNames>
-      <RefTableId>590729257</RefTableId>
+      <RefTableId>1067970981</RefTableId>
       <RefSchemaName>dbo</RefSchemaName>
       <RefTableName>pojazd</RefTableName>
-      <RefKeyName>PK__pojazd__3213E83FC37560C3</RefKeyName>
+      <RefKeyName>PK__pojazd__3213E83F07147FA2</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
     <foreign-key id="108" parent="26" name="FKn7ef3525cl06sug8x57h2mn1o">
-      <ObjectId>830730112</ObjectId>
-      <CreatedTimestamp>2018-02-05.02:09:10.440</CreatedTimestamp>
-      <ModifiedTimestamp>2018-02-05.02:09:10.440</ModifiedTimestamp>
+      <ObjectId>1307971836</ObjectId>
+      <CreatedTimestamp>2018-02-05.14:28:04.033</CreatedTimestamp>
+      <ModifiedTimestamp>2018-02-05.14:28:04.033</ModifiedTimestamp>
       <ColNames>pracownik</ColNames>
-      <RefTableId>622729371</RefTableId>
+      <RefTableId>1099971095</RefTableId>
       <RefSchemaName>dbo</RefSchemaName>
       <RefTableName>pracownik</RefTableName>
-      <RefKeyName>PK__pracowni__3213E83FEEAB9B02</RefKeyName>
+      <RefKeyName>PK__pracowni__3213E83F81475D5D</RefKeyName>
       <RefColNames>id</RefColNames>
     </foreign-key>
   </database-model>

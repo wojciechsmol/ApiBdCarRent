@@ -103,6 +103,38 @@ public class PojazdServiceImpl implements PojazdService {
     }
 
     @Override
+    public Pojazd updatePojazd(Long pojazdId, PojazdDto pojazdDetails){
+
+        if(!mPojazdRepository.exists(pojazdId))
+            return null;
+
+        Pojazd pojazd = mPojazdRepository.findOne(pojazdId);
+
+        if(pojazdDetails.getIdOpiekuna() != null && pojazdDetails.getIdOpiekuna() != pojazd.getOpieka().getPracownik().getId()) {
+            Opieka opieka = pojazd.getOpieka();
+            pojazd.setOpieka(null);
+            opieka.getPracownik().getOpieki().remove(opieka);
+            mPracownikRepository.save(opieka.getPracownik());
+            mPojazdRepository.save(pojazd);
+            mOpiekaRepository.delete(opieka);
+
+            opieka = new Opieka(mPracownikRepository.findOne(pojazdDetails.getIdOpiekuna()), pojazd);
+            mOpiekaRepository.save(opieka);
+            opieka.getPracownik().getOpieki().add(opieka);
+            mPracownikRepository.save(opieka.getPracownik());
+
+
+            pojazd.setOpieka(opieka);
+            mPojazdRepository.save(pojazd);
+        }
+        if(pojazdDetails.getStatus() != null){
+            pojazd.setStatus(pojazdDetails.getStatus());
+        }
+
+        return pojazd;
+    }
+
+    @Override
     public PojazdDto convertToDto(Pojazd pojazd) {
 
         PojazdDto pojazdDto = mModelMapper.map(pojazd, PojazdDto.class);

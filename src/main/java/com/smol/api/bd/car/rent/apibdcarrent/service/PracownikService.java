@@ -14,5 +14,6 @@ public interface PracownikService {
     boolean deletePracownik(Long pracownikId);
     Pracownik getPracownik(Long pracownikId);
     PracownikDto convertToDto(Pracownik pracownik);
+    List<Pracownik> getAllOpiekuni();
     Pracownik convertFromDto(PracownikDto pracownikDto);
 }
