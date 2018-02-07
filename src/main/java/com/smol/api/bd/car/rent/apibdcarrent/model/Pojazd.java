@@ -57,6 +57,8 @@ public class Pojazd {
     @JsonBackReference
     private List<CzynnoscEksploatacyjna> czynnosciEksploatacyjne;
 
+
+
     public Pojazd() {
     }
 
@@ -178,4 +180,5 @@ public class Pojazd {
     public boolean isAvailable(){
         return status == statusPojazdu.SPRAWNY;
     }
+
 }

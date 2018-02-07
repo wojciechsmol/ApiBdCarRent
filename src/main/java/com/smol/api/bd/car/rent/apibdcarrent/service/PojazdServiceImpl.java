@@ -41,9 +41,6 @@ public class PojazdServiceImpl implements PojazdService {
     @Override
     public List<Pojazd> getAllPojazdy() {
         List<Pojazd> pojazdy = new ArrayList<>();
-        Pojazd pojazd = mPojazdRepository.findOne(Long.parseLong("2"));
-        Model model = mModelRepository.findOne(Long.valueOf(1));
-
         mPojazdRepository.findAll().forEach(pojazdy::add);
         return pojazdy;
 

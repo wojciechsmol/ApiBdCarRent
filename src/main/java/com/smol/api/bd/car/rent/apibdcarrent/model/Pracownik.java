@@ -49,6 +49,10 @@ public class Pracownik {
     @JsonProperty("status_zatrudnienia")
     private StatusZatrudnienia statusZatrudnienia;
 
+    @OneToMany(mappedBy = "pojazd")
+    @JsonBackReference
+    private List<CzynnoscEksploatacyjna> czynnosciEksploatacyjne;
+
     @Enumerated
     @Column(columnDefinition = "smallint")
     private Rola rola;
@@ -57,16 +61,17 @@ public class Pracownik {
     }
 
 
-    public Pracownik(String pesel, String imie, String nazwisko, LocalDate dataUrodzenia, StatusZatrudnienia statusZatrudnienia, Rola rola) {
+    public Pracownik(String pesel, String imie, String nazwisko, LocalDate dataUrodzenia, StatusZatrudnienia statusZatrudnienia, Rola rola, List<CzynnoscEksploatacyjna> czynnosciEksploatacyjne) {
         this.pesel = pesel;
         this.imie = imie;
         this.nazwisko = nazwisko;
         this.dataUrodzenia = dataUrodzenia;
         this.statusZatrudnienia = statusZatrudnienia;
         this.rola = rola;
+        this.czynnosciEksploatacyjne = czynnosciEksploatacyjne;
     }
 
-    public Pracownik(String pesel, String imie, String nazwisko, LocalDate dataUrodzenia, List<Wypozyczenie> wypozyczenia, List<Opieka> opieki, StatusZatrudnienia statusZatrudnienia, Rola rola) {
+    public Pracownik(String pesel, String imie, String nazwisko, LocalDate dataUrodzenia, List<Wypozyczenie> wypozyczenia, List<Opieka> opieki, StatusZatrudnienia statusZatrudnienia, List<CzynnoscEksploatacyjna> czynnosciEksploatacyjne, Rola rola) {
         this.pesel = pesel;
         this.imie = imie;
         this.nazwisko = nazwisko;
@@ -74,6 +79,7 @@ public class Pracownik {
         this.wypozyczenia = wypozyczenia;
         this.opieki = opieki;
         this.statusZatrudnienia = statusZatrudnienia;
+        this.czynnosciEksploatacyjne = czynnosciEksploatacyjne;
         this.rola = rola;
     }
 
@@ -147,5 +153,13 @@ public class Pracownik {
 
     public void setRola(Rola rola) {
         this.rola = rola;
+    }
+
+    public List<CzynnoscEksploatacyjna> getCzynnosciEksploatacyjne() {
+        return czynnosciEksploatacyjne;
+    }
+
+    public void setCzynnosciEksploatacyjne(List<CzynnoscEksploatacyjna> czynnosciEksploatacyjne) {
+        this.czynnosciEksploatacyjne = czynnosciEksploatacyjne;
     }
 }

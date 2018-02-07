@@ -36,6 +36,7 @@ public class ModelServiceImpl implements ModelService {
 
         Model model = mModelMapper.map(modelDto, Model.class);
         model.setMarka(mMarkaService.convertFromDto(pojazdDto.getMarka()));
+
         Marka marka = model.getMarka();
         if (marka.getModele() == null)
             marka.setModele(new ArrayList<>());

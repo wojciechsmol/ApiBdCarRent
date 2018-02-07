@@ -48,8 +48,6 @@ public class PracownikServiceImpl implements PracownikService {
         if (!pracownikRepository.exists(pracownikId)) {
             return null;
         }
-
-        //TU TRZEBA ZROBIc USUWANIE WYPOZYCZEN ORAZ OPIEK ITD.
         Pracownik pracownik = pracownikRepository.findOne(pracownikId);
 
         if(pracownikDetails.getDataUrodzenia() != null)
@@ -108,6 +106,7 @@ public class PracownikServiceImpl implements PracownikService {
         Pracownik pracownik = convertFromDto(pracownikDto);
         pracownik.setWypozyczenia(new ArrayList<>());
         pracownik.setOpieki(new ArrayList<>());
+        pracownik.setCzynnosciEksploatacyjne(new ArrayList<>());
         pracownikRepository.save(pracownik);
 
         return pracownik;

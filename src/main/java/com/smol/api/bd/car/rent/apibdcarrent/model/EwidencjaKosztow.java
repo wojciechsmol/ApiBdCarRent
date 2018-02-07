@@ -20,6 +20,9 @@ public class EwidencjaKosztow {
     @Column(columnDefinition = "date")
     private LocalDate data;
 
+    @JsonProperty("cena")
+    private int cena;
+
     @ManyToOne(fetch=FetchType.LAZY)
     @JsonManagedReference
     private Pojazd pojazd;
@@ -33,8 +36,9 @@ public class EwidencjaKosztow {
     public EwidencjaKosztow() {
     }
 
-    public EwidencjaKosztow(LocalDate data, Pojazd pojazd, Long idKierowcy, String nazwaCzynnosci) {
+    public EwidencjaKosztow(LocalDate data, int cena, Pojazd pojazd, Long idKierowcy, String nazwaCzynnosci) {
         this.data = data;
+        this.cena = cena;
         this.pojazd = pojazd;
         this.idKierowcy = idKierowcy;
         this.nazwaCzynnosci = nazwaCzynnosci;
@@ -78,5 +82,13 @@ public class EwidencjaKosztow {
 
     public void setNazwaCzynnosci(String nazwaCzynnosci) {
         this.nazwaCzynnosci = nazwaCzynnosci;
+    }
+
+    public int getCena() {
+        return cena;
+    }
+
+    public void setCena(int cena) {
+        this.cena = cena;
     }
 }

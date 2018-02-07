@@ -11,7 +11,7 @@ public class CzynnoscEksploatacyjnaDto {
     private Long id;
 
     @JsonProperty("nazwa")
-    private CzynnoscEksploatacyjna.rodzajCzynnoscEksploatacyjnej mRodzajCzynnoscEksploatacyjnej;
+    private String nazwa;
 
     @JsonProperty("data")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd.MM.yyyy")
@@ -29,9 +29,9 @@ public class CzynnoscEksploatacyjnaDto {
     public CzynnoscEksploatacyjnaDto() {
     }
 
-    public CzynnoscEksploatacyjnaDto(Long id, CzynnoscEksploatacyjna.rodzajCzynnoscEksploatacyjnej rodzajCzynnoscEksploatacyjnej, LocalDate data, int cena, Long idPojazdu, Long idPracownika) {
+    public CzynnoscEksploatacyjnaDto(Long id, String nazwa, LocalDate data, int cena, Long idPojazdu, Long idPracownika) {
         this.id = id;
-        mRodzajCzynnoscEksploatacyjnej = rodzajCzynnoscEksploatacyjnej;
+        this.nazwa = nazwa;
         this.data = data;
         this.cena = cena;
         this.idPojazdu = idPojazdu;
@@ -42,8 +42,8 @@ public class CzynnoscEksploatacyjnaDto {
         return id;
     }
 
-    public CzynnoscEksploatacyjna.rodzajCzynnoscEksploatacyjnej getRodzajCzynnoscEksploatacyjnej() {
-        return mRodzajCzynnoscEksploatacyjnej;
+    public String getNazwa() {
+        return nazwa;
     }
 
     public LocalDate getData() {
@@ -62,8 +62,8 @@ public class CzynnoscEksploatacyjnaDto {
         this.id = id;
     }
 
-    public void setRodzajCzynnoscEksploatacyjnej(CzynnoscEksploatacyjna.rodzajCzynnoscEksploatacyjnej rodzajCzynnoscEksploatacyjnej) {
-        mRodzajCzynnoscEksploatacyjnej = rodzajCzynnoscEksploatacyjnej;
+    public void setNazwa(String nazwa) {
+        this.nazwa = nazwa;
     }
 
     public void setData(LocalDate data) {

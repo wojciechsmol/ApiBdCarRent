@@ -11,7 +11,7 @@ public class CzynnoscSerwisowaDto {
     private Long id;
 
     @JsonProperty("nazwa")
-    private CzynnoscSerwisowa.rodzajCzynnosciSerwisowej mRodzajCzynnosciSerwisowej;
+    private String nazwa;
 
     @JsonProperty("data")
     @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd.MM.yyyy")
@@ -23,28 +23,25 @@ public class CzynnoscSerwisowaDto {
     @JsonProperty("id_pojazdu")
     private Long idPojazdu;
 
-    @JsonProperty("id_pracownika")
-    private  Long idPracownika;
 
 
     public CzynnoscSerwisowaDto() {
     }
 
-    public CzynnoscSerwisowaDto(Long id, CzynnoscSerwisowa.rodzajCzynnosciSerwisowej rodzajCzynnosciSerwisowej, LocalDate data, int cena, Long idPojazdu, Long idPracownika) {
+    public CzynnoscSerwisowaDto(Long id, String nazwa, LocalDate data, int cena, Long idPojazdu) {
         this.id = id;
-        mRodzajCzynnosciSerwisowej = rodzajCzynnosciSerwisowej;
+        this.nazwa = nazwa;
         this.data = data;
         this.cena = cena;
         this.idPojazdu = idPojazdu;
-        this.idPracownika = idPracownika;
     }
 
     public Long getId() {
         return id;
     }
 
-    public CzynnoscSerwisowa.rodzajCzynnosciSerwisowej getRodzajCzynnosciSerwisowej() {
-        return mRodzajCzynnosciSerwisowej;
+    public String getNazwa() {
+        return nazwa;
     }
 
     public LocalDate getData() {
@@ -63,8 +60,8 @@ public class CzynnoscSerwisowaDto {
         this.id = id;
     }
 
-    public void setRodzajCzynnosciSerwisowej(CzynnoscSerwisowa.rodzajCzynnosciSerwisowej rodzajCzynnosciSerwisowej) {
-        mRodzajCzynnosciSerwisowej = rodzajCzynnosciSerwisowej;
+    public void setNazwa(String nazwa) {
+        this.nazwa = nazwa;
     }
 
     public void setData(LocalDate data) {
@@ -79,11 +76,4 @@ public class CzynnoscSerwisowaDto {
         this.idPojazdu = idPojazdu;
     }
 
-    public Long getIdPracownika() {
-        return idPracownika;
-    }
-
-    public void setIdPracownika(Long idPracownika) {
-        this.idPracownika = idPracownika;
-    }
 }

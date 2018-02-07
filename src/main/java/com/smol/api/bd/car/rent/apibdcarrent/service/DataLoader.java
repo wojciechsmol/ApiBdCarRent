@@ -34,13 +34,13 @@ public class DataLoader implements ApplicationRunner {
 
     private void loadData(){
 
-        Pracownik prac1 = new Pracownik("18121115224", "Krzysiek", "Kowalski", java.time.LocalDate.of(1971, 10, 4), Pracownik.StatusZatrudnienia.PRACUJE, Pracownik.Rola.OPIEKUN);
+        Pracownik prac1 = new Pracownik("18121115224", "Krzysiek", "Kowalski", java.time.LocalDate.of(1971, 10, 4), Pracownik.StatusZatrudnienia.PRACUJE, Pracownik.Rola.OPIEKUN, new ArrayList<>());
         pracownikRepository.save(prac1);
 
-        Pracownik prac2 = new Pracownik("95063468245", "Jacek", "Nowak", java.time.LocalDate.of(1994, 7, 3), Pracownik.StatusZatrudnienia.PRACUJE, Pracownik.Rola.KIEROWCA);
+        Pracownik prac2 = new Pracownik("95063468245", "Jacek", "Nowak", java.time.LocalDate.of(1994, 7, 3), Pracownik.StatusZatrudnienia.PRACUJE, Pracownik.Rola.KIEROWCA, new ArrayList<>());
         pracownikRepository.save(prac2);
 
-        Pracownik prac3 = new Pracownik("74859375847", "Piotr", "Kłosowski", java.time.LocalDate.of(1923, 8, 2),  Pracownik.StatusZatrudnienia.PRACUJE, Pracownik.Rola.OPIEKUN);
+        Pracownik prac3 = new Pracownik("74859375847", "Piotr", "Kłosowski", java.time.LocalDate.of(1923, 8, 2),  Pracownik.StatusZatrudnienia.PRACUJE, Pracownik.Rola.OPIEKUN, new ArrayList<>());
         pracownikRepository.save(prac3);
 
 
@@ -63,7 +63,7 @@ public class DataLoader implements ApplicationRunner {
         Pojazd pojazd2 = new Pojazd("DFE34", 3344, Pojazd.statusPojazdu.SPRAWNY, corsa);
         mPojazdRepository.save(pojazd2);
 
-        Opieka opieka2 = new Opieka(prac3, pojazd2);
+        Opieka opieka2 = new Opieka(prac1, pojazd2);
         mOpiekaRepository.save(opieka2);
 
         corsa1 = mPojazdRepository.findOne(pojazd2.getId());
