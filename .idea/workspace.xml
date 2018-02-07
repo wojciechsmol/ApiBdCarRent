@@ -2,37 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5c1e768f-eeec-4ed1-a149-31e0577e4b10" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/controller/CzynnoscEksploatacyjnaController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/controller/CzynnoscSerwisowaController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/repository/CzynnoscEksploatacyjnaRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/repository/CzynnoscSerwisowaRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/repository/EwidencjaKosztowRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/CzynnoscEksploatacyjnaService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/CzynnoscEksploatacyjnaServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/CzynnoscSerwisowaService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/CzynnoscSerwisowaServiceImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/EwidencjaKosztowService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/EwidencjaKosztowServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscEksploatacyjna.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscEksploatacyjna.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscEksploatacyjnaDto.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscEksploatacyjnaDto.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/model/Pojazd.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/model/Pojazd.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/model/Pracownik.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/model/Pracownik.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/service/DataLoader.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/service/DataLoader.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/service/ModelServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/service/ModelServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/service/PojazdServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/service/PojazdServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/service/PracownikServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/com/smol/api/bd/car/rent/apibdcarrent/service/PracownikServiceImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/6e415450-92c4-4a3e-b1da-abc691d0b1cd.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/6e415450-92c4-4a3e-b1da-abc691d0b1cd.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/WydatekMiesiecznyDto.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscEksploatacyjna.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscEksploatacyjna.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscEksploatacyjnaDto.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscEksploatacyjnaDto.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscSerwisowaDto.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscSerwisowaDto.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/EwidencjaKosztow.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/EwidencjaKosztow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/Pojazd.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/Pojazd.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/Pracownik.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/Pracownik.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/DataLoader.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/DataLoader.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/ModelServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/ModelServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/PojazdServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/PojazdServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/PracownikServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/PracownikServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/CzynnoscEksploatacyjnaServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/CzynnoscEksploatacyjnaServiceImpl.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -72,60 +46,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file leaf-file-name="CzynnoscSerwisowaController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/controller/CzynnoscSerwisowaController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="17" column="55" lean-forward="true" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CzynnoscEksploatacyjnaController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/controller/CzynnoscEksploatacyjnaController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="28" column="53" lean-forward="false" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CzynnoscSerwisowaServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/CzynnoscSerwisowaServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CzynnoscSerwisowa.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscSerwisowa.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="36" column="26" lean-forward="true" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CzynnoscSerwisowaRepository.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/repository/CzynnoscSerwisowaRepository.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="EwidencjaKosztowServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/EwidencjaKosztowServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -138,11 +58,79 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ewidencja_kosztow" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ewidencja_kosztow" pinned="false" current-in-tab="false">
         <entry file="das://table:/d6e3a673/6e415450-92c4-4a3e-b1da-abc691d0b1cd/api-bd.dbo.ewidencja_kosztow">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WydatekMiesiecznyDto.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/WydatekMiesiecznyDto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CzynnoscEksploatacyjnaController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/controller/CzynnoscEksploatacyjnaController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CzynnoscEksploatacyjnaServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/CzynnoscEksploatacyjnaServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CzynnoscEksploatacyjnaDto.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscEksploatacyjnaDto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="203">
+              <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="68" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CzynnoscSerwisowaDto.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscSerwisowaDto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="16" column="68" lean-forward="false" selection-start-line="16" selection-start-column="68" selection-end-line="16" selection-end-column="68" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WypozyczenieDto.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/WypozyczenieDto.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="74" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -168,22 +156,6 @@
               <caret line="5" column="17" lean-forward="false" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CzynnoscSerwisowaDto.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscSerwisowaDto.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1103">
-              <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#931#932#0" expanded="true" />
-                <element signature="e#959#960#0" expanded="true" />
-                <element signature="e#1245#1246#0" expanded="true" />
-                <element signature="e#1279#1280#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -245,7 +217,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/ModelService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/data.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/Wypozyczenie.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/WypozyczenieDto.java" />
@@ -286,16 +257,17 @@
         <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/ModelServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/CzynnoscEksploatacyjnaService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/PojazdServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscEksploatacyjnaDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/CzynnoscSerwisowaService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/CzynnoscEksploatacyjnaServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscSerwisowaDto.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/EwidencjaKosztowService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/CzynnoscSerwisowaServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/controller/CzynnoscEksploatacyjnaController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/controller/CzynnoscSerwisowaController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/EwidencjaKosztow.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/EwidencjaKosztowServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/WydatekMiesiecznyDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/CzynnoscEksploatacyjnaServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscEksploatacyjnaDto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscSerwisowaDto.java" />
       </list>
     </option>
   </component>
@@ -634,12 +606,12 @@
       <workItem from="1517434772211" duration="7910000" />
       <workItem from="1517677411809" duration="53397000" />
       <workItem from="1517776055859" duration="3530000" />
-      <workItem from="1517779887365" duration="54004000" />
+      <workItem from="1517779887365" duration="56190000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="198218000" />
+    <option name="totallyTimeSpent" value="200404000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -670,7 +642,7 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30995107" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="1931" y="31" width="511" height="868" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2055465" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2055465" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938388" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -738,8 +710,14 @@
           <properties />
           <option name="timeStamp" value="67" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/controller/CzynnoscEksploatacyjnaController.java</url>
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="68" />
+      <option name="time" value="69" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="SpringBootApplicationConfigurationType">
@@ -748,20 +726,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://table:/d6e3a673/6e415450-92c4-4a3e-b1da-abc691d0b1cd/api-bd.dbo.wypozyczenie">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/d6e3a673/6e415450-92c4-4a3e-b1da-abc691d0b1cd/api-bd.dbo.wypozyczenie">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://table:/d6e3a673/6e415450-92c4-4a3e-b1da-abc691d0b1cd/api-bd.dbo.wypozyczenie">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -969,20 +933,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscEksploatacyjnaDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="55" column="0" lean-forward="false" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1072#1073#0" expanded="true" />
-            <element signature="e#1100#1101#0" expanded="true" />
-            <element signature="e#1386#1387#0" expanded="true" />
-            <element signature="e#1420#1421#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscEksploatacyjna.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="350">
@@ -1049,26 +999,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/CzynnoscEksploatacyjnaServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1157">
-          <caret line="92" column="76" lean-forward="false" selection-start-line="92" selection-start-column="76" selection-end-line="92" selection-end-column="76" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/controller/CzynnoscEksploatacyjnaController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="28" column="53" lean-forward="false" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/controller/CzynnoscSerwisowaController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="332">
@@ -1091,28 +1021,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="36" column="26" lean-forward="true" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscSerwisowaDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1103">
-          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#931#932#0" expanded="true" />
-            <element signature="e#959#960#0" expanded="true" />
-            <element signature="e#1245#1246#0" expanded="true" />
-            <element signature="e#1279#1280#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.13.RELEASE/spring-web-4.3.13.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1168,6 +1076,70 @@
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
           <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/WydatekMiesiecznyDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.13.RELEASE/spring-web-4.3.13.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/controller/CzynnoscEksploatacyjnaController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/service/CzynnoscEksploatacyjnaServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/WypozyczenieDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="14" column="4" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="74" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscEksploatacyjnaDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="16" column="4" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/smol/api/bd/car/rent/apibdcarrent/model/CzynnoscSerwisowaDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="68" lean-forward="false" selection-start-line="16" selection-start-column="68" selection-end-line="16" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

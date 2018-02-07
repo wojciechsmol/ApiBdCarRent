@@ -67,6 +67,7 @@ public class CzynnoscEksploatacyjnaServiceImpl implements CzynnoscEksploatacyjna
         Pojazd pojazd = mPojazdRepository.findOne(czynnoscEksploatacyjnaDto.getIdPojazdu());
         czynnoscEksploatacyjna.setPojazd(pojazd);
 
+
         if(!mPracownikRepository.exists(czynnoscEksploatacyjnaDto.getIdPracownika()))
             return null;
 
