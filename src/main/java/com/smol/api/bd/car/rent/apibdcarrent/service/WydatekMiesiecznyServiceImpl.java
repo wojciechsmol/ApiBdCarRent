@@ -3,11 +3,14 @@ package com.smol.api.bd.car.rent.apibdcarrent.service;
 import com.smol.api.bd.car.rent.apibdcarrent.model.EwidencjaKosztow;
 import com.smol.api.bd.car.rent.apibdcarrent.model.WydatekDto;
 import com.smol.api.bd.car.rent.apibdcarrent.model.WydatekMiesiecznyDto;
+import com.smol.api.bd.car.rent.apibdcarrent.model.WydatekWMiesiacuDto;
 import com.smol.api.bd.car.rent.apibdcarrent.repository.EwidencjaKosztowRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 @Service
@@ -80,33 +83,76 @@ public class WydatekMiesiecznyServiceImpl implements WydatekMiesiecznyService {
 
 
     @Override
+    public List<WydatekWMiesiacuDto> getWszystkieWydatkiWMiesiacu() {
+
+        List<EwidencjaKosztow> koszty = new ArrayList<>();
+        mEwidencjaKosztowRepository.findAll().forEach(koszty::add);
+
+        List<WydatekWMiesiacuDto> wszystkieWydatki = new ArrayList<>();
+        int index;
+
+        for (EwidencjaKosztow koszt : koszty) {
+
+            index = getWydatekWMiesiacuIndex(koszt.getData().getYear(), getMonthFromInt(koszt.getData().getMonthValue()), wszystkieWydatki);
+            if(index >= 0){
+                WydatekWMiesiacuDto wydatekWMiesiacu = wszystkieWydatki.get(index);
+                wydatekWMiesiacu.setCena(wydatekWMiesiacu.getCena() + koszt.getCena());
+            }
+            else if(index == -1)
+                wszystkieWydatki.add(new WydatekWMiesiacuDto(koszt.getData().getYear(), getMonthFromInt(koszt.getData().getMonthValue()), koszt.getCena(), koszt.getData()));
+        }
+
+//        wszystkieWydatki.sort(new Comparator<WydatekWMiesiacuDto>() {
+//            public int compare(WydatekWMiesiacuDto w1, WydatekWMiesiacuDto w2) {
+//                return w1.getData().compareTo(w2.getData());
+//            }
+//        });
+
+        wszystkieWydatki.sort(Comparator.comparing(w -> w.getData()));
+
+        return wszystkieWydatki;
+    }
+
+    @Override
+    public int getWydatekWMiesiacuIndex(int rok, String miesiac, List<WydatekWMiesiacuDto> wszystkieWydatki) {
+        for (WydatekWMiesiacuDto wydatek : wszystkieWydatki) {
+            if (wydatek.getRok() == rok && wydatek.getMiesiac().equals(miesiac))
+                return wszystkieWydatki.indexOf(wydatek);
+        }
+        return -1;
+    }
+
+
+    @Override
     public String getMonthFromInt(int miesiac) {
         switch (miesiac) {
             case 1:
-                return "styczeń";
+                return "Styczeń";
             case 2:
-                return "luty";
+                return "Luty";
             case 3:
-                return "marzec";
+                return "Marzec";
             case 4:
-                return "kwiecień";
+                return "Kwiecień";
             case 5:
-                return "maj";
+                return "Maj";
             case 6:
-                return "czerwiec";
+                return "Czerwiec";
             case 7:
-                return "lipiec";
+                return "Lipiec";
             case 8:
-                return "sierpień";
+                return "Sierpień";
             case 9:
-                return "wrzesień";
+                return "Wrzesień";
             case 10:
-                return "październik";
+                return "Październik";
             case 11:
-                return "listopad";
+                return "Listopad";
             case 12:
-                return "grudzień";
+                return "Grudzień";
         }
         return "";
     }
+
+
 }
