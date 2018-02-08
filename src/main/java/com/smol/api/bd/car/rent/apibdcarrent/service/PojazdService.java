@@ -20,6 +20,8 @@ public interface PojazdService {
 
     Pojazd updatePojazd(Long pojazdId, PojazdDto pojazdDetails);
 
+    List<Pojazd> getAllPojazdyWNaprawie();
+
     PojazdDto convertToDto(Pojazd pojazd);
 
     Pojazd convertFromDto(PojazdDto pojazdDto);

@@ -64,4 +64,11 @@ public class PojazdController {
         return ResponseEntity.ok(mPojazdService.convertToDto(pojazd));
     }
 
+    @GetMapping("/wNaprawie")
+    public List<PojazdDto> getAllPojazdyWNaprawie(){
+        return mPojazdService.getAllPojazdyWNaprawie().stream()
+                .map(pojazd -> mPojazdService.convertToDto(pojazd))
+                .collect(Collectors.toList());
+    }
+
 }

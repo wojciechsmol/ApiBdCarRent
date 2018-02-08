@@ -166,6 +166,29 @@ public class PojazdServiceImpl implements PojazdService {
     }
 
     @Override
+    public List<Pojazd> getAllPojazdyWNaprawie() {
+        //Save all the pojazdy to the list
+        List<Pojazd> allPojazdyWNaprawie = getAllPojazdy();
+
+        boolean isWNaprawie;
+
+        //check all the pojazdy
+        for (Iterator<Pojazd> i = allPojazdyWNaprawie.iterator(); i.hasNext(); ) {
+            Pojazd pojazd = i.next();
+            isWNaprawie = false;
+
+            if (pojazd.repairing())
+                isWNaprawie = true;
+
+
+            if (!isWNaprawie)
+                i.remove();
+        }
+
+        return allPojazdyWNaprawie;
+    }
+
+    @Override
     public PojazdDto convertToDto(Pojazd pojazd) {
 
         PojazdDto pojazdDto = mModelMapper.map(pojazd, PojazdDto.class);

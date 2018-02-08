@@ -180,4 +180,6 @@ public class Pojazd {
         return status == statusPojazdu.SPRAWNY;
     }
 
+    public boolean repairing() {return status == statusPojazdu.W_NAPRAWIE;}
+
 }
