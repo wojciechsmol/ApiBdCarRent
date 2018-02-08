@@ -7,4 +7,5 @@ import java.util.List;
 public interface WydatekKierowcyService {
 
     WydatekKierowcyDto getWydatekKierowcy(Long idKierowcy);
+    List<WydatekKierowcyDto> getAllWydatkiKierowcy();
 }

@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RequestMapping("/wydatkiKierowcy")
 @RestController
 public class WydatkiKierowcyController {
@@ -20,8 +22,14 @@ public class WydatkiKierowcyController {
         mWydatekKierowcyService = wydatekKierowcyService;
     }
 
-    @GetMapping("")
+    @GetMapping("/kierowca")
     public ResponseEntity<WydatekKierowcyDto> getWydatekKierowcy(@RequestParam("id_kierowcy") Long idKierowcy) {
         return ResponseEntity.ok(mWydatekKierowcyService.getWydatekKierowcy(idKierowcy));
     }
+
+    @GetMapping("")
+    public List<WydatekKierowcyDto> getAllWydatkiKierowcy() {
+        return mWydatekKierowcyService.getAllWydatkiKierowcy();
+    }
+
 }
