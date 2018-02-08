@@ -22,6 +22,8 @@ public interface PojazdService {
 
     List<Pojazd> getAllPojazdyWNaprawie();
 
+    List<Pojazd> getAllSprawnePojazdy();
+
     PojazdDto convertToDto(Pojazd pojazd);
 
     Pojazd convertFromDto(PojazdDto pojazdDto);

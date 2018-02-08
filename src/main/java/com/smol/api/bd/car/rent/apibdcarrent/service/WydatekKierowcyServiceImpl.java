@@ -53,6 +53,7 @@ public class WydatekKierowcyServiceImpl implements WydatekKierowcyService {
 
         for (Pracownik pracownik : pracownicy) {
 
+            if (pracownik.getRola() == Pracownik.Rola.KIEROWCA)
             wydatkiKierowcy.add(getWydatekKierowcy(pracownik.getId()));
         }
 

@@ -71,4 +71,11 @@ public class PojazdController {
                 .collect(Collectors.toList());
     }
 
+    @GetMapping("/sprawne")
+    public List<PojazdDto> gettAllSprawnePojazdy(){
+        return mPojazdService.getAllSprawnePojazdy().stream()
+                .map(pojazd -> mPojazdService.convertToDto(pojazd))
+                .collect(Collectors.toList());
+    }
+
 }
