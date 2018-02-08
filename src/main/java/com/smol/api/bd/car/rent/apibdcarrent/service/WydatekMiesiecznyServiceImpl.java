@@ -90,25 +90,34 @@ public class WydatekMiesiecznyServiceImpl implements WydatekMiesiecznyService {
 
         List<WydatekWMiesiacuDto> wszystkieWydatki = new ArrayList<>();
         int index;
+        List<Integer> yearsToHandle = new ArrayList<>();
 
         for (EwidencjaKosztow koszt : koszty) {
 
             index = getWydatekWMiesiacuIndex(koszt.getData().getYear(), getMonthFromInt(koszt.getData().getMonthValue()), wszystkieWydatki);
-            if(index >= 0){
+            if (index >= 0) {
                 WydatekWMiesiacuDto wydatekWMiesiacu = wszystkieWydatki.get(index);
                 wydatekWMiesiacu.setCena(wydatekWMiesiacu.getCena() + koszt.getCena());
+            } else if (index == -1) {
+                WydatekWMiesiacuDto wydatekWMiesiacu = new WydatekWMiesiacuDto(koszt.getData().getYear(), getMonthFromInt(koszt.getData().getMonthValue()), koszt.getCena(), koszt.getData());
+                wszystkieWydatki.add(wydatekWMiesiacu);
+
+                if (!yearsToHandle.contains(wydatekWMiesiacu.getRok()))
+                    yearsToHandle.add(wydatekWMiesiacu.getRok());
             }
-            else if(index == -1)
-                wszystkieWydatki.add(new WydatekWMiesiacuDto(koszt.getData().getYear(), getMonthFromInt(koszt.getData().getMonthValue()), koszt.getCena(), koszt.getData()));
         }
 
-//        wszystkieWydatki.sort(new Comparator<WydatekWMiesiacuDto>() {
-//            public int compare(WydatekWMiesiacuDto w1, WydatekWMiesiacuDto w2) {
-//                return w1.getData().compareTo(w2.getData());
-//            }
-//        });
+        for (int year : yearsToHandle){
+            for(int i=1; i <=12; i++){
+                int indexHelp = getWydatekWMiesiacuIndex(year, getMonthFromInt(i), wszystkieWydatki);
+                if (indexHelp == -1){
+                    wszystkieWydatki.add(new WydatekWMiesiacuDto(year, getMonthFromInt(i), 0, LocalDate.of(year, i, 1)));
+                }
+            }
+        }
 
-        wszystkieWydatki.sort(Comparator.comparing(w -> w.getData()));
+
+            wszystkieWydatki.sort(Comparator.comparing(w -> w.getData()));
 
         return wszystkieWydatki;
     }
@@ -121,6 +130,8 @@ public class WydatekMiesiecznyServiceImpl implements WydatekMiesiecznyService {
         }
         return -1;
     }
+
+
 
 
     @Override
