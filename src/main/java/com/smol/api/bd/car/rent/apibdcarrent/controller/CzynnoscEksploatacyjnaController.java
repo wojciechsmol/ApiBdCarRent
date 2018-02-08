@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 @RestController
 public class CzynnoscEksploatacyjnaController {
 
-    CzynnoscEksploatacyjnaService mCzynnoscEksploatacyjnaService;
+    private CzynnoscEksploatacyjnaService mCzynnoscEksploatacyjnaService;
 
     @Autowired
     public CzynnoscEksploatacyjnaController(CzynnoscEksploatacyjnaService czynnoscEksploatacyjnaService) {
@@ -31,7 +31,7 @@ public class CzynnoscEksploatacyjnaController {
     }
 
     @GetMapping("")
-    public List<CzynnoscEksploatacyjnaDto> getAllCzynnosciEksploatacyjne(){
+    public List<CzynnoscEksploatacyjnaDto> getAllCzynnosciEksploatacyjne() {
         return mCzynnoscEksploatacyjnaService.getAllCzynnosciEksploatacyjne().stream()
                 .map(czynnoscEksploatacyjna -> mCzynnoscEksploatacyjnaService.convertToDto(czynnoscEksploatacyjna))
                 .collect(Collectors.toList());

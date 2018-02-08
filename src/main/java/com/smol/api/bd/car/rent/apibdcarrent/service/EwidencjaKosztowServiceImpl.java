@@ -10,9 +10,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class EwidencjaKosztowServiceImpl implements EwidencjaKosztowService {
 
-    EwidencjaKosztowRepository mEwidencjaKosztowRepository;
-    PojazdRepository mPojazdRepository;
-    PracownikRepository mPracownikRepository;
+    private EwidencjaKosztowRepository mEwidencjaKosztowRepository;
+    private PojazdRepository mPojazdRepository;
+    private PracownikRepository mPracownikRepository;
 
     @Autowired
     public EwidencjaKosztowServiceImpl(EwidencjaKosztowRepository ewidencjaKosztowRepository, PojazdRepository pojazdRepository, PracownikRepository pracownikRepository) {
@@ -39,7 +39,7 @@ public class EwidencjaKosztowServiceImpl implements EwidencjaKosztowService {
     public boolean createEwidencjaKosztowWithCzynnoscSerwisowa(CzynnoscSerwisowa czynnoscSerwisowa) {
         EwidencjaKosztow ewidencjaKosztow = new EwidencjaKosztow(czynnoscSerwisowa.getData(), czynnoscSerwisowa.getCena(), czynnoscSerwisowa.getPojazd(), null, czynnoscSerwisowa.getRodzajCzynnosciSerwisowej().toString());
 
-        if(ewidencjaKosztow != null) {
+        if (ewidencjaKosztow != null) {
             Pojazd pojazd = czynnoscSerwisowa.getPojazd();
             pojazd.getEwidencjeKosztow().add(ewidencjaKosztow);
             mPojazdRepository.save(pojazd);

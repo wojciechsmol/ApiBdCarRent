@@ -7,5 +7,6 @@ import com.smol.api.bd.car.rent.apibdcarrent.model.PojazdDto;
 public interface ModelService {
 
     ModelDto convertToDto(Model model);
+
     Model convertFromDto(ModelDto modelDto, PojazdDto pojazdDto);
 }

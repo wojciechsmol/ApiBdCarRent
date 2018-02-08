@@ -16,7 +16,7 @@ public class Opieka {
     private Long id;
 
 
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JsonManagedReference
     private Pracownik pracownik;
 

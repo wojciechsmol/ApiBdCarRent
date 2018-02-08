@@ -34,8 +34,6 @@ public class WypozyczenieServiceImpl implements WypozyczenieService {
     }
 
 
-
-
     @Override
     public List<Wypozyczenie> getAllWypozyczenia() {
         List<Wypozyczenie> wypozyczenia = new ArrayList<>();
@@ -44,28 +42,28 @@ public class WypozyczenieServiceImpl implements WypozyczenieService {
     }
 
     @Override
-    public Wypozyczenie updateWypozyczenie(Long wypozyczenieId, WypozyczenieDto wypozyczenieDetails){
-        if(!wypozyczenieRepository.exists(wypozyczenieId))
+    public Wypozyczenie updateWypozyczenie(Long wypozyczenieId, WypozyczenieDto wypozyczenieDetails) {
+        if (!wypozyczenieRepository.exists(wypozyczenieId))
             return null;
 
         Wypozyczenie wypozyczenie = wypozyczenieRepository.findOne(wypozyczenieId);
 
-        if(wypozyczenieDetails.getFaktycznaDataRozpoczecia() != null)
+        if (wypozyczenieDetails.getFaktycznaDataRozpoczecia() != null)
             wypozyczenie.setFaktycznaDataRozpoczecia(wypozyczenieDetails.getFaktycznaDataRozpoczecia());
-        if(wypozyczenieDetails.getPlanowanaDataRozpoczecia() != null)
+        if (wypozyczenieDetails.getPlanowanaDataRozpoczecia() != null)
             wypozyczenie.setPlanowanaDataRozpoczecia(wypozyczenieDetails.getPlanowanaDataRozpoczecia());
-        if(wypozyczenieDetails.getFaktycznaDataZakonczenia() != null)
+        if (wypozyczenieDetails.getFaktycznaDataZakonczenia() != null)
             wypozyczenie.setFaktycznaDataZakonczenia(wypozyczenieDetails.getFaktycznaDataZakonczenia());
-        if(wypozyczenieDetails.getPlanowanaDataZakonczenia() != null)
+        if (wypozyczenieDetails.getPlanowanaDataZakonczenia() != null)
             wypozyczenie.setPlanowanaDataZakonczenia(wypozyczenieDetails.getPlanowanaDataZakonczenia());
-        if(wypozyczenieDetails.getPrzebiegRozpoczecia() != 0)
+        if (wypozyczenieDetails.getPrzebiegRozpoczecia() != 0)
             wypozyczenie.setPrzebiegRozpoczecia(wypozyczenieDetails.getPrzebiegRozpoczecia());
-        if(wypozyczenieDetails.getPrzebiegZakonczenia() != 0)
+        if (wypozyczenieDetails.getPrzebiegZakonczenia() != 0)
             wypozyczenie.setPrzebiegZakonczenia(wypozyczenieDetails.getPrzebiegZakonczenia());
-        if(wypozyczenieDetails.getStatusWypozyczenia() != null)
+        if (wypozyczenieDetails.getStatusWypozyczenia() != null)
             wypozyczenie.setStatusWypozyczenia(wypozyczenieDetails.getStatusWypozyczenia());
 
-        if(wypozyczenieDetails.getIdPojazdu() != null) {
+        if (wypozyczenieDetails.getIdPojazdu() != null) {
             //if Id don't match then we've got to change the pojazd
             if (wypozyczenieDetails.getIdPojazdu() != wypozyczenie.getPojazd().getId()) {
                 Pojazd pojazd = mPojazdRepository.findOne(wypozyczenieDetails.getIdPojazdu());
@@ -86,13 +84,13 @@ public class WypozyczenieServiceImpl implements WypozyczenieService {
             }
         }
 
-        if(wypozyczenieDetails.getIdPracownika() != null)  {
+        if (wypozyczenieDetails.getIdPracownika() != null) {
             //if Id don't match then we've got to change the pracownik
-            if(wypozyczenieDetails.getIdPracownika() != wypozyczenie.getPracownik().getId()) {
+            if (wypozyczenieDetails.getIdPracownika() != wypozyczenie.getPracownik().getId()) {
                 Pracownik pracownik = mPracownikRepository.findOne(wypozyczenieDetails.getIdPracownika());
 
                 //if pracownik is ZWOLNIONY then can't book the car
-                if(pracownik != null && pracownik.getStatusZatrudnienia()!=Pracownik.StatusZatrudnienia.ZWOLNIONY) {
+                if (pracownik != null && pracownik.getStatusZatrudnienia() != Pracownik.StatusZatrudnienia.ZWOLNIONY) {
                     wypozyczenie.getPracownik().getWypozyczenia().remove(wypozyczenie);
                     mPracownikRepository.save(wypozyczenie.getPracownik());
 
@@ -114,9 +112,8 @@ public class WypozyczenieServiceImpl implements WypozyczenieService {
         //Should be validation if the car available
 
         Wypozyczenie wypozyczenie = convertFromDto(wypozyczenieDto);
-        if(wypozyczenie.getPracownik() == null || wypozyczenie.getPojazd() == null || wypozyczenie.getPracownik().getStatusZatrudnienia() == Pracownik.StatusZatrudnienia.ZWOLNIONY)
+        if (wypozyczenie.getPracownik() == null || wypozyczenie.getPojazd() == null || wypozyczenie.getPracownik().getStatusZatrudnienia() == Pracownik.StatusZatrudnienia.ZWOLNIONY)
             return null;
-
 
 
         wypozyczenie.getPojazd().getWypozyczenia().add(wypozyczenie);
@@ -139,9 +136,9 @@ public class WypozyczenieServiceImpl implements WypozyczenieService {
     }
 
     @Override
-    public boolean deleteWypozyczenie(Long wypozyczenieId){
+    public boolean deleteWypozyczenie(Long wypozyczenieId) {
 
-        if(!wypozyczenieRepository.exists(wypozyczenieId))
+        if (!wypozyczenieRepository.exists(wypozyczenieId))
             return false;
 
         Wypozyczenie wypozyczenie = wypozyczenieRepository.findOne(wypozyczenieId);
@@ -171,10 +168,10 @@ public class WypozyczenieServiceImpl implements WypozyczenieService {
     @Override
     public Wypozyczenie convertFromDto(WypozyczenieDto wypozyczenieDto) {
         Wypozyczenie wypozyczenie = mModelMapper.map(wypozyczenieDto, Wypozyczenie.class);
-        if(mPracownikRepository.exists(wypozyczenieDto.getIdPracownika()))
-        wypozyczenie.setPracownik(mPracownikRepository.findOne(wypozyczenieDto.getIdPracownika()));
+        if (mPracownikRepository.exists(wypozyczenieDto.getIdPracownika()))
+            wypozyczenie.setPracownik(mPracownikRepository.findOne(wypozyczenieDto.getIdPracownika()));
 
-        if(mPojazdRepository.exists(wypozyczenieDto.getIdPojazdu()))
+        if (mPojazdRepository.exists(wypozyczenieDto.getIdPojazdu()))
             wypozyczenie.setPojazd(mPojazdRepository.findOne(wypozyczenieDto.getIdPojazdu()));
 
 

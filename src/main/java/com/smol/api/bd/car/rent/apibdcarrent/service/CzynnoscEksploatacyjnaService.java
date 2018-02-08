@@ -8,8 +8,11 @@ import java.util.List;
 public interface CzynnoscEksploatacyjnaService {
 
     CzynnoscEksploatacyjna createCzynnoscEksploatacyjna(CzynnoscEksploatacyjnaDto czynnoscEksploatacyjnaDto);
+
     List<CzynnoscEksploatacyjna> getAllCzynnosciEksploatacyjne();
+
     CzynnoscEksploatacyjna convertFromDto(CzynnoscEksploatacyjnaDto czynnoscEksploatacyjnaDto);
+
     CzynnoscEksploatacyjnaDto convertToDto(CzynnoscEksploatacyjna czynnoscEksploatacyjna);
 
 }

@@ -23,7 +23,7 @@ public class EwidencjaKosztow {
     @JsonProperty("cena")
     private int cena;
 
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JsonManagedReference
     private Pojazd pojazd;
 

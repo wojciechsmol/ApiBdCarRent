@@ -5,6 +5,4 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface PojazdRepository extends CrudRepository<Pojazd, Long> {
 
-
-    Pojazd findFirstByModelId(Long modelId);
 }

@@ -15,15 +15,15 @@ import java.util.List;
 @Service
 public class PojazdServiceImpl implements PojazdService {
 
-    PojazdRepository mPojazdRepository;
-    MarkaService mMarkaService;
-    PracownikRepository mPracownikRepository;
-    ModelService mModelService;
-    ModelMapper mModelMapper;
-    OpiekaRepository mOpiekaRepository;
-    ModelRepository mModelRepository;
-    WypozyczenieRepository mWypozyczenieRepository;
-    MarkaRepository mMarkaRepository;
+    private PojazdRepository mPojazdRepository;
+    private MarkaService mMarkaService;
+    private PracownikRepository mPracownikRepository;
+    private ModelService mModelService;
+    private ModelMapper mModelMapper;
+    private OpiekaRepository mOpiekaRepository;
+    private ModelRepository mModelRepository;
+    private WypozyczenieRepository mWypozyczenieRepository;
+    private MarkaRepository mMarkaRepository;
 
     @Autowired
     public PojazdServiceImpl(PojazdRepository pojazdRepository, MarkaService markaService, PracownikRepository pracownikRepository, ModelService modelService, ModelMapper modelMapper, OpiekaRepository opiekaRepository, ModelRepository modelRepository, WypozyczenieRepository wypozyczenieRepository, MarkaRepository markaRepository) {
@@ -94,7 +94,7 @@ public class PojazdServiceImpl implements PojazdService {
     @Override
     public Pojazd getPojazd(Long pojazdId) {
         Pojazd pojazd = mPojazdRepository.findOne(pojazdId);
-        if (pojazd == null){
+        if (pojazd == null) {
             return null;
         }
 
@@ -102,15 +102,15 @@ public class PojazdServiceImpl implements PojazdService {
     }
 
     @Override
-    public Pojazd updatePojazd(Long pojazdId, PojazdDto pojazdDetails){
+    public Pojazd updatePojazd(Long pojazdId, PojazdDto pojazdDetails) {
 
-        if(!mPojazdRepository.exists(pojazdId))
+        if (!mPojazdRepository.exists(pojazdId))
             return null;
 
         Pojazd pojazd = mPojazdRepository.findOne(pojazdId);
 
         boolean skip = false;
-        if(pojazd.getOpieka() == null){
+        if (pojazd.getOpieka() == null) {
             Opieka opieka = new Opieka(mPracownikRepository.findOne(pojazdDetails.getIdOpiekuna()), pojazd);
             mOpiekaRepository.save(opieka);
             opieka.getPracownik().getOpieki().add(opieka);
@@ -119,7 +119,7 @@ public class PojazdServiceImpl implements PojazdService {
             mPojazdRepository.save(pojazd);
             skip = true;
         }
-        if(!skip && pojazdDetails.getIdOpiekuna() != null && pojazdDetails.getIdOpiekuna() != pojazd.getOpieka().getPracownik().getId()) {
+        if (!skip && pojazdDetails.getIdOpiekuna() != null && pojazdDetails.getIdOpiekuna() != pojazd.getOpieka().getPracownik().getId()) {
             Opieka opieka = pojazd.getOpieka();
             pojazd.setOpieka(null);
             opieka.getPracownik().getOpieki().remove(opieka);
@@ -136,11 +136,10 @@ public class PojazdServiceImpl implements PojazdService {
             pojazd.setOpieka(opieka);
             mPojazdRepository.save(pojazd);
         }
-        if(pojazdDetails.getStatus() != null){
-            if (pojazdDetails.getStatus() != Pojazd.statusPojazdu.SPRAWNY)
-            {
+        if (pojazdDetails.getStatus() != null) {
+            if (pojazdDetails.getStatus() != Pojazd.statusPojazdu.SPRAWNY) {
                 List<Wypozyczenie> wypozyczenia = pojazd.getWypozyczenia();
-                for (Iterator<Wypozyczenie> i = wypozyczenia.iterator(); i.hasNext(); ){
+                for (Iterator<Wypozyczenie> i = wypozyczenia.iterator(); i.hasNext(); ) {
                     Wypozyczenie wypozyczenie = i.next();
                     wypozyczenie.getPracownik().getWypozyczenia().remove(wypozyczenie);
                     mPracownikRepository.save(wypozyczenie.getPracownik());
@@ -150,7 +149,7 @@ public class PojazdServiceImpl implements PojazdService {
                 mPojazdRepository.save(pojazd);
             }
 
-            if (pojazdDetails.getStatus() == Pojazd.statusPojazdu.ZŁOMOWANY){
+            if (pojazdDetails.getStatus() == Pojazd.statusPojazdu.ZŁOMOWANY) {
                 Opieka opieka = pojazd.getOpieka();
                 pojazd.getOpieka().getPracownik().getOpieki().remove(opieka);
                 mPracownikRepository.save(pojazd.getOpieka().getPracownik());
@@ -173,7 +172,7 @@ public class PojazdServiceImpl implements PojazdService {
 
         pojazdDto.setMarka(mMarkaService.convertToDto(pojazd.getModel().getMarka()));
         pojazdDto.setModel(mModelService.convertToDto(pojazd.getModel()));
-        if(pojazd.getOpieka() != null) {
+        if (pojazd.getOpieka() != null) {
             pojazdDto.setOpiekun(pojazd.getOpieka().getPracownik().getImie() + " " + pojazd.getOpieka().getPracownik().getNazwisko());
             pojazdDto.setIdOpiekuna(pojazd.getOpieka().getPracownik().getId());
         }
@@ -193,13 +192,13 @@ public class PojazdServiceImpl implements PojazdService {
         pojazd.setWypozyczenia(new ArrayList<>());
 
         if (pojazd.getModel().getPojazdy() == null)
-        pojazd.getModel().setPojazdy(new ArrayList<>());
+            pojazd.getModel().setPojazdy(new ArrayList<>());
 
         pojazd.getModel().getPojazdy().add(pojazd);
         mPojazdRepository.save(pojazd);
 
 
-        if(pojazdDto.getIdOpiekuna() != null) {
+        if (pojazdDto.getIdOpiekuna() != null) {
             if (mPracownikRepository.exists(pojazdDto.getIdOpiekuna())) {
                 Opieka opieka = new Opieka(mPracownikRepository.findOne(pojazdDto.getIdOpiekuna()), pojazd);
                 mOpiekaRepository.save(opieka);

@@ -18,13 +18,13 @@ import java.util.List;
 @Service
 public class CzynnoscSerwisowaServiceImpl implements CzynnoscSerwisowaService {
 
-    ModelMapper mModelMapper;
-    PojazdRepository mPojazdRepository;
-    PojazdService mPojazdService;
-    PracownikRepository mPracownikRepository;
-    PracownikService mPracownikService;
-    CzynnoscSerwisowaRepository mCzynnoscSerwisowaRepository;
-    EwidencjaKosztowService mEwidencjaKosztowService;
+    private ModelMapper mModelMapper;
+    private PojazdRepository mPojazdRepository;
+    private PojazdService mPojazdService;
+    private PracownikRepository mPracownikRepository;
+    private PracownikService mPracownikService;
+    private CzynnoscSerwisowaRepository mCzynnoscSerwisowaRepository;
+    private EwidencjaKosztowService mEwidencjaKosztowService;
 
     @Autowired
     public CzynnoscSerwisowaServiceImpl(ModelMapper modelMapper, PojazdRepository pojazdRepository, PojazdService pojazdService, PracownikRepository pracownikRepository, PracownikService pracownikService, CzynnoscSerwisowaRepository czynnoscSerwisowaRepository, EwidencjaKosztowService ewidencjaKosztowService) {
@@ -41,7 +41,7 @@ public class CzynnoscSerwisowaServiceImpl implements CzynnoscSerwisowaService {
     public CzynnoscSerwisowa createCzynnoscSerwisowa(CzynnoscSerwisowaDto czynnoscSerwisowaDto) {
 
         CzynnoscSerwisowa czynnoscSerwisowa = convertFromDto(czynnoscSerwisowaDto);
-        if(czynnoscSerwisowa == null)
+        if (czynnoscSerwisowa == null)
             return null;
 
         mEwidencjaKosztowService.createEwidencjaKosztowWithCzynnoscSerwisowa(czynnoscSerwisowa);
@@ -62,7 +62,7 @@ public class CzynnoscSerwisowaServiceImpl implements CzynnoscSerwisowaService {
 
         czynnoscSerwisowa.setRodzajCzynnosciSerwisowej(CzynnoscSerwisowa.rodzajCzynnosciSerwisowej.valueOf(czynnoscSerwisowaDto.getNazwa()));
 
-        if(!mPojazdRepository.exists(czynnoscSerwisowaDto.getIdPojazdu()))
+        if (!mPojazdRepository.exists(czynnoscSerwisowaDto.getIdPojazdu()))
             return null;
 
         Pojazd pojazd = mPojazdRepository.findOne(czynnoscSerwisowaDto.getIdPojazdu());

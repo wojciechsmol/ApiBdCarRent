@@ -28,7 +28,7 @@ public class Marka {
     public Marka(String opis, List<Model> modele) {
         this.opis = opis;
         this.modele = modele;
-        }
+    }
 
     public Marka(String opis) {
         this.opis = opis;
@@ -45,7 +45,6 @@ public class Marka {
     public List<Model> getModele() {
         return modele;
     }
-
 
 
     public void setId(Long id) {

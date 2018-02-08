@@ -10,8 +10,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class MarkaServiceImpl implements MarkaService {
 
-    ModelMapper mModelMapper;
-    MarkaRepository mMarkaRepository;
+    private ModelMapper mModelMapper;
+    private MarkaRepository mMarkaRepository;
 
     @Autowired
     public MarkaServiceImpl(ModelMapper modelMapper, MarkaRepository markaRepository) {
@@ -28,12 +28,12 @@ public class MarkaServiceImpl implements MarkaService {
     public Marka convertFromDto(MarkaDto markaDto) {
 
         Marka marka = mMarkaRepository.findTopByOpis(markaDto.getOpis());
-        if(marka != null)
+        if (marka != null)
             return marka;
 
         marka = mModelMapper.map(markaDto, Marka.class);
         marka.setOpis(markaDto.getOpis());
         mMarkaRepository.save(marka);
-        return  marka;
+        return marka;
     }
 }

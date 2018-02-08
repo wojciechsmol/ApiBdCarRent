@@ -26,30 +26,29 @@ public class MainController {
     }
 
     @GetMapping("/statusyWypozyczenia")
-    public EnumSet<Wypozyczenie.statusyWypozyczen> getStatusyWypozyczen(){
+    public EnumSet<Wypozyczenie.statusyWypozyczen> getStatusyWypozyczen() {
         return Wypozyczenie.statusyWypozyczen.allStatusyWypozyczen;
     }
 
     @GetMapping("/statusyPojazdu")
-    public EnumSet<Pojazd.statusPojazdu> getStatusyPojazdu(){
+    public EnumSet<Pojazd.statusPojazdu> getStatusyPojazdu() {
         return Pojazd.statusPojazdu.allStatusyPojazdu;
     }
 
     @GetMapping("/nadwozia")
-    public EnumSet<Model.typNadwozia> getAllNadwozia(){
+    public EnumSet<Model.typNadwozia> getAllNadwozia() {
         return Model.typNadwozia.allTypyNadwozia;
     }
 
     @GetMapping("/listaCzynnosciSerwisowych")
-    public EnumSet<CzynnoscSerwisowa.rodzajCzynnosciSerwisowej> getAllCzynnosciSerwisowe(){
+    public EnumSet<CzynnoscSerwisowa.rodzajCzynnosciSerwisowej> getAllCzynnosciSerwisowe() {
         return CzynnoscSerwisowa.rodzajCzynnosciSerwisowej.allCzynnosciSerwisowe;
     }
 
     @GetMapping("/listaCzynnosciEksploatacyjnych")
-    public EnumSet<CzynnoscEksploatacyjna.rodzajCzynnoscEksploatacyjnej> getAllCzynnosciEksploatacyjne(){
+    public EnumSet<CzynnoscEksploatacyjna.rodzajCzynnoscEksploatacyjnej> getAllCzynnosciEksploatacyjne() {
         return CzynnoscEksploatacyjna.rodzajCzynnoscEksploatacyjnej.allCzynnosciEksploatacyjne;
     }
-
 
 
 }

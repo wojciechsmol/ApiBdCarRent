@@ -6,5 +6,6 @@ import com.smol.api.bd.car.rent.apibdcarrent.model.MarkaDto;
 public interface MarkaService {
 
     MarkaDto convertToDto(Marka marka);
+
     Marka convertFromDto(MarkaDto markaDto);
 }

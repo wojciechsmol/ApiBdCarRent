@@ -9,8 +9,11 @@ import java.util.List;
 public interface CzynnoscSerwisowaService {
 
     CzynnoscSerwisowa createCzynnoscSerwisowa(CzynnoscSerwisowaDto czynnoscSerwisowaDto);
+
     List<CzynnoscSerwisowa> getAllCzynnosciSerwisowe();
+
     CzynnoscSerwisowa convertFromDto(CzynnoscSerwisowaDto czynnoscSerwisowaDto);
+
     CzynnoscSerwisowaDto convertToDto(CzynnoscSerwisowa czynnoscSerwisowa);
 
 

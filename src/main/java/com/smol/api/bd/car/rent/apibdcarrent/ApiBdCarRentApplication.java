@@ -10,7 +10,7 @@ import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-public class ApiBdCarRentApplication{
+public class ApiBdCarRentApplication {
 
     @Bean
     public ModelMapper modelMapper() {

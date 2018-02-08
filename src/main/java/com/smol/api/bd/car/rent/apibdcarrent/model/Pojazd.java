@@ -15,7 +15,7 @@ import java.util.List;
 public class Pojazd {
 
     //ENUM TYPE of statusPojazdu
-    public enum statusPojazdu{
+    public enum statusPojazdu {
         SPRAWNY, W_NAPRAWIE, ZŁOMOWANY;
         public static final EnumSet<statusPojazdu> allStatusyPojazdu = EnumSet.allOf(statusPojazdu.class);
     }
@@ -41,7 +41,7 @@ public class Pojazd {
     private List<Wypozyczenie> wypozyczenia;
 
 
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JsonManagedReference
     private Model model;
 
@@ -56,7 +56,6 @@ public class Pojazd {
     @OneToMany(mappedBy = "pojazd")
     @JsonBackReference
     private List<CzynnoscEksploatacyjna> czynnosciEksploatacyjne;
-
 
 
     public Pojazd() {
@@ -161,7 +160,7 @@ public class Pojazd {
         this.czynnosciEksploatacyjne = czynnosciEksploatacyjne;
     }
 
-    public boolean isTaken(LocalDateTime fromTime, LocalDateTime toTime){
+    public boolean isTaken(LocalDateTime fromTime, LocalDateTime toTime) {
 
         if (opieka == null)
             return true;
@@ -177,7 +176,7 @@ public class Pojazd {
         return false;
     }
 
-    public boolean isAvailable(){
+    public boolean isAvailable() {
         return status == statusPojazdu.SPRAWNY;
     }
 

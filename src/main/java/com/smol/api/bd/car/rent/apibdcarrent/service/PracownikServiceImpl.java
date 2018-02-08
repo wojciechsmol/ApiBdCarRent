@@ -20,10 +20,10 @@ import java.util.Optional;
 @Service
 public class PracownikServiceImpl implements PracownikService {
 
-    PracownikRepository pracownikRepository;
-    ModelMapper mModelMapper;
-    OpiekaRepository mOpiekaRepository;
-    WypozyczenieRepository wypozyczenieRepository;
+    private PracownikRepository pracownikRepository;
+    private ModelMapper mModelMapper;
+    private OpiekaRepository mOpiekaRepository;
+    private WypozyczenieRepository wypozyczenieRepository;
 
     PojazdRepository mPojazdRepository;
 
@@ -50,24 +50,24 @@ public class PracownikServiceImpl implements PracownikService {
         }
         Pracownik pracownik = pracownikRepository.findOne(pracownikId);
 
-        if(pracownikDetails.getDataUrodzenia() != null)
-        pracownik.setDataUrodzenia(pracownikDetails.getDataUrodzenia());
-        if(pracownikDetails.getImie() != null)
-        pracownik.setImie(pracownikDetails.getImie());
-        if(pracownikDetails.getNazwisko() != null)
-        pracownik.setNazwisko(pracownikDetails.getNazwisko());
-        if(pracownikDetails.getPesel() != null)
-        pracownik.setPesel(pracownikDetails.getPesel());
-        if(pracownikDetails.getRola() != null)
-        pracownik.setRola(pracownikDetails.getRola());
-        if(pracownikDetails.getStatusZatrudnienia() != null) {
+        if (pracownikDetails.getDataUrodzenia() != null)
+            pracownik.setDataUrodzenia(pracownikDetails.getDataUrodzenia());
+        if (pracownikDetails.getImie() != null)
+            pracownik.setImie(pracownikDetails.getImie());
+        if (pracownikDetails.getNazwisko() != null)
+            pracownik.setNazwisko(pracownikDetails.getNazwisko());
+        if (pracownikDetails.getPesel() != null)
+            pracownik.setPesel(pracownikDetails.getPesel());
+        if (pracownikDetails.getRola() != null)
+            pracownik.setRola(pracownikDetails.getRola());
+        if (pracownikDetails.getStatusZatrudnienia() != null) {
 
 
             if (pracownikDetails.getStatusZatrudnienia() == Pracownik.StatusZatrudnienia.NIE_PRACUJE || pracownikDetails.getStatusZatrudnienia() == Pracownik.StatusZatrudnienia.ZWOLNIONY) {
 
                 // USUWANIE WYPOZYCZEN
                 List<Wypozyczenie> wypozyczenia = pracownik.getWypozyczenia();
-                for (Iterator<Wypozyczenie> i = wypozyczenia.iterator(); i.hasNext(); ){
+                for (Iterator<Wypozyczenie> i = wypozyczenia.iterator(); i.hasNext(); ) {
                     Wypozyczenie wypozyczenie = i.next();
 
                     wypozyczenie.getPojazd().getWypozyczenia().remove(wypozyczenie);
@@ -80,9 +80,9 @@ public class PracownikServiceImpl implements PracownikService {
                 pracownikRepository.save(pracownik);
 
                 //USUWANIE OPIEK
-                if (pracownik.getRola() == Pracownik.Rola.OPIEKUN){
+                if (pracownik.getRola() == Pracownik.Rola.OPIEKUN) {
                     List<Opieka> opieki = pracownik.getOpieki();
-                    for(Iterator<Opieka> i = opieki.iterator(); i.hasNext();) {
+                    for (Iterator<Opieka> i = opieki.iterator(); i.hasNext(); ) {
                         Opieka opieka = i.next();
                         opieka.getPojazd().setOpieka(null);
                         mPojazdRepository.save(opieka.getPojazd());
@@ -119,7 +119,7 @@ public class PracownikServiceImpl implements PracownikService {
             return false;
         }
 
-        for (Opieka opieka : pracownik.getOpieki()){
+        for (Opieka opieka : pracownik.getOpieki()) {
             mOpiekaRepository.delete(opieka);
             Pojazd pojazd = opieka.getPojazd();
             pojazd.setOpieka(null);
@@ -152,7 +152,7 @@ public class PracownikServiceImpl implements PracownikService {
             if (opiekun.getRola() != Pracownik.Rola.OPIEKUN || opiekun.getStatusZatrudnienia() == Pracownik.StatusZatrudnienia.ZWOLNIONY || opiekun.getStatusZatrudnienia() == Pracownik.StatusZatrudnienia.NIE_PRACUJE)
                 isOpiekunem = false;
 
-            if(!isOpiekunem)
+            if (!isOpiekunem)
                 i.remove();
         }
         return opiekuni;

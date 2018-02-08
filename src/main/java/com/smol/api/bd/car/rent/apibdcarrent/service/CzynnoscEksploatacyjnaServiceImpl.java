@@ -17,13 +17,13 @@ import java.util.List;
 @Service
 public class CzynnoscEksploatacyjnaServiceImpl implements CzynnoscEksploatacyjnaService {
 
-    ModelMapper mModelMapper;
-    PojazdRepository mPojazdRepository;
-    PojazdService mPojazdService;
-    PracownikRepository mPracownikRepository;
-    PracownikService mPracownikService;
-    CzynnoscEksploatacyjnaRepository mCzynnoscEksploatacyjnaRepository;
-    EwidencjaKosztowService mEwidencjaKosztowService;
+    private ModelMapper mModelMapper;
+    private PojazdRepository mPojazdRepository;
+    private PojazdService mPojazdService;
+    private PracownikRepository mPracownikRepository;
+    private PracownikService mPracownikService;
+    private CzynnoscEksploatacyjnaRepository mCzynnoscEksploatacyjnaRepository;
+    private EwidencjaKosztowService mEwidencjaKosztowService;
 
     @Autowired
     public CzynnoscEksploatacyjnaServiceImpl(ModelMapper modelMapper, PojazdRepository pojazdRepository, PojazdService pojazdService, PracownikRepository pracownikRepository, PracownikService pracownikService, CzynnoscEksploatacyjnaRepository czynnoscEksploatacyjnaRepository, EwidencjaKosztowService ewidencjaKosztowService) {
@@ -62,13 +62,13 @@ public class CzynnoscEksploatacyjnaServiceImpl implements CzynnoscEksploatacyjna
         czynnoscEksploatacyjna.setRodzajCzynnosciEksploatacyjnej(CzynnoscEksploatacyjna.rodzajCzynnoscEksploatacyjnej.valueOf(czynnoscEksploatacyjnaDto.getNazwa()));
 
 
-        if(!mPojazdRepository.exists(czynnoscEksploatacyjnaDto.getIdPojazdu()))
+        if (!mPojazdRepository.exists(czynnoscEksploatacyjnaDto.getIdPojazdu()))
             return null;
         Pojazd pojazd = mPojazdRepository.findOne(czynnoscEksploatacyjnaDto.getIdPojazdu());
         czynnoscEksploatacyjna.setPojazd(pojazd);
 
 
-        if(!mPracownikRepository.exists(czynnoscEksploatacyjnaDto.getIdPracownika()))
+        if (!mPracownikRepository.exists(czynnoscEksploatacyjnaDto.getIdPracownika()))
             return null;
 
         Pracownik pracownik = mPracownikRepository.findOne(czynnoscEksploatacyjnaDto.getIdPracownika());

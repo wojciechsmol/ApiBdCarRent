@@ -14,10 +14,11 @@ public class CzynnoscSerwisowa {
 
 
     //ENUM TYPE of rodzajCzynnosciSerwisowej
-    public enum rodzajCzynnosciSerwisowej{
+    public enum rodzajCzynnosciSerwisowej {
         WYMIANA_ROZRZĄDU, NAPRAWY_LAKIERNICZE, WYMIANA_SILNIKA;
         public static final EnumSet<rodzajCzynnosciSerwisowej> allCzynnosciSerwisowe = EnumSet.allOf(rodzajCzynnosciSerwisowej.class);
     }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -32,7 +33,7 @@ public class CzynnoscSerwisowa {
     private LocalDate data;
     private int cena;
 
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JsonManagedReference
     private Pojazd pojazd;
 

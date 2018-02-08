@@ -14,7 +14,7 @@ public class CzynnoscSerwisowaDto {
     private String nazwa;
 
     @JsonProperty("data")
-    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy/MM/dd")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
     private LocalDate data;
 
     @JsonProperty("cena")
@@ -22,7 +22,6 @@ public class CzynnoscSerwisowaDto {
 
     @JsonProperty("id_pojazdu")
     private Long idPojazdu;
-
 
 
     public CzynnoscSerwisowaDto() {

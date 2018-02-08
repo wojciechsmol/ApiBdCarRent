@@ -12,7 +12,7 @@ public class WypozyczenieDto {
     private Long id;
 
     @JsonProperty("planowana_data_rozpoczecia")
-    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy/MM/dd HH:mm")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd HH:mm")
     private LocalDateTime planowanaDataRozpoczecia;
 
     @JsonProperty("planowana_data_zakonczenia")

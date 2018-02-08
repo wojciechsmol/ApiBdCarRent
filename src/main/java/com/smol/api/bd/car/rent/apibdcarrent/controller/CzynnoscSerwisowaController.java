@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 @RestController
 public class CzynnoscSerwisowaController {
 
-    CzynnoscSerwisowaService mCzynnoscSerwisowaService;
+    private CzynnoscSerwisowaService mCzynnoscSerwisowaService;
 
     @Autowired
     public CzynnoscSerwisowaController(CzynnoscSerwisowaService czynnoscSerwisowaService) {
@@ -23,16 +23,16 @@ public class CzynnoscSerwisowaController {
     }
 
     @PostMapping("")
-    public ResponseEntity<CzynnoscSerwisowaDto> createCzynnoscSerwisowa(@Valid @RequestBody CzynnoscSerwisowaDto czynnoscSerwisowaDto){
+    public ResponseEntity<CzynnoscSerwisowaDto> createCzynnoscSerwisowa(@Valid @RequestBody CzynnoscSerwisowaDto czynnoscSerwisowaDto) {
         CzynnoscSerwisowa czynnoscSerwisowa = mCzynnoscSerwisowaService.createCzynnoscSerwisowa(czynnoscSerwisowaDto);
-        if(czynnoscSerwisowa == null)
+        if (czynnoscSerwisowa == null)
             return ResponseEntity.notFound().build();
 
         return ResponseEntity.ok(mCzynnoscSerwisowaService.convertToDto(czynnoscSerwisowa));
     }
 
     @GetMapping("")
-    public List<CzynnoscSerwisowaDto> getAllCzynnosciSerwisowe(){
+    public List<CzynnoscSerwisowaDto> getAllCzynnosciSerwisowe() {
         return mCzynnoscSerwisowaService.getAllCzynnosciSerwisowe().stream()
                 .map(czynnoscSerwisowa -> mCzynnoscSerwisowaService.convertToDto(czynnoscSerwisowa))
                 .collect(Collectors.toList());

@@ -14,7 +14,7 @@ import java.util.List;
 public class Model {
 
     //ENUM TYPE of typNadwozia
-    public enum typNadwozia{
+    public enum typNadwozia {
         HATCHBACK, SEDAN, VAN;
         public static final EnumSet<typNadwozia> allTypyNadwozia = EnumSet.allOf(typNadwozia.class);
     }
@@ -38,7 +38,7 @@ public class Model {
     @JsonBackReference
     private List<Pojazd> pojazdy;
 
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JsonManagedReference
     private Marka marka;
 

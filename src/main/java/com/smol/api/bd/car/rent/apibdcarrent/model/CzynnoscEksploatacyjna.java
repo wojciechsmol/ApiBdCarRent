@@ -13,7 +13,7 @@ import java.util.EnumSet;
 public class CzynnoscEksploatacyjna {
 
     //ENUM TYPE of rodzajCzynnosciEksploatacyjnej
-    public enum rodzajCzynnoscEksploatacyjnej{
+    public enum rodzajCzynnoscEksploatacyjnej {
         TANKOWANIE, DOLANIE_PŁYNU_DO_SPRYSKIWACZY, DOLANIE_OLEJU_SILNIKOWEGO;
         public static final EnumSet<rodzajCzynnoscEksploatacyjnej> allCzynnosciEksploatacyjne = EnumSet.allOf(rodzajCzynnoscEksploatacyjnej.class);
     }
@@ -31,11 +31,11 @@ public class CzynnoscEksploatacyjna {
 
     private int cena;
 
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JsonManagedReference
     private Pojazd pojazd;
 
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JsonManagedReference
     private Pracownik pracownik;
 

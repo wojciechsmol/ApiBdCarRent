@@ -24,7 +24,7 @@ public class PojazdController {
     }
 
     @GetMapping("")
-    public List<PojazdDto> getAllPojazdy(){
+    public List<PojazdDto> getAllPojazdy() {
         return mPojazdService.getAllPojazdy().stream()
                 .map(pojazd -> mPojazdService.convertToDto(pojazd))
                 .collect(Collectors.toList());
@@ -32,7 +32,7 @@ public class PojazdController {
 
     @GetMapping("/dostepne")
     public List<PojazdDto> getAllAvailablePojazdy(@RequestParam("od") String from,
-                                                  @RequestParam("do") String to){
+                                                  @RequestParam("do") String to) {
         return mPojazdService.getAllAvailablePojazdy(from, to).stream()
                 .map(pojazd -> mPojazdService.convertToDto(pojazd))
                 .collect(Collectors.toList());
@@ -44,7 +44,7 @@ public class PojazdController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<PojazdDto> getPojazd(@PathVariable(value = "id") Long pojazdId){
+    public ResponseEntity<PojazdDto> getPojazd(@PathVariable(value = "id") Long pojazdId) {
         Pojazd pojazd = mPojazdService.getPojazd(pojazdId);
         if (pojazd == null)
             return ResponseEntity.notFound().build();
@@ -55,10 +55,10 @@ public class PojazdController {
 
     @PatchMapping("/{id}")
     public ResponseEntity<PojazdDto> updatePojazd(@PathVariable(value = "id") Long pojazdId,
-                                                        @Valid @RequestBody PojazdDto pojazdDetails) {
+                                                  @Valid @RequestBody PojazdDto pojazdDetails) {
 
         Pojazd pojazd = mPojazdService.updatePojazd(pojazdId, pojazdDetails);
-        if(pojazd == null)
+        if (pojazd == null)
             return ResponseEntity.notFound().build();
 
         return ResponseEntity.ok(mPojazdService.convertToDto(pojazd));

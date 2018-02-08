@@ -19,7 +19,7 @@ public class PracownikDto {
     @JsonProperty("nazwisko")
     private String nazwisko;
     @JsonProperty("data_urodzenia")
-    @JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy/MM/dd")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy/MM/dd")
     private LocalDate dataUrodzenia;
 
     @JsonProperty("status_zatrudnienia")

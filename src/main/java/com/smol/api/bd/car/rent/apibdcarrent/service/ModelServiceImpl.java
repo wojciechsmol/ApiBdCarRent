@@ -12,10 +12,10 @@ import java.util.ArrayList;
 @Service
 public class ModelServiceImpl implements ModelService {
 
-    ModelMapper mModelMapper;
-    ModelRepository mModelRepository;
-    MarkaService mMarkaService;
-    MarkaRepository mMarkaRepository;
+    private ModelMapper mModelMapper;
+    private ModelRepository mModelRepository;
+    private MarkaService mMarkaService;
+    private MarkaRepository mMarkaRepository;
 
     @Autowired
     public ModelServiceImpl(ModelMapper modelMapper, ModelRepository modelRepository, MarkaService markaService, MarkaRepository markaRepository) {

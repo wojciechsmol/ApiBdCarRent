@@ -44,22 +44,19 @@ public class Wypozyczenie {
     @JsonProperty("przebieg_zakonczenia")
     private int przebiegZakonczenia;
 
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JsonManagedReference
     private Pracownik pracownik;
 
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JsonManagedReference
     private Pojazd pojazd;
-
 
 
     @Enumerated
     @Column(columnDefinition = "smallint")
     @JsonProperty("status_wypozyczenia")
     private statusyWypozyczen statusWypozyczenia;
-
-
 
 
     public Wypozyczenie() {

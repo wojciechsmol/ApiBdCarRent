@@ -42,7 +42,7 @@ public class PracownikController {
     @GetMapping("/{id}")
     public ResponseEntity<PracownikDto> getPracownik(@PathVariable(value = "id") Long pracownikId) {
         Pracownik pracownik = pracownikService.getPracownik(pracownikId);
-        if(pracownik == null)
+        if (pracownik == null)
             return ResponseEntity.notFound().build();
 
         return ResponseEntity.ok(pracownikService.convertToDto(pracownik));
@@ -58,10 +58,10 @@ public class PracownikController {
 
     @PatchMapping("/{id}")
     public ResponseEntity<PracownikDto> updatePracownik(@PathVariable(value = "id") Long pracownikId,
-                                                     @Valid @RequestBody PracownikDto pracownikDetails) {
+                                                        @Valid @RequestBody PracownikDto pracownikDetails) {
 
         Pracownik pracownik = pracownikService.updatePracownik(pracownikId, pracownikDetails);
-        if(pracownik == null)
+        if (pracownik == null)
             return ResponseEntity.notFound().build();
 
         return ResponseEntity.ok(pracownikService.convertToDto(pracownik));
@@ -75,7 +75,6 @@ public class PracownikController {
 
         return ResponseEntity.ok().build();
     }
-
 
 
 }
