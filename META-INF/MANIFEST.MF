@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: com.smol.api.bd.car.rent.apibdcarrent.ApiBdCarRentApplicat
+ ion
+

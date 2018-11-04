@@ -135,6 +135,7 @@ public class WypozyczenieServiceImpl implements WypozyczenieService {
         return wypozyczenieRepository.findOne(wypozyczenieId);
     }
 
+
     @Override
     public boolean deleteWypozyczenie(Long wypozyczenieId) {
 

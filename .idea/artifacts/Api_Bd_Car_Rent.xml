@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="Api Bd Car Rent">
+    <output-path>$PROJECT_DIR$/out/artifacts/Api_Bd_Car_Rent</output-path>
+    <root id="archive" name="Api Bd Car Rent.war">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+    </root>
+  </artifact>
+</component>
